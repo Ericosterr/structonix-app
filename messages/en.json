@@ -1,0 +1,217 @@
+{
+  "common": {
+    "calculator": "Calculator",
+    "whatsapp": "WhatsApp",
+    "moreInfo": "More Information",
+    "viewPdf": "View PDF",
+    "downloadPdf": "Download PDF",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Message sent successfully.",
+    "error": "An error occurred. Please try again.",
+    "area": "Area (m²)",
+    "estimatedPrice": "Estimated price",
+    "standard": "Standard",
+    "premium": "Premium",
+    "mode": "Mode",
+    "services": "Services",
+    "language": "Language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "nav": {
+    "about": "About Us",
+    "investors": "For Investors",
+    "calculator": "Calculator",
+    "estructura": "Structure",
+    "ingenieria": "Engineering",
+    "arquitectura": "Architecture",
+    "acabados": "Finishes",
+    "carpinteria": "Carpentry",
+    "gestion-administrativa": "Administrative Management"
+  },
+  "footer": {
+    "legalLine": "© 2026 All rights reserved. Structonix Sistem Global S.L. CIF B24937930",
+    "copyright": "© 2026 All rights reserved.",
+    "companyLine": "Structonix Sistem Global S.L.",
+    "cif": "CIF B24937930",
+    "privacy": "Privacy Policy",
+    "instagram": "Instagram",
+    "youtube": "YouTube",
+    "facebook": "Facebook",
+    "socialLinks": "Social links"
+  },
+  "home": {
+    "slogan": "WE SHAPE SPACES THROUGH ENGINEERING, PRECISION AND VISION, CREATING STRUCTURES DESIGNED FOR THE FUTURE.",
+    "servicesTitle": "Services"
+  },
+  "about": {
+    "sobreStructonix": "About Structonix",
+    "equipoStructonix": "Structonix Team",
+    "equipo": "Team",
+    "gestionAdministrativa": "Administrative Management",
+    "controlDeCalidad": "Quality Control",
+    "arquitecturaEInnovacion": "Architecture and Innovation",
+    "structonixSistemGlobal": "Structonix Sistem Global",
+    "sobreStructonixText": "Structonix Sistem Global SL is a modern full-service construction and engineering company that delivers projects of any complexity across Spain. We support the client at every stage: from land selection and acquisition to commissioning the building. This approach allows us to fully control the process and guarantee a predictable outcome.",
+    "equipoStructonixText": "Our team consists of more than 40 highly qualified specialists integrated into a single system: architects, engineers, builders, designers and project managers. But the company's key advantage is the extensive technical experience within the team.",
+    "gestionAdministrativaText": "In every project, thanks to our Administrative Management system, we coordinate the interaction of all specialists, including professional surveyors and geodesists, who ensure the accuracy of initial data and the correct positioning of the project on site.\n\nEngineering solutions are developed taking into account all technical nuances, and each stage of construction is accompanied by strict technical supervision.",
+    "controlDeCalidadText": "We pay special attention to quality control: from verifying project documentation to selecting and testing construction materials.\n\nInternal technical control processes allow us to minimise risks, eliminate errors and guarantee a high level of reliability and durability of the installations.",
+    "arquitecturaEInnovacionText": "We create modern villas and residential properties, combining architectural aesthetics, innovative technologies and energy-efficient solutions.\n\nEach project is a unique concept, thought through down to the smallest detail.",
+    "structonixSistemGlobalText": "Structonix Sistem Global SL is a team that assumes full responsibility for the result, guaranteeing a turnkey construction from idea to perfect completion."
+  },
+  "services": {
+    "heroDescription": {
+      "estructura": "Structure is the hidden foundation of every home, determining its solidity, durability and level of execution.\n\nAll load-bearing elements, from foundations to floor slabs, are built with maximum precision and technical rigour.\n\nA perfectly executed structure is a guarantee of stability, safety and property value for many years.",
+      "ingenieria": "Engineering integrates all home systems into a unique, well-designed environment that works flawlessly.\n\nStructural, electrical, mechanical and hydraulic solutions are designed as a whole, ensuring comfort and efficiency.",
+      "arquitectura": "Architecture is an expression of lifestyle.\n\nIt defines the unique character of the villa, combining aesthetics, space and functionality into a harmonious whole.",
+      "acabados": "Finishes are the final touch that defines the level of a home.\n\nAttention to detail, quality of materials and precision in execution create a coherent and comfortable environment.",
+      "carpinteria": "VentanaPro is a company specialising in high-end aluminium windows and modern glazing systems, offering solutions for comfortable and energy-efficient homes.\n\nThe company specialises in panoramic windows with minimalist profiles that provide maximum natural light, excellent thermal and acoustic insulation, and reduced heating and air conditioning costs.\n\nThe range includes functional roller shutter systems with solar protection and privacy screening, as well as elegant glazed enclosures for terraces, balconies and staircases.\n\nVentanaPro offers a complete cycle of services, from professional advice and solution selection to quality installation with warranty, ensuring a high level of execution and durability in every detail.",
+      "gestion-administrativa": "Administrative management ensures comprehensive project support at all stages of execution.\n\nFrom obtaining permits to coordinating process participants, every step is supervised and structured."
+    },
+    "description": {
+      "estructura": "Structure services by Structonix.",
+      "ingenieria": "Engineering services by Structonix.",
+      "arquitectura": "Architecture services by Structonix.",
+      "acabados": "Finishing services by Structonix.",
+      "carpinteria": "Carpentry services by Structonix.",
+      "gestion-administrativa": "Administrative management by Structonix."
+    }
+  },
+  "investors": {
+    "title": "INVESTOR OFFERS",
+    "projectDescription": "Project description"
+  },
+  "calculator": {
+    "structureTitle": "Structure Calculator",
+    "constructionTitle": "Construction Calculator",
+    "structureRate": "650 €/m²",
+    "standardRate": "1650 €/m²",
+    "premiumRate": "2300 €/m²"
+  },
+  "contact": {
+    "formTitle": "Contact",
+    "nombre": "Name",
+    "email": "Email",
+    "telefono": "Phone",
+    "mensaje": "Message"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: 11 June 2026",
+    "sections": {
+      "controller": {
+        "title": "1. Data controller",
+        "content": "The data controller responsible for processing your personal data is Structonix Sistem Global S.L., tax ID (CIF) B24937930, registered address at Calle Teide, 3/2 Benalmadena, Malaga 29831, Spain.\n\nContact email: info@structonixsistem.com\nContact phone: +34645018598\nWebsite: https://structonixsistem.com"
+      },
+      "dataCollected": {
+        "title": "2. Personal data we process",
+        "content": "Through this website we may process the following categories of personal data:\n\n• Identification data: first and last name.\n• Contact data: email address and phone number.\n• Communication data: content of messages sent via the contact form.\n• Technical data: IP address, browsing data and cookies when necessary for security or site operation."
+      },
+      "purposes": {
+        "title": "3. Purposes of processing",
+        "content": "We process your personal data for the following purposes:\n\n• To manage and respond to requests received through the contact form.\n• To maintain commercial or informational communications related to our construction, engineering, architecture and investment services.\n• To ensure website security and prevent fraudulent or abusive use.\n• To comply with applicable legal obligations."
+      },
+      "legalBasis": {
+        "title": "4. Legal basis for processing",
+        "content": "Processing of your data is based on:\n\n• Your consent when submitting the contact form.\n• Pre-contractual measures or management of commercial enquiries.\n• Legitimate interest in maintaining website security and preventing spam or fraud.\n• Compliance with legal obligations, where applicable."
+      },
+      "contactForm": {
+        "title": "5. Contact form",
+        "content": "When you use the contact form, we collect the data you voluntarily provide (name, email, phone and message) to handle your enquiry.\n\nData is securely sent to info@structonixsistem.com via a professional email delivery service. Please do not submit specially protected or confidential information that is not necessary for your request.\n\nThe site may use Google reCAPTCHA v3 to protect the form against automated submissions. Use of reCAPTCHA is subject to Google's Privacy Policy and Terms of Service."
+      },
+      "retention": {
+        "title": "6. Data retention period",
+        "content": "We will retain your personal data for as long as necessary to handle your request and, subsequently, for the periods required by applicable law or until you request deletion, where appropriate.\n\nCommunications arising from the contact form will be retained while we maintain a commercial relationship or for a reasonable period to respond to related future enquiries."
+      },
+      "recipients": {
+        "title": "7. Recipients and processors",
+        "content": "Your data may be shared with providers that deliver services necessary for website operation, such as hosting, transactional email (Resend) and security tools (Google reCAPTCHA), always under agreements that ensure confidentiality and compliance with Regulation (EU) 2016/679 (GDPR).\n\nWe do not sell or transfer your personal data to third parties for commercial purposes."
+      },
+      "rights": {
+        "title": "8. Your rights",
+        "content": "Under the GDPR, you may exercise the following rights:\n\n• Access: know what data we process about you.\n• Rectification: correct inaccurate or incomplete data.\n• Erasure: request deletion of your data where applicable.\n• Objection and restriction: object to or restrict certain processing.\n• Portability: receive your data in a structured format, where applicable.\n• Withdraw consent: at any time, without affecting the lawfulness of prior processing.\n\nTo exercise your rights, email info@structonixsistem.com stating your request and verifying your identity. You may also lodge a complaint with the Spanish Data Protection Agency (www.aepd.es) if you believe processing does not comply with the law."
+      },
+      "cookies": {
+        "title": "9. Cookies and similar technologies",
+        "content": "This website may use technical cookies necessary for operation and third-party cookies related to security services (reCAPTCHA) or analytics, if implemented in the future.\n\nYou can configure your browser to block or delete cookies. Note that some site features may become unavailable if you disable essential cookies."
+      },
+      "security": {
+        "title": "10. Security measures",
+        "content": "Structonix Sistem Global S.L. applies appropriate technical and organisational measures to protect your personal data against unauthorised access, loss, destruction or alteration.\n\nAmong other measures, we use secure connections (HTTPS), form validation, submission rate limiting and antispam verification on the contact form."
+      },
+      "changes": {
+        "title": "11. Changes to this policy",
+        "content": "We may update this Privacy Policy to reflect legal changes or improvements to our services. The current version will always be available on this page with the last updated date."
+      },
+      "contact": {
+        "title": "12. Contact",
+        "content": "For any enquiry related to this Privacy Policy or the processing of your personal data, contact us at:\n\nStructonix Sistem Global S.L.\nCIF B24937930\nCalle Teide, 3/2 Benalmadena, Malaga 29831, Spain\nEmail: info@structonixsistem.com\nPhone: +34645018598"
+      }
+    }
+  },
+  "calculador": {
+    "pageTitle": "Calculator"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist.",
+    "backHome": "Back to home"
+  },
+  "seo": {
+    "home": {
+      "title": "Structonix - Engineering, Architecture and Construction in Spain",
+      "description": "Structonix Sistem Global S.L. — engineering, architecture and construction in Spain."
+    },
+    "about": {
+      "title": "About Us | Structonix",
+      "description": "Learn about Structonix Sistem Global S.L."
+    },
+    "investors": {
+      "title": "For Investors | Structonix",
+      "description": "Investor offers from Structonix Sistem Global S.L."
+    },
+    "calculator": {
+      "title": "Calculator | Structonix",
+      "description": "Structure and construction calculators by Structonix."
+    },
+    "privacy": {
+      "title": "Privacy Policy | Structonix",
+      "description": "Privacy policy of Structonix Sistem Global S.L."
+    },
+    "services": {
+      "estructura": {
+        "title": "Structure | Structonix",
+        "description": "Structure services by Structonix."
+      },
+      "ingenieria": {
+        "title": "Engineering | Structonix",
+        "description": "Engineering services by Structonix."
+      },
+      "arquitectura": {
+        "title": "Architecture | Structonix",
+        "description": "Architecture services by Structonix."
+      },
+      "acabados": {
+        "title": "Finishes | Structonix",
+        "description": "Finishing services by Structonix."
+      },
+      "carpinteria": {
+        "title": "Carpentry | Structonix",
+        "description": "Carpentry services by Structonix."
+      },
+      "gestion-administrativa": {
+        "title": "Administrative Management | Structonix",
+        "description": "Administrative management by Structonix."
+      }
+    }
+  },
+  "validation": {
+    "nombreRequired": "Name is required",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Please enter a valid email",
+    "telefonoRequired": "Phone is required",
+    "mensajeRequired": "Message is required",
+    "mensajeMin": "Message must be at least 10 characters"
+  }
+}
