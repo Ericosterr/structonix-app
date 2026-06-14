@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { Globe } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const localeLabels: Record<Locale, string> = {
   es: "ES",
@@ -18,11 +19,50 @@ const localeLabels: Record<Locale, string> = {
   ru: "RU",
 };
 
-export function LanguageSwitcher() {
+type LanguageSwitcherProps = {
+  variant?: "desktop" | "mobile";
+  onLocaleChange?: () => void;
+};
+
+export function LanguageSwitcher({
+  variant = "desktop",
+  onLocaleChange,
+}: LanguageSwitcherProps) {
   const t = useTranslations("common");
   const locale = useLocale() as Locale;
   const router = useRouter();
   const pathname = usePathname();
+
+  const switchLocale = (nextLocale: Locale) => {
+    router.replace(pathname, { locale: nextLocale });
+    onLocaleChange?.();
+  };
+
+  if (variant === "mobile") {
+    return (
+      <div className="w-full px-4">
+        <div
+          className="flex min-h-11 w-full items-center justify-center gap-8 border-t border-white/10 pt-3"
+          role="group"
+          aria-label={t("language")}
+        >
+          {routing.locales.map((nextLocale) => (
+            <button
+              key={nextLocale}
+              type="button"
+              onClick={() => switchLocale(nextLocale)}
+              className={cn(
+                "min-h-11 px-2 text-sm font-medium text-white transition-opacity hover:opacity-80",
+                locale === nextLocale && "font-semibold underline underline-offset-4",
+              )}
+            >
+              {localeLabels[nextLocale]}
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <DropdownMenu>
@@ -36,7 +76,7 @@ export function LanguageSwitcher() {
         {routing.locales.map((nextLocale) => (
           <DropdownMenuItem
             key={nextLocale}
-            onClick={() => router.replace(pathname, { locale: nextLocale })}
+            onClick={() => switchLocale(nextLocale)}
           >
             {localeLabels[nextLocale]}
           </DropdownMenuItem>

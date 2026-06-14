@@ -10,7 +10,10 @@ import { mainNavItems } from "@config/navigation";
 import { site } from "@config/site";
 import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
-import { HeaderServicesMenu } from "@/components/layout/HeaderServicesMenu";
+import {
+  HeaderServicesMenu,
+  mobileNavItemClass,
+} from "@/components/layout/HeaderServicesMenu";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -19,6 +22,8 @@ export function Header() {
   const tNav = useTranslations("nav");
   const tCommon = useTranslations("common");
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const closeMobileMenu = () => setMobileOpen(false);
 
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-primary">
@@ -116,29 +121,47 @@ export function Header() {
               <Menu className="h-4 w-4" />
             </Button>
           </SheetTrigger>
-          <SheetContent className="flex flex-col gap-4 bg-primary text-white">
-            {mainNavItems.map((item) => (
+          <SheetContent className="flex w-full max-w-[min(100vw,430px)] flex-col gap-0 overflow-y-auto border-white/10 bg-primary p-0 text-white [&>button]:text-white [&>button]:hover:text-white/80">
+            <nav className="flex flex-col pt-14">
+              {mainNavItems.map((item) => (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  className={mobileNavItemClass}
+                  onClick={closeMobileMenu}
+                >
+                  {tNav(item.key)}
+                </Link>
+              ))}
+              <HeaderServicesMenu variant="mobile" onNavigate={closeMobileMenu} />
               <Link
-                key={item.key}
-                href={item.href}
-                className="text-sm font-medium text-white"
-                onClick={() => setMobileOpen(false)}
+                href="/calculador"
+                className={mobileNavItemClass}
+                onClick={closeMobileMenu}
               >
-                {tNav(item.key)}
+                {tCommon("calculator")}
               </Link>
-            ))}
-            <HeaderServicesMenu
-              variant="mobile"
-              onNavigate={() => setMobileOpen(false)}
-            />
-            <Link
-              href="/calculador"
-              className="text-sm font-medium text-white"
-              onClick={() => setMobileOpen(false)}
-            >
-              {tCommon("calculator")}
-            </Link>
-            <LanguageSwitcher />
+              {company.whatsapp ? (
+                <a
+                  href={company.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${mobileNavItemClass} gap-2`}
+                  onClick={closeMobileMenu}
+                >
+                  <Image
+                    src={site.assets.whatsappIcon}
+                    alt=""
+                    width={20}
+                    height={20}
+                    aria-hidden="true"
+                    className="shrink-0"
+                  />
+                  {tCommon("whatsapp")}
+                </a>
+              ) : null}
+              <LanguageSwitcher variant="mobile" onLocaleChange={closeMobileMenu} />
+            </nav>
           </SheetContent>
         </Sheet>
       </Container>

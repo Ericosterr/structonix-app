@@ -7,6 +7,9 @@ import { serviceNavItems } from "@config/navigation";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
+const mobileNavItemClass =
+  "flex min-h-11 w-full items-center px-4 py-3 text-sm font-medium text-white transition-opacity hover:opacity-80";
+
 type HeaderServicesMenuProps = {
   variant: "desktop" | "mobile";
   onNavigate?: () => void;
@@ -46,25 +49,25 @@ export function HeaderServicesMenu({ variant, onNavigate }: HeaderServicesMenuPr
   }
 
   return (
-    <div className="border-b border-white/10 pb-3">
+    <div className="w-full">
       <button
         type="button"
-        className="flex w-full items-center justify-between text-sm font-semibold text-white"
+        className={cn(mobileNavItemClass, "justify-between")}
         onClick={() => setMobileOpen((open) => !open)}
         aria-expanded={mobileOpen}
       >
         {tCommon("services")}
         <ChevronDown
-          className={cn("h-4 w-4 transition-transform", mobileOpen && "rotate-180")}
+          className={cn("h-4 w-4 shrink-0 transition-transform", mobileOpen && "rotate-180")}
         />
       </button>
       {mobileOpen ? (
-        <div className="mt-3 flex flex-col gap-2 pl-2">
+        <div className="flex flex-col">
           {serviceNavItems.map((item) => (
             <Link
               key={item.key}
               href={item.href}
-              className="text-sm text-white/90 hover:text-white"
+              className={cn(mobileNavItemClass, "pl-8 text-white/90 hover:text-white")}
               onClick={onNavigate}
             >
               {tNav(item.key)}
@@ -75,3 +78,5 @@ export function HeaderServicesMenu({ variant, onNavigate }: HeaderServicesMenuPr
     </div>
   );
 }
+
+export { mobileNavItemClass };
