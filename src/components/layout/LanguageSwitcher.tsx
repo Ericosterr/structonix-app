@@ -21,12 +21,12 @@ const localeLabels: Record<Locale, string> = {
 };
 
 type LanguageSwitcherProps = {
-  variant?: "desktop" | "mobile";
+  variant: "desktop" | "mobile";
   onLocaleChange?: () => void;
 };
 
 export function LanguageSwitcher({
-  variant = "desktop",
+  variant,
   onLocaleChange,
 }: LanguageSwitcherProps) {
   const t = useTranslations("common");
