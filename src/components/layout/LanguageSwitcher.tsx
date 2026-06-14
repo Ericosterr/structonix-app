@@ -1,8 +1,10 @@
 "use client";
 
+import { usePathname as useFullPathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { getPathname, usePathname } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
+import { syncLocaleCookie } from "@/lib/sync-locale-cookie";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -32,6 +34,7 @@ export function LanguageSwitcher({
   const t = useTranslations("common");
   const locale = useLocale() as Locale;
   const pathname = usePathname();
+  const fullPathname = useFullPathname();
 
   const switchLocale = (nextLocale: Locale) => {
     if (nextLocale === locale) {
@@ -41,6 +44,8 @@ export function LanguageSwitcher({
 
     // Hard navigation guarantees a full HTML document response.
     // router.replace() uses RSC flight fetches that break on CDN/mobile production.
+    // Sync NEXT_LOCALE first so unprefixed ES URLs are not redirected by middleware.
+    syncLocaleCookie(fullPathname, locale, nextLocale);
     const href = getPathname({ href: pathname, locale: nextLocale });
     window.location.assign(href);
   };
