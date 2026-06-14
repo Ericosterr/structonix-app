@@ -12,15 +12,25 @@ const RSC_REQUEST_HEADERS = [
 ] as const;
 
 export function shouldForceHtmlDocument(request: NextRequest): boolean {
-  const userAgent = request.headers.get("user-agent") ?? "";
+  const hasRscQuery = request.nextUrl.searchParams.has("_rsc");
 
+  // Legitimate client-side App Router flight fetch.
+  if (hasRscQuery) {
+    return false;
+  }
+
+  const userAgent = request.headers.get("user-agent") ?? "";
   if (HTML_DOCUMENT_USER_AGENT.test(userAgent)) {
     return true;
   }
 
-  const hasRscQuery = request.nextUrl.searchParams.has("_rsc");
-  if (hasRscQuery) {
-    return false;
+  const secFetchMode = request.headers.get("sec-fetch-mode");
+  const secFetchDest = request.headers.get("sec-fetch-dest");
+
+  // Full document loads (hard navigations, locale switches, mobile browsers)
+  // must never receive a cached or misclassified RSC flight payload.
+  if (secFetchMode === "navigate" || secFetchDest === "document") {
+    return true;
   }
 
   // CDN / reverse-proxy redirect bug: RSC header survives without ?_rsc query.
@@ -33,9 +43,6 @@ export function shouldForceHtmlDocument(request: NextRequest): boolean {
     accept === "text/x-component" ||
     accept.startsWith("text/x-component,") ||
     accept.startsWith("text/x-component;");
-
-  const secFetchMode = request.headers.get("sec-fetch-mode");
-  const secFetchDest = request.headers.get("sec-fetch-dest");
 
   if (
     isFlightAccept &&
@@ -58,7 +65,7 @@ export function withHtmlDocumentHeaders(request: NextRequest): Headers {
   if (!accept.includes("text/html")) {
     headers.set(
       "accept",
-      `text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8${accept ? `,${accept}` : ""}`,
+      "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     );
   }
 

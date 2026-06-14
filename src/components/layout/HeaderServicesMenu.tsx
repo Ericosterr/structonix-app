@@ -6,9 +6,7 @@ import { useTranslations } from "next-intl";
 import { serviceNavItems } from "@config/navigation";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-
-const mobileNavItemClass =
-  "flex min-h-11 w-full items-center px-4 py-3 text-sm font-medium text-white transition-opacity hover:opacity-80";
+import { mobileNavItemClass } from "@/components/layout/mobile-nav";
 
 type HeaderServicesMenuProps = {
   variant: "desktop" | "mobile";
@@ -78,5 +76,3 @@ export function HeaderServicesMenu({ variant, onNavigate }: HeaderServicesMenuPr
     </div>
   );
 }
-
-export { mobileNavItemClass };

@@ -10,10 +10,8 @@ import { mainNavItems } from "@config/navigation";
 import { site } from "@config/site";
 import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
-import {
-  HeaderServicesMenu,
-  mobileNavItemClass,
-} from "@/components/layout/HeaderServicesMenu";
+import { HeaderServicesMenu } from "@/components/layout/HeaderServicesMenu";
+import { mobileNavItemClass } from "@/components/layout/mobile-nav";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -121,8 +119,8 @@ export function Header() {
               <Menu className="h-4 w-4" />
             </Button>
           </SheetTrigger>
-          <SheetContent className="flex w-full max-w-[min(100vw,430px)] flex-col gap-0 overflow-y-auto border-white/10 bg-primary p-0 text-white [&>button]:text-white [&>button]:hover:text-white/80">
-            <nav className="flex flex-col pt-14">
+          <SheetContent className="flex w-full max-w-[min(100vw,430px)] flex-col gap-0 overflow-x-hidden overflow-y-auto border-white/10 bg-primary p-0 text-white shadow-none">
+            <nav className="flex w-full flex-col pb-6 pt-14">
               {mainNavItems.map((item) => (
                 <Link
                   key={item.key}
