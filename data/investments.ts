@@ -6,6 +6,8 @@ export interface InvestmentProject {
   type: string;
   area: string;
   description: string;
+  /** Bust browser/CDN cache when the PDF is replaced at the same path. */
+  pdfVersion?: string;
 }
 
 export const investments: InvestmentProject[] = [
@@ -32,7 +34,8 @@ export const investments: InvestmentProject[] = [
     id: "urbanizacion-en-corral-nou-nacera-valencia",
     title: "Urbanizacion en Corral Nou – Náquera (Valencia)",
     image: "/investors/urbanizacionValencia.png",
-    pdf: "/pdfs/Proecto-de-urbanizacion-en-Nquera%2C%20Valencia.pdf",
+    pdf: "/pdfs/Proecto-de-urbanizacion-en-Nquera, Valencia.pdf",
+    pdfVersion: "20260615",
     type: "Para construir entre una y diez villas",
     // TODO: Provide exact project area when available
     area: "unknown m²",

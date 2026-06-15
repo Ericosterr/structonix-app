@@ -21,10 +21,20 @@ type InvestmentCardProps = {
   className?: string;
 };
 
+function versionedPdfUrl(path: string, version?: string): string {
+  if (!version) {
+    return path;
+  }
+
+  const separator = path.includes("?") ? "&" : "?";
+  return `${path}${separator}v=${encodeURIComponent(version)}`;
+}
+
 export function InvestmentCard({ project, className }: InvestmentCardProps) {
   const t = useTranslations("common");
   const tInvestors = useTranslations("investors");
   const [open, setOpen] = useState(false);
+  const pdfSrc = versionedPdfUrl(project.pdf, project.pdfVersion);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -75,12 +85,12 @@ export function InvestmentCard({ project, className }: InvestmentCardProps) {
             {project.pdf ? (
               <>
                 <iframe
-                  src={project.pdf}
+                  src={pdfSrc}
                   title={project.title || project.id}
                   className="h-64 w-full rounded-[var(--radius-button)] border border-border"
                 />
                 <Button asChild variant="outline" className="w-full">
-                  <a href={project.pdf} target="_blank" rel="noopener noreferrer">
+                  <a href={pdfSrc} target="_blank" rel="noopener noreferrer">
                     {t("viewPdf")}
                   </a>
                 </Button>
@@ -100,7 +110,7 @@ export function InvestmentCard({ project, className }: InvestmentCardProps) {
         </div>
         {project.pdf ? (
           <Button asChild className="w-full">
-            <a href={project.pdf} download>
+            <a href={pdfSrc} download>
               {t("downloadPdf")}
             </a>
           </Button>
