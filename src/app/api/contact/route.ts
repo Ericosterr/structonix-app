@@ -10,7 +10,8 @@ const contactPayloadSchema = z.object({
   email: z.string().email(),
   telefono: z.string().min(1),
   mensaje: z.string().min(10),
-  recaptchaToken: z.string().optional(),
+  recaptchaToken: z
+    .preprocess((value) => (value === null ? undefined : value), z.string().optional()),
   website: z.string().optional(),
 });
 
@@ -26,7 +27,14 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json();
-    const data = contactPayloadSchema.parse(body);
+    const parsed = contactPayloadSchema.safeParse(body);
+
+    if (!parsed.success) {
+      console.error("[contact] Zod validation failed", parsed.error.flatten());
+      return NextResponse.json({ error: "Invalid request." }, { status: 400 });
+    }
+
+    const data = parsed.data;
 
     if (data.website) {
       return NextResponse.json({ success: true });
@@ -34,10 +42,15 @@ export async function POST(request: Request) {
 
     if (isRecaptchaRequired()) {
       if (!data.recaptchaToken) {
+        console.error("[contact] Missing reCAPTCHA token");
         return NextResponse.json({ error: "Invalid request." }, { status: 400 });
       }
-      const valid = await verifyRecaptchaToken(data.recaptchaToken);
-      if (!valid) {
+
+      const verification = await verifyRecaptchaToken(data.recaptchaToken);
+      console.log("[contact] reCAPTCHA verification result", verification);
+
+      if (!verification.valid) {
+        console.error("[contact] reCAPTCHA verification failed", verification);
         return NextResponse.json({ error: "Invalid request." }, { status: 400 });
       }
     }
@@ -69,7 +82,8 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ success: true });
-  } catch {
+  } catch (error) {
+    console.error("[contact] Unexpected error", error);
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
 }

@@ -9,6 +9,8 @@
     "sending": "Отправка...",
     "success": "Сообщение успешно отправлено.",
     "error": "Произошла ошибка. Попробуйте снова.",
+    "recaptchaInitFailed": "reCAPTCHA failed to initialize",
+    "recaptchaTokenFailed": "Failed to obtain reCAPTCHA token",
     "area": "Площадь (м²)",
     "estimatedPrice": "Ориентировочная цена",
     "standard": "Стандарт",

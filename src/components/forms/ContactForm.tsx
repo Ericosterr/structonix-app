@@ -19,12 +19,17 @@ type ContactFormProps = {
   className?: string;
 };
 
+type SubmitError = "generic" | "recaptchaInit" | "recaptchaToken" | null;
+
 export function ContactForm({ className }: ContactFormProps) {
   const tContact = useTranslations("contact");
   const tCommon = useTranslations("common");
   const tValidation = useTranslations("validation");
-  const executeRecaptcha = useRecaptcha();
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const { executeRecaptcha, isConfigured, isReady, initFailed } = useRecaptcha();
+  const [status, setStatus] = useState<"idle" | "success">("idle");
+  const [submitError, setSubmitError] = useState<SubmitError>(null);
+
+  const recaptchaBlocked = isConfigured && (initFailed || !isReady);
 
   const schema = useMemo(
     () =>
@@ -57,20 +62,55 @@ export function ContactForm({ className }: ContactFormProps) {
 
   const onSubmit = async (values: ContactFormValues) => {
     setStatus("idle");
+    setSubmitError(null);
+
+    if (recaptchaBlocked) {
+      setSubmitError("recaptchaInit");
+      return;
+    }
+
     try {
-      const recaptchaToken = executeRecaptcha ? await executeRecaptcha() : null;
+      const payload: ContactFormValues & { recaptchaToken?: string } = {
+        ...values,
+      };
+
+      if (isConfigured) {
+        let recaptchaToken: string;
+        try {
+          recaptchaToken = await executeRecaptcha();
+        } catch {
+          setSubmitError("recaptchaToken");
+          return;
+        }
+        payload.recaptchaToken = recaptchaToken;
+      }
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...values, recaptchaToken }),
+        body: JSON.stringify(payload),
       });
-      if (!response.ok) throw new Error("Request failed");
+
+      if (!response.ok) {
+        setSubmitError("generic");
+        return;
+      }
+
       setStatus("success");
       reset();
     } catch {
-      setStatus("error");
+      setSubmitError("generic");
     }
   };
+
+  const errorMessage =
+    submitError === "recaptchaInit"
+      ? tCommon("recaptchaInitFailed")
+      : submitError === "recaptchaToken"
+        ? tCommon("recaptchaTokenFailed")
+        : submitError === "generic"
+          ? tCommon("error")
+          : null;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={cn("space-y-4", className)}>
@@ -110,14 +150,21 @@ export function ContactForm({ className }: ContactFormProps) {
         className="hidden"
         {...register("website")}
       />
-      <Button type="submit" disabled={isSubmitting} className="w-full">
+      <Button
+        type="submit"
+        disabled={isSubmitting || recaptchaBlocked}
+        className="w-full"
+      >
         {isSubmitting ? tCommon("sending") : tCommon("send")}
       </Button>
+      {recaptchaBlocked ? (
+        <p className="text-sm text-destructive">{tCommon("recaptchaInitFailed")}</p>
+      ) : null}
       {status === "success" ? (
         <p className="text-sm text-primary">{tCommon("success")}</p>
       ) : null}
-      {status === "error" ? (
-        <p className="text-sm text-destructive">{tCommon("error")}</p>
+      {errorMessage ? (
+        <p className="text-sm text-destructive">{errorMessage}</p>
       ) : null}
     </form>
   );

@@ -9,6 +9,8 @@
     "sending": "Enviando...",
     "success": "Mensaje enviado correctamente.",
     "error": "Ha ocurrido un error. Inténtelo de nuevo.",
+    "recaptchaInitFailed": "reCAPTCHA failed to initialize",
+    "recaptchaTokenFailed": "Failed to obtain reCAPTCHA token",
     "area": "Área (m²)",
     "estimatedPrice": "Precio estimado",
     "standard": "Standard",
