@@ -36,6 +36,11 @@ export const teamMembers: TeamMember[] = [
     image: "/team/ViktorOsinskiy.JPG",
   },
   {
+    name: "Ruslan Horbachev",
+    position: "Encargado Structonix",
+    image: "/team/RuslanHorbachev.jpg",
+  },
+  {
     name: "Smuk Volodimir",
     position: "Maquinista Structonix",
     image: "/team/VolodimirSmukStructonix.jpg",
@@ -59,6 +64,11 @@ export const teamMembers: TeamMember[] = [
     name: "Oleksandr Besarab",
     position: "Albanil de Structonix",
     image: "/team/Oleksandr%20Besarab.JPG",
+  },
+  {
+    name: "Volodymir Chuenko",
+    position: "Albanil de Structonix",
+    image: "/team/VolodymirChuenko.jpg",
   },
   {
     name: "Andrei Chervatiuk",
