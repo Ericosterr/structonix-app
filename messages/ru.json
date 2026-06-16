@@ -30,7 +30,8 @@
     "arquitectura": "Архитектура",
     "acabados": "Отделка",
     "carpinteria": "Алюминиевые Окна",
-    "gestion-administrativa": "Административное управление"
+    "gestion-administrativa": "Административное управление",
+    "blog": "Блог"
   },
   "footer": {
     "legalLine": "© 2026 Все права защищены. Structonix Sistem Global S.L. CIF B24937930",
@@ -155,6 +156,19 @@
   "calculador": {
     "pageTitle": "Калькулятор"
   },
+  "blog": {
+    "subtitle": "Новости, проекты и экспертные материалы Structonix.",
+    "featuredTitle": "Избранное",
+    "allPostsTitle": "Все статьи",
+    "readMore": "Читать далее",
+    "minuteRead": "мин чтения",
+    "empty": "Статьи скоро появятся здесь.",
+    "previous": "Назад",
+    "next": "Далее",
+    "pageOf": "Страница {current} из {total}",
+    "backToBlog": "Назад к блогу",
+    "byAuthor": "Автор:"
+  },
   "notFound": {
     "title": "Страница не найдена",
     "description": "Запрашиваемая страница не существует.",
@@ -180,6 +194,10 @@
     "privacy": {
       "title": "Политика конфиденциальности | Structonix",
       "description": "Политика конфиденциальности Structonix Sistem Global S.L."
+    },
+    "blog": {
+      "title": "Блог | Structonix",
+      "description": "Статьи о строительстве, инженерии и инвестициях в недвижимость от Structonix."
     },
     "services": {
       "estructura": {

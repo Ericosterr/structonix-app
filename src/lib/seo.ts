@@ -164,6 +164,7 @@ export const staticRoutes = [
   "/servicios/carpinteria",
   "/servicios/gestion-administrativa",
   "/para-inversores",
+  "/blog",
   "/calculador",
   "/politica-de-privacidad",
 ] as const;

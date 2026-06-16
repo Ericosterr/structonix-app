@@ -30,7 +30,8 @@
     "arquitectura": "Arquitectura",
     "acabados": "Acabados",
     "carpinteria": "Carpinteria",
-    "gestion-administrativa": "Gestion Administrativa"
+    "gestion-administrativa": "Gestion Administrativa",
+    "blog": "Blog"
   },
   "footer": {
     "legalLine": "© 2026 Todos los derechos reservados. Structonix Sistem Global S.L. CIF B24937930",
@@ -155,6 +156,19 @@
   "calculador": {
     "pageTitle": "Calculador"
   },
+  "blog": {
+    "subtitle": "Noticias, proyectos y conocimiento de Structonix.",
+    "featuredTitle": "Destacados",
+    "allPostsTitle": "Todos los artículos",
+    "readMore": "Leer más",
+    "minuteRead": "min de lectura",
+    "empty": "Próximamente publicaremos artículos aquí.",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "pageOf": "Página {current} de {total}",
+    "backToBlog": "Volver al blog",
+    "byAuthor": "Por"
+  },
   "notFound": {
     "title": "Página no encontrada",
     "description": "La página que busca no existe.",
@@ -180,6 +194,10 @@
     "privacy": {
       "title": "Política de Privacidad | Structonix",
       "description": "Política de privacidad de Structonix Sistem Global S.L."
+    },
+    "blog": {
+      "title": "Blog | Structonix",
+      "description": "Artículos sobre construcción, ingeniería e inversión inmobiliaria de Structonix."
     },
     "services": {
       "estructura": {

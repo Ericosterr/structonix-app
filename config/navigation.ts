@@ -24,6 +24,7 @@ export const serviceSlugs: ServiceSlug[] = [
 export const mainNavItems: NavItem[] = [
   { key: "about", href: "/quienes-somos" },
   { key: "investors", href: "/para-inversores" },
+  { key: "blog", href: "/blog" },
 ];
 
 export const serviceNavItems: NavItem[] = serviceSlugs.map((slug) => ({
