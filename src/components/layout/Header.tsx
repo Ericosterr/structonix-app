@@ -10,6 +10,7 @@ import { mainNavItems } from "@config/navigation";
 import { site } from "@config/site";
 import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { HeaderAreasMenu } from "@/components/layout/HeaderAreasMenu";
 import { HeaderServicesMenu } from "@/components/layout/HeaderServicesMenu";
 import { MobileNavMenu } from "@/components/layout/MobileNavMenu";
 import { Button } from "@/components/ui/button";
@@ -47,6 +48,7 @@ export function Header() {
                 {tNav(item.key)}
               </Link>
             ))}
+            <HeaderAreasMenu variant="desktop" />
             <HeaderServicesMenu variant="desktop" />
           </nav>
         </div>

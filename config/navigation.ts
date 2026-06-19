@@ -1,3 +1,5 @@
+import { zoneSlugs } from "@data/zones";
+
 export type ServiceSlug =
   | "estructura"
   | "ingenieria"
@@ -26,6 +28,16 @@ export const mainNavItems: NavItem[] = [
   { key: "investors", href: "/para-inversores" },
   { key: "blog", href: "/blog" },
 ];
+
+/**
+ * Single source of truth for the Areas/Zones navigation. Generated from the
+ * same `zoneSlugs` that produce the /zonas/[zona] pages, so adding a new zone
+ * automatically adds it to the header and footer navigation.
+ */
+export const zoneNavItems: NavItem[] = zoneSlugs.map((slug) => ({
+  key: slug,
+  href: `/zonas/${slug}`,
+}));
 
 export const serviceNavItems: NavItem[] = serviceSlugs.map((slug) => ({
   key: slug,

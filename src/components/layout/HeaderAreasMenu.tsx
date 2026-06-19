@@ -1,28 +1,28 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { serviceNavItems } from "@config/navigation";
+import { zoneNavItems } from "@config/navigation";
 import { HeaderDropdownMenu } from "@/components/layout/HeaderDropdownMenu";
 
-type HeaderServicesMenuProps = {
+type HeaderAreasMenuProps = {
   variant: "desktop" | "mobile";
   onNavigate?: () => void;
 };
 
-export function HeaderServicesMenu({ variant, onNavigate }: HeaderServicesMenuProps) {
+export function HeaderAreasMenu({ variant, onNavigate }: HeaderAreasMenuProps) {
   const tNav = useTranslations("nav");
-  const tCommon = useTranslations("common");
+  const tZones = useTranslations("zones");
 
-  const items = serviceNavItems.map((item) => ({
+  const items = zoneNavItems.map((item) => ({
     key: item.key,
     href: item.href,
-    label: tNav(item.key),
+    label: tZones(`${item.key}.name`),
   }));
 
   return (
     <HeaderDropdownMenu
       variant={variant}
-      triggerLabel={tCommon("services")}
+      triggerLabel={tNav("areas")}
       items={items}
       onNavigate={onNavigate}
     />

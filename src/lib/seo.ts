@@ -154,6 +154,88 @@ export function buildOrganizationJsonLd() {
   };
 }
 
+export function buildBreadcrumbJsonLd(
+  items: Array<{ name: string; url: string }>,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function buildFaqJsonLd(faqs: Array<{ q: string; a: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+}
+
+type LocalBusinessInput = {
+  name: string;
+  url: string;
+  areaServed: string;
+  geo: { lat: number; lng: number; region: string };
+};
+
+export function buildLocalBusinessJsonLd({
+  name,
+  url,
+  areaServed,
+  geo,
+}: LocalBusinessInput) {
+  const logoUrl = `${site.baseUrl}${site.assets.companyLogo}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    "@id": `${url}#localbusiness`,
+    name,
+    url,
+    image: logoUrl,
+    logo: logoUrl,
+    ...(company.phone ? { telephone: company.phone } : {}),
+    ...(company.email ? { email: company.email } : {}),
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Calle Teide, 3/2",
+      addressLocality: "Benalmádena",
+      addressRegion: geo.region,
+      postalCode: "29631",
+      addressCountry: "ES",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: geo.lat,
+      longitude: geo.lng,
+    },
+    areaServed: {
+      "@type": "City",
+      name: areaServed,
+    },
+    knowsAbout: [
+      "Luxury villa construction",
+      "Architecture",
+      "Engineering",
+      "Construction project management",
+      "Real estate development",
+    ],
+  };
+}
+
 export const staticRoutes = [
   "/",
   "/quienes-somos",

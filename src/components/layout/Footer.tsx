@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { company } from "@config/company";
+import { zoneNavItems } from "@config/navigation";
 import { site } from "@config/site";
 import { Link } from "@/i18n/navigation";
 import { FooterSocialIcons } from "@/components/layout/FooterSocialIcons";
@@ -8,9 +9,24 @@ import { Container } from "@/components/ui/Container";
 
 export async function Footer() {
   const tFooter = await getTranslations("footer");
+  const tNav = await getTranslations("nav");
+  const tZones = await getTranslations("zones");
 
   return (
     <footer className="mt-auto bg-primary text-white">
+      <Container className="border-b border-white/10 py-5">
+        <nav aria-label={tNav("areas")} className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs">
+          {zoneNavItems.map((zone) => (
+            <Link
+              key={zone.key}
+              href={zone.href}
+              className="text-white/85 underline-offset-4 transition-opacity hover:opacity-80 hover:underline"
+            >
+              {tZones(`${zone.key}.name`)}
+            </Link>
+          ))}
+        </nav>
+      </Container>
       <Container className="py-5 md:py-6">
         <div className="flex flex-col items-center gap-5 md:grid md:grid-cols-[1fr_auto_1fr] md:items-stretch md:gap-6">
           {/* Left — logo */}
