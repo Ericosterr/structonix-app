@@ -120,6 +120,64 @@ export function buildPageMetadata({
   };
 }
 
+type LocalizedSlugMetadataInput = {
+  locale: Locale;
+  title: string;
+  description: string;
+  slugByLocale: Record<Locale, string>;
+};
+
+/**
+ * Metadata for pages whose slug differs per locale (localized URLs).
+ * Produces canonical + per-locale hreflang alternates + x-default + OpenGraph.
+ */
+export function buildLocalizedSlugMetadata({
+  locale,
+  title,
+  description,
+  slugByLocale,
+}: LocalizedSlugMetadataInput): Metadata {
+  const path = `/${slugByLocale[locale]}`;
+  const canonical = getLocalizedUrl(site.baseUrl, locale, path);
+  const images = buildOgImages();
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages: {
+        ...Object.fromEntries(
+          routing.locales.map((loc) => [
+            loc,
+            getLocalizedUrl(site.baseUrl, loc, `/${slugByLocale[loc]}`),
+          ]),
+        ),
+        "x-default": getLocalizedUrl(
+          site.baseUrl,
+          routing.defaultLocale,
+          `/${slugByLocale[routing.defaultLocale]}`,
+        ),
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      siteName: siteBrand.siteName,
+      locale: ogLocaleMap[locale],
+      type: "website",
+      images,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [getOgImageUrl()],
+    },
+  };
+}
+
 export function buildOrganizationJsonLd() {
   const logoUrl = `${site.baseUrl}${site.assets.companyLogo}`;
   const sameAs = [company.instagram, company.youtube].filter(Boolean);

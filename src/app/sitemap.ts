@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site } from "@config/site";
-import { serviceLocationSlugs } from "@data/service-locations";
+import { landingKeys, landingSlugs } from "@data/landings";
 import { zoneSlugs } from "@data/zones";
 import { routing } from "@/i18n/routing";
 import { getLocalizedUrl } from "@/lib/locale-path";
@@ -29,9 +29,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       });
     }
 
-    for (const service of serviceLocationSlugs) {
+    for (const key of landingKeys) {
       entries.push({
-        url: getLocalizedUrl(site.baseUrl, locale, `/services/${service}`),
+        url: getLocalizedUrl(site.baseUrl, locale, `/${landingSlugs[key][locale]}`),
         lastModified: new Date(),
         changeFrequency: "monthly",
         priority: 0.95,

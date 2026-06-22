@@ -355,6 +355,169 @@
       ]
     }
   },
+  "landings": {
+    "common": {
+      "breadcrumbHome": "Home",
+      "ctaPrimary": "Request a Consultation",
+      "ctaSecondary": "Discuss Your Project",
+      "faqTitle": "Frequently asked questions",
+      "relatedTitle": "Related pages",
+      "servicesTitle": "Explore our services",
+      "zoneMarbella": "Building in Marbella"
+    },
+    "constructora-marbella": {
+      "h1": "General Contractor in Marbella",
+      "linkLabel": "General Contractor Marbella",
+      "heroTagline": "Structonix is a general contractor in Marbella delivering luxury villas and residences with a single team responsible for design, build and licensing.",
+      "introTitle": "Your general contractor in Marbella",
+      "intro": "A general contractor coordinates every trade, supplier and approval on a building project and carries responsibility for the finished result. In Marbella, where projects span the Golden Mile, Nueva Andalucía and Sierra Blanca, that single line of responsibility is what keeps a luxury build on budget and on schedule.\n\nStructonix acts as your general contractor with architecture, engineering and project management in-house, so the same team that designs your villa also builds it and answers for its quality.",
+      "sections": [
+        { "title": "What a general contractor delivers", "body": "We plan the works, contract and supervise every trade, control materials and quality, and manage health and safety on site. You receive one contract, one budget and one accountable partner instead of coordinating separate firms." },
+        { "title": "Single-point responsibility", "body": "When design, engineering and construction sit with one contractor, there is no gap for problems to fall through. We own the programme end to end, which is decisive for owners building a high-value home from abroad." },
+        { "title": "Built on Marbella experience", "body": "We know how each town hall and gated community approves and inspects works, and we build to the standards expected in Marbella's premium market — the foundation of a reliable general contractor relationship." }
+      ],
+      "faq": [
+        { "q": "What is the difference between a general contractor and a builder?", "a": "A builder executes construction work, while a general contractor also plans, contracts and supervises all trades and carries overall responsibility for budget, schedule and quality. Structonix provides full general-contractor responsibility." },
+        { "q": "Does the general contractor handle permits in Marbella?", "a": "Yes. We manage the building licence, first occupation licence and energy certification with Marbella town hall as part of our service." },
+        { "q": "Can you act as general contractor for a villa designed by another architect?", "a": "Yes. We can build to a third-party design, although most clients prefer our integrated design-and-build model for tighter cost and quality control." },
+        { "q": "How do you control budget as a general contractor?", "a": "We work from a defined scope and detailed measurements, contract trades competitively and report costs transparently throughout the build." },
+        { "q": "Which areas around Marbella do you cover?", "a": "The Golden Mile, Nueva Andalucía, Sierra Blanca, Marbella East and neighbouring Benahavís and Estepona on the Costa del Sol." }
+      ]
+    },
+    "arquitecto-marbella": {
+      "h1": "Architect in Marbella",
+      "linkLabel": "Architect Marbella",
+      "heroTagline": "Architectural design for luxury villas in Marbella — from concept and planning approval to full technical documentation, by an integrated architecture and engineering team.",
+      "introTitle": "Architecture for Marbella villas",
+      "intro": "Great architecture in Marbella balances design ambition with what the local planning framework will actually approve. Plot orientation, sea views, slope and the PGOU rules all shape what can be built on the Golden Mile, in Nueva Andalucía or Sierra Blanca.\n\nOur architects design contemporary and Mediterranean villas tailored to each plot and client, then carry the project through licensing and into construction alongside our engineers.",
+      "sections": [
+        { "title": "Concept and design", "body": "We translate your brief, plot and lifestyle into a villa that maximises views, light and indoor-outdoor living, with a clear design language and material palette suited to Marbella." },
+        { "title": "Planning and licensing", "body": "We prepare and submit the documentation required by Marbella town hall and gated communities, designing within PGOU rules to secure approval without compromising the concept." },
+        { "title": "Design that is built as drawn", "body": "Because our architects work alongside our engineers and builders, the villa you are shown is the villa you receive — no value-engineering surprises between design and construction." }
+      ],
+      "faq": [
+        { "q": "Do I need a local architect to build in Marbella?", "a": "Yes. A project in Spain must be designed and certified by a qualified architect and submitted to the town hall. Our in-house architects handle this end to end." },
+        { "q": "Can you obtain planning permission in Marbella?", "a": "Yes. We prepare the technical project and manage the building licence process with Marbella town hall, including communities with their own design codes." },
+        { "q": "Do you only design, or also build?", "a": "We offer both. Many clients choose our integrated design-and-build service, but we can also deliver architecture and licensing as a standalone service." },
+        { "q": "How long does the design and licensing phase take?", "a": "Concept to a submitted building licence typically takes several months depending on plot complexity and the community involved; we set a realistic timeline at the start." },
+        { "q": "What architectural styles do you work in?", "a": "From contemporary minimalist villas to warm modern-Mediterranean designs, always adapted to the plot, views and Marbella's planning context." }
+      ]
+    },
+    "villa-construction-marbella": {
+      "h1": "Villa Construction in Marbella",
+      "linkLabel": "Villa Construction Marbella",
+      "heroTagline": "Turnkey luxury villa construction in Marbella — plot, design, licensing, build and handover delivered by one integrated team.",
+      "introTitle": "Turnkey villa construction in Marbella",
+      "intro": "Building a villa in Marbella means working with scarce premium plots, demanding hillside engineering and a strict licensing process. Handled well, it is the most rewarding way to own exactly the home you want on the Costa del Sol.\n\nStructonix delivers turnkey villa construction as a single team of architects, engineers and project managers, taking responsibility for the whole build from groundwork to the final snag.",
+      "sections": [
+        { "title": "From plot to handover", "body": "We assess your plot, design the villa, engineer the structure and pool, secure licences and build to completion — one partner across the entire journey." },
+        { "title": "Engineering for Marbella plots", "body": "Sloping plots in Sierra Blanca and view parcels across Marbella demand serious foundations, retaining and drainage. Our engineering unlocks those views safely and durably." },
+        { "title": "Quality you can verify remotely", "body": "Structured progress reporting and strict quality control let owners follow their villa from abroad with confidence at every stage." }
+      ],
+      "faq": [
+        { "q": "What does turnkey villa construction include?", "a": "Everything from plot assessment, design and engineering to licensing, construction and handover — delivered by one accountable team rather than separate firms." },
+        { "q": "How much does it cost to build a villa in Marbella?", "a": "It depends on plot, design, finishes, pool and basement. We provide a detailed, transparent cost breakdown after reviewing your plot and brief." },
+        { "q": "How long does it take to build a villa in Marbella?", "a": "A turnkey villa typically takes 14–24 months including design and licensing, with the building and first occupation licences being the main timeline drivers." },
+        { "q": "Can you build on a steep or sea-view plot?", "a": "Yes. Hillside and view plots are an engineering strength of ours, from deep foundations to retaining structures and infinity pools." },
+        { "q": "Do you build villas outside Marbella too?", "a": "Yes, across the Costa del Sol including Benahavís and Estepona — see our Builders Costa del Sol page." }
+      ]
+    },
+    "builders-costa-del-sol": {
+      "h1": "Builders on the Costa del Sol",
+      "linkLabel": "Builders Costa del Sol",
+      "heroTagline": "Luxury home builders across the Costa del Sol — Marbella, Benahavís, Estepona and beyond — with one integrated team for design, engineering and construction.",
+      "introTitle": "Luxury builders across the Costa del Sol",
+      "intro": "The Costa del Sol stretches from Málaga through Marbella, Benahavís and Estepona to Sotogrande, and each municipality has its own planning rules and licence timelines. Building well across this coast requires genuine local knowledge in every town.\n\nStructonix builds luxury villas, renovations and developments along the whole coast, bringing the same integrated team and quality standards to every location.",
+      "sections": [
+        { "title": "Coverage across the coast", "body": "From the Golden Mile to the New Golden Mile and the hills of Benahavís, we build wherever our clients buy, matching strategy and engineering to each plot and municipality." },
+        { "title": "One team, consistent quality", "body": "Wherever your plot is, the same architects, engineers and project managers deliver your project to a single high standard, with one point of accountability." },
+        { "title": "Local licensing expertise", "body": "Each town hall approves works differently. We know the requirements in Marbella, Benahavís, Estepona and the wider province, keeping projects moving." }
+      ],
+      "faq": [
+        { "q": "Where on the Costa del Sol do you build?", "a": "Primarily Marbella, Benahavís and Estepona, and across the wider Málaga province including Nueva Andalucía, the Golden Mile and Sotogrande." },
+        { "q": "Do build costs vary by town on the Costa del Sol?", "a": "Plot value and access vary more than construction itself; finish level remains the main cost driver. We provide location-specific estimates." },
+        { "q": "Can you manage a build while I live abroad?", "a": "Yes. Our project management is designed for international owners, with remote reporting and full on-site control." },
+        { "q": "Do you build developments as well as single villas?", "a": "Yes. We deliver individual villas and small residential developments with reporting suitable for developers and investors." },
+        { "q": "Which town is best to build in?", "a": "It depends on your goals — Marbella for prestige and rental demand, Benahavís for privacy and views, Estepona for value and growth. We advise per project." }
+      ]
+    },
+    "construction-company-marbella": {
+      "h1": "Construction Company in Marbella",
+      "linkLabel": "Construction Company Marbella",
+      "heroTagline": "A full-service construction company in Marbella delivering turnkey luxury villas with architecture, engineering and project management under one roof.",
+      "introTitle": "An integrated construction company in Marbella",
+      "intro": "Marbella's luxury market demands a construction company that can manage design, structure and licensing as a single capability, not a chain of subcontractors. International owners expect both design quality and absolute reliability.\n\nStructonix is an integrated construction company of more than 40 specialists, combining architecture, engineering, construction and project management so your villa is delivered by one accountable organisation.",
+      "sections": [
+        { "title": "Architecture, engineering and construction in one company", "body": "Keeping all disciplines in-house removes the coordination gaps that derail multi-vendor builds and gives you one organisation responsible for the result." },
+        { "title": "Capacity for complex projects", "body": "A team of 40+ professionals lets us handle demanding villas and developments while maintaining quality control and structured reporting." },
+        { "title": "Trusted by international clients", "body": "Multilingual support in English, Russian and Spanish and a remote-owner project model make us a natural partner for buyers across Europe and the CIS." }
+      ],
+      "faq": [
+        { "q": "What makes Structonix different from other construction companies in Marbella?", "a": "We combine architecture, engineering, construction and project management in one in-house team of 40+ specialists, giving you a single point of accountability from design to handover." },
+        { "q": "Do you build across all areas of Marbella?", "a": "Yes — the Golden Mile, Nueva Andalucía, Sierra Blanca, Marbella East and neighbouring Benahavís and Estepona." },
+        { "q": "Can the construction company manage everything if I live abroad?", "a": "Yes. We manage permits, contractors and quality control and report on progress so you can build remotely with confidence." },
+        { "q": "Do you handle permits and licences?", "a": "Yes. Our administrative team manages the full licensing process with Marbella town hall." },
+        { "q": "How much does it cost to build with your company?", "a": "Costs depend on plot, design and finishes; we provide a detailed, transparent breakdown after reviewing your project." }
+      ]
+    },
+    "project-management-marbella": {
+      "h1": "Construction Project Management in Marbella",
+      "linkLabel": "Project Management Marbella",
+      "heroTagline": "Professional construction project management in Marbella — protecting your budget, schedule and quality as your single point of accountability.",
+      "introTitle": "Construction project management in Marbella",
+      "intro": "Project management is the discipline that keeps a complex build on budget, on schedule and at the right quality. For owners who do not live in Spain, professional project management is the difference between a smooth build and an expensive one.\n\nStructonix acts as your project manager and owner's representative, controlling cost, programme, contractors and quality from the first decision to the final handover.",
+      "sections": [
+        { "title": "Cost and schedule control", "body": "We build a realistic budget and programme, then track them continuously, flagging risks early and keeping decisions and approvals moving." },
+        { "title": "Quality and contractor management", "body": "We select and supervise trades, enforce specifications and run structured quality checks so the finished villa matches what was promised." },
+        { "title": "Built for remote owners", "body": "Transparent reporting and a single point of contact let international owners stay fully informed and in control without being on site." }
+      ],
+      "faq": [
+        { "q": "What does a construction project manager do?", "a": "They plan and control budget, schedule, contractors and quality on behalf of the owner, acting as the single accountable point of contact throughout the build." },
+        { "q": "Do I need project management if I already have a builder?", "a": "Independent project management protects your interests on cost, quality and schedule, which is especially valuable when building from abroad." },
+        { "q": "Can you manage a project another company is building?", "a": "Yes. We can act as owner's representative overseeing a third-party contractor, or deliver integrated management within our own build." },
+        { "q": "How do you report progress?", "a": "We provide structured, regular reporting on budget, programme and quality, with photos and clear decisions required from you." },
+        { "q": "Does project management increase the total cost?", "a": "Good project management typically protects value by avoiding overruns, rework and delays that cost far more than the management fee." }
+      ]
+    },
+    "obra-nueva-marbella": {
+      "h1": "New Construction in Marbella",
+      "linkLabel": "New Construction Marbella",
+      "heroTagline": "New-build villas and homes in Marbella — modern, energy-efficient construction from plot and licensing to handover.",
+      "introTitle": "New construction in Marbella",
+      "intro": "New construction lets you build exactly the home you want, to current standards of energy efficiency, comfort and design, rather than compromising with an existing property. In Marbella, most premium projects are new builds on scarce plots or full rebuilds.\n\nStructonix delivers new-build villas and residences end to end, from plot due diligence and design through the building licence and into construction.",
+      "sections": [
+        { "title": "The new-build process", "body": "We confirm what your plot allows under the PGOU, design the home, engineer it and secure the building licence (obra mayor) before construction begins." },
+        { "title": "Modern standards by default", "body": "New construction lets us deliver high energy efficiency, smart-home readiness and contemporary layouts that older properties rarely match." },
+        { "title": "Licence and certification", "body": "We manage the building licence, first occupation licence (LPO) and energy certification so your new home is fully legal and ready to register and insure." }
+      ],
+      "faq": [
+        { "q": "What is obra nueva (new construction)?", "a": "It is a ground-up build on a plot, as opposed to renovating an existing property. It requires a building licence (obra mayor) and, on completion, a first occupation licence." },
+        { "q": "What permits does new construction in Marbella need?", "a": "Principally the obra mayor building licence and the first occupation licence (LPO), plus energy certification. We manage all of them." },
+        { "q": "Is new construction better than renovation?", "a": "New construction offers modern standards and full customisation; renovation can be better value on the right property. We advise based on your plot and goals." },
+        { "q": "How long does a new-build villa take?", "a": "Typically 14–24 months including design and licensing, depending on size, plot and complexity." },
+        { "q": "Can I build new on a plot with an old house?", "a": "Often yes, via demolition and rebuild, subject to PGOU rules. We assess feasibility before you commit." }
+      ]
+    },
+    "renovation-marbella": {
+      "h1": "Renovation in Marbella",
+      "linkLabel": "Renovation Marbella",
+      "heroTagline": "Luxury villa and apartment renovation in Marbella — modernising properties to contemporary standards with full project control.",
+      "introTitle": "Villa and home renovation in Marbella",
+      "intro": "Renovation transforms an existing Marbella property into a modern home, often unlocking significant value in established areas where new plots are unavailable. Done properly, a renovation rivals new construction in quality and comfort.\n\nStructonix delivers full and partial renovations — from kitchens, bathrooms and interiors to complete structural reforms and extensions — with the same integrated team and control as our new builds.",
+      "sections": [
+        { "title": "Full and partial renovation", "body": "Whether modernising interiors or reconfiguring layouts and structure, we plan the works to minimise disruption and protect the parts of the property you want to keep." },
+        { "title": "Permits for renovation works", "body": "Many reforms require a licence (obra menor or obra mayor depending on scope). We assess the works and manage the right permits with Marbella town hall." },
+        { "title": "Value-driven modernisation", "body": "Upgrading energy performance, finishes and layout can substantially raise a property's market and rental value — we focus renovation budgets where they return most." }
+      ],
+      "faq": [
+        { "q": "Do I need a licence to renovate in Marbella?", "a": "Cosmetic works may need only a minor works licence (obra menor), while structural changes require a major works licence. We determine and manage the correct permits." },
+        { "q": "Is renovation cheaper than building new?", "a": "Often, yes — you reuse the existing structure and location. But heavy structural reforms can approach new-build costs; we advise after assessing the property." },
+        { "q": "Can you renovate while keeping part of the house?", "a": "Yes. We plan partial renovations and phased works to retain elements you value while modernising the rest." },
+        { "q": "How long does a renovation take?", "a": "From a few months for interiors to a year or more for full structural reforms, depending on scope. We set a clear programme upfront." },
+        { "q": "Do you renovate apartments as well as villas?", "a": "Yes. We renovate apartments, townhouses and villas across Marbella to a luxury standard." }
+      ]
+    }
+  },
   "notFound": {
     "title": "Page not found",
     "description": "The page you are looking for does not exist.",
@@ -401,6 +564,40 @@
       "costa-del-sol": {
         "title": "Luxury Construction & Development on the Costa del Sol | Structonix",
         "description": "Architecture, engineering, construction and project management for luxury villas and developments across the Costa del Sol, from Marbella to Estepona."
+      }
+    },
+    "landings": {
+      "constructora-marbella": {
+        "title": "General Contractor in Marbella | Luxury Villa Builder | Structonix",
+        "description": "General contractor in Marbella for luxury villas — one team for design, build and licensing across the Golden Mile, Nueva Andalucía and Sierra Blanca."
+      },
+      "arquitecto-marbella": {
+        "title": "Architect in Marbella | Luxury Villa Design | Structonix",
+        "description": "Architect in Marbella for luxury villas — concept design, PGOU planning approval and full technical documentation by an integrated architecture and engineering team."
+      },
+      "villa-construction-marbella": {
+        "title": "Villa Construction in Marbella | Turnkey Luxury Villas | Structonix",
+        "description": "Turnkey luxury villa construction in Marbella — plot, design, licensing, build and handover by one integrated team. Golden Mile, Nueva Andalucía and Sierra Blanca."
+      },
+      "builders-costa-del-sol": {
+        "title": "Builders on the Costa del Sol | Luxury Home Construction | Structonix",
+        "description": "Luxury home builders across the Costa del Sol — Marbella, Benahavís and Estepona — with one integrated team for design, engineering and turnkey construction."
+      },
+      "construction-company-marbella": {
+        "title": "Construction Company in Marbella | Luxury Villa Builders | Structonix",
+        "description": "Full-service construction company in Marbella delivering turnkey luxury villas with integrated architecture, engineering and project management for international clients."
+      },
+      "project-management-marbella": {
+        "title": "Construction Project Management in Marbella | Structonix",
+        "description": "Professional construction project management in Marbella — budget, schedule and quality control as your single point of accountability, ideal for remote owners."
+      },
+      "obra-nueva-marbella": {
+        "title": "New Construction in Marbella | New-Build Villas | Structonix",
+        "description": "New-build villas and homes in Marbella — modern, energy-efficient construction from plot and licensing to handover, managed end to end by Structonix."
+      },
+      "renovation-marbella": {
+        "title": "Renovation in Marbella | Luxury Villa Refurbishment | Structonix",
+        "description": "Luxury villa and apartment renovation in Marbella — modernising properties to contemporary standards with full project control and licensing."
       }
     },
     "serviceLocations": {

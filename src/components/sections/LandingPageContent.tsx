@@ -1,7 +1,13 @@
 import { getTranslations } from "next-intl/server";
+import { company } from "@config/company";
 import { site } from "@config/site";
-import { getLandingPath } from "@data/landings";
-import { relatedZones, zoneBackgrounds, zoneGeo, type ZoneSlug } from "@data/zones";
+import {
+  getLandingPath,
+  landingBackgrounds,
+  landingGeo,
+  landingLinks,
+  type LandingKey,
+} from "@data/landings";
 import type { Locale } from "@/i18n/routing";
 import { getLocalizedUrl } from "@/lib/locale-path";
 import {
@@ -19,10 +25,12 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-type ZonePageContentProps = {
-  zona: ZoneSlug;
+type LandingPageContentProps = {
+  landingKey: LandingKey;
   locale: Locale;
 };
+
+type Section = { title: string; body: string };
 
 const SERVICE_LINKS = [
   { href: "/servicios/arquitectura", key: "arquitectura" },
@@ -37,61 +45,44 @@ function paragraphs(text: string) {
   ));
 }
 
-export async function ZonePageContent({ zona, locale }: ZonePageContentProps) {
-  const t = await getTranslations("zones");
+export async function LandingPageContent({
+  landingKey,
+  locale,
+}: LandingPageContentProps) {
+  const t = await getTranslations("landings");
   const tNav = await getTranslations("nav");
 
-  const name = t(`${zona}.name`);
-  const faqItems = t.raw(`${zona}.faq`) as FaqItem[];
-  const background = zoneBackgrounds[zona];
-  const geo = zoneGeo[zona];
+  const h1 = t(`${landingKey}.h1`);
+  const sections = t.raw(`${landingKey}.sections`) as Section[];
+  const faqItems = t.raw(`${landingKey}.faq`) as FaqItem[];
+  const background = landingBackgrounds[landingKey];
+  const geo = landingGeo[landingKey];
 
-  const pageUrl = getLocalizedUrl(site.baseUrl, locale, `/zonas/${zona}`);
+  const path = getLandingPath(landingKey, locale);
+  const pageUrl = getLocalizedUrl(site.baseUrl, locale, path);
   const homeUrl = getLocalizedUrl(site.baseUrl, locale, "/");
 
   const breadcrumbItems = [
     { label: t("common.breadcrumbHome"), href: "/" },
-    { label: name },
+    { label: t(`${landingKey}.linkLabel`) },
   ];
 
-  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
-    { name: t("common.breadcrumbHome"), url: homeUrl },
-    { name, url: pageUrl },
-  ]);
-  const faqJsonLd = buildFaqJsonLd(faqItems);
   const localBusinessJsonLd = buildLocalBusinessJsonLd({
-    name: `Structonix — ${name}`,
+    name: `Structonix — ${t(`${landingKey}.linkLabel`)}`,
     url: pageUrl,
-    areaServed: name,
+    areaServed: geo.areaServed,
     geo,
   });
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: t("common.breadcrumbHome"), url: homeUrl },
+    { name: t(`${landingKey}.linkLabel`), url: pageUrl },
+  ]);
+  const faqJsonLd = buildFaqJsonLd(faqItems);
 
-  const otherZones = relatedZones.filter((zone) => zone !== zona);
-
-  const marbellaServiceLinks =
-    zona === "marbella"
-      ? await (async () => {
-          const tLandings = await getTranslations("landings");
-          return (
-            [
-              "constructora-marbella",
-              "villa-construction-marbella",
-              "construction-company-marbella",
-            ] as const
-          ).map((key) => ({
-            href: getLandingPath(key, locale),
-            label: tLandings(`${key}.linkLabel`),
-          }));
-        })()
-      : [];
-
-  const sections = [
-    { key: "market", title: t("common.marketTitle"), body: t(`${zona}.market`) },
-    { key: "architecture", title: t("common.architectureTitle"), body: t(`${zona}.architecture`) },
-    { key: "engineering", title: t("common.engineeringTitle"), body: t(`${zona}.engineering`) },
-    { key: "projectManagement", title: t("common.pmTitle"), body: t(`${zona}.projectManagement`) },
-    { key: "investment", title: t("common.investmentTitle"), body: t(`${zona}.investment`) },
-  ];
+  const clusterLinks = landingLinks[landingKey].map((targetKey) => ({
+    href: getLandingPath(targetKey, locale),
+    label: t(`${targetKey}.linkLabel`),
+  }));
 
   return (
     <>
@@ -112,14 +103,14 @@ export async function ZonePageContent({ zona, locale }: ZonePageContentProps) {
         <div className="max-w-3xl space-y-6">
           <Breadcrumbs items={breadcrumbItems} className="text-white/80" />
           <h1 className="text-3xl font-semibold tracking-tight text-primary-foreground md:text-4xl lg:text-5xl">
-            {t(`${zona}.h1`)}
+            {h1}
           </h1>
           <p className="text-base leading-relaxed text-white/90 md:text-lg">
-            {t(`${zona}.heroTagline`)}
+            {t(`${landingKey}.heroTagline`)}
           </p>
           <div className="flex flex-wrap gap-3">
             <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
-              <Link href="#contacto">{t("common.ctaButton")}</Link>
+              <Link href="#contacto">{t("common.ctaPrimary")}</Link>
             </Button>
             <Button
               asChild
@@ -127,7 +118,9 @@ export async function ZonePageContent({ zona, locale }: ZonePageContentProps) {
               variant="outline"
               className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white"
             >
-              <Link href="/para-inversores">{tNav("investors")}</Link>
+              <a href={company.whatsapp} target="_blank" rel="noopener noreferrer">
+                {t("common.ctaSecondary")}
+              </a>
             </Button>
           </div>
         </div>
@@ -135,15 +128,22 @@ export async function ZonePageContent({ zona, locale }: ZonePageContentProps) {
 
       <AnimatedSection className="py-14 md:py-20">
         <Container className="max-w-3xl space-y-5">
-          <SectionHeading title={t(`${zona}.overviewTitle`)} />
+          <SectionHeading title={t(`${landingKey}.introTitle`)} />
           <div className="space-y-4 leading-relaxed text-foreground/90">
-            {paragraphs(t(`${zona}.overview`))}
+            {paragraphs(t(`${landingKey}.intro`))}
           </div>
         </Container>
       </AnimatedSection>
 
-      {sections.map((section) => (
-        <AnimatedSection key={section.key} className="border-t border-border py-12 md:py-16">
+      {sections.map((section, index) => (
+        <AnimatedSection
+          key={section.title}
+          className={
+            index % 2 === 0
+              ? "border-t border-border bg-muted/40 py-12 md:py-16"
+              : "border-t border-border py-12 md:py-16"
+          }
+        >
           <Container className="max-w-3xl space-y-4">
             <SectionHeading title={section.title} />
             <div className="space-y-4 leading-relaxed text-foreground/90">
@@ -153,19 +153,48 @@ export async function ZonePageContent({ zona, locale }: ZonePageContentProps) {
         </AnimatedSection>
       ))}
 
-      <AnimatedSection className="border-t border-border bg-muted/40 py-14 md:py-20">
+      <AnimatedSection className="border-t border-border py-14 md:py-20">
+        <Container className="space-y-6">
+          <SectionHeading title={t("common.relatedTitle")} />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {clusterLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-[var(--radius-card)] border border-primary/30 bg-primary/5 p-5 font-medium text-primary transition-colors hover:bg-primary/10"
+              >
+                {link.label} <span aria-hidden="true">→</span>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </AnimatedSection>
+
+      <AnimatedSection className="border-t border-border bg-muted/40 py-12 md:py-16">
         <Container className="space-y-6">
           <SectionHeading title={t("common.servicesTitle")} />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="flex flex-wrap gap-3">
             {SERVICE_LINKS.map((service) => (
               <Link
                 key={service.key}
                 href={service.href}
-                className="rounded-[var(--radius-card)] border border-border bg-background p-5 font-medium shadow-[var(--shadow-soft)] transition-colors hover:bg-muted"
+                className="rounded-[var(--radius-button)] border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
               >
-                {tNav(service.key)} <span aria-hidden="true">→</span>
+                {tNav(service.key)}
               </Link>
             ))}
+            <Link
+              href="/zonas/marbella"
+              className="rounded-[var(--radius-button)] border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
+            >
+              {t("common.zoneMarbella")}
+            </Link>
+            <Link
+              href="/para-inversores"
+              className="rounded-[var(--radius-button)] border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
+            >
+              {tNav("investors")}
+            </Link>
           </div>
         </Container>
       </AnimatedSection>
@@ -175,38 +204,6 @@ export async function ZonePageContent({ zona, locale }: ZonePageContentProps) {
         items={faqItems}
         className="border-t border-border"
       />
-
-      <AnimatedSection className="border-t border-border py-12 md:py-16">
-        <Container className="space-y-6">
-          <SectionHeading title={t("common.otherAreas")} />
-          <div className="flex flex-wrap gap-3">
-            {otherZones.map((zone) => (
-              <Link
-                key={zone}
-                href={`/zonas/${zone}`}
-                className="rounded-[var(--radius-button)] border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
-              >
-                {t(`${zone}.name`)}
-              </Link>
-            ))}
-            {marbellaServiceLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-[var(--radius-button)] border border-primary/40 bg-primary/5 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/blog"
-              className="rounded-[var(--radius-button)] border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
-            >
-              {tNav("blog")}
-            </Link>
-          </div>
-        </Container>
-      </AnimatedSection>
 
       <div id="contacto" className="scroll-mt-24">
         <ContactSection backgroundImage={background} />

@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { getPathname, usePathname } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { syncLocaleCookie } from "@/lib/sync-locale-cookie";
+import { getLocalizedLandingSlug } from "@data/landings";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,6 +23,35 @@ const localeLabels: Record<Locale, string> = {
   ru: "RU",
 };
 
+/**
+ * Same-origin path of the page's own hreflang alternate for a locale.
+ *
+ * Blog posts use per-locale Notion slugs (one row per locale), so their
+ * locale-specific URL only lives in the page's `<link rel="alternate">` tags,
+ * which are generated from the same translation data as hreflang/sitemap.
+ * We read the path (never the absolute href) so dev/staging origins are kept.
+ */
+function getHreflangPath(locale: Locale): string | null {
+  if (typeof document === "undefined") {
+    return null;
+  }
+
+  const link = document.querySelector<HTMLLinkElement>(
+    `link[rel="alternate"][hreflang="${locale}"]`,
+  );
+
+  if (!link) {
+    return null;
+  }
+
+  try {
+    const url = new URL(link.href, window.location.origin);
+    return `${url.pathname}${url.search}${url.hash}`;
+  } catch {
+    return null;
+  }
+}
+
 type LanguageSwitcherProps = {
   variant: "desktop" | "mobile";
   onLocaleChange?: () => void;
@@ -36,6 +66,36 @@ export function LanguageSwitcher({
   const pathname = usePathname();
   const fullPathname = useFullPathname();
 
+  /**
+   * Resolve the destination path for a locale switch. One canonical resolution
+   * order, no hardcoded slug replacements:
+   *  1. Landing pages -> central slug map in `data/landings.ts`.
+   *  2. Blog posts -> per-locale slug from the page's own hreflang alternate
+   *     (falls back to the blog index so a missing translation never 404s).
+   *  3. Everything else -> slug-stable, just swap the locale prefix.
+   */
+  const resolveLocaleHref = (nextLocale: Locale): string => {
+    const currentSlug = pathname.replace(/^\//, "");
+
+    const mappedLandingSlug = getLocalizedLandingSlug(
+      locale,
+      currentSlug,
+      nextLocale,
+    );
+    if (mappedLandingSlug) {
+      return getPathname({ href: `/${mappedLandingSlug}`, locale: nextLocale });
+    }
+
+    if (pathname.startsWith("/blog/")) {
+      const alternate = getHreflangPath(nextLocale);
+      return (
+        alternate ?? getPathname({ href: "/blog", locale: nextLocale })
+      );
+    }
+
+    return getPathname({ href: pathname, locale: nextLocale });
+  };
+
   const switchLocale = (nextLocale: Locale) => {
     if (nextLocale === locale) {
       onLocaleChange?.();
@@ -46,8 +106,7 @@ export function LanguageSwitcher({
     // router.replace() uses RSC flight fetches that break on CDN/mobile production.
     // Sync NEXT_LOCALE first so unprefixed ES URLs are not redirected by middleware.
     syncLocaleCookie(fullPathname, locale, nextLocale);
-    const href = getPathname({ href: pathname, locale: nextLocale });
-    window.location.assign(href);
+    window.location.assign(resolveLocaleHref(nextLocale));
   };
 
   if (variant === "mobile") {
