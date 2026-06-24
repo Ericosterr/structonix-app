@@ -8,6 +8,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { GalleryCarousel } from "@/components/ui/GalleryCarousel";
 import { ImageSlider } from "@/components/ui/ImageSlider";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { StructureGallery } from "@/components/services/StructureGallery";
 
 type ServicePageContentProps = {
   slug: ServiceSlug;
@@ -74,6 +75,8 @@ export async function ServicePageContent({ slug }: ServicePageContentProps) {
           )}
         </AnimatedSection>
       ) : null}
+
+      {slug === "estructura" ? <StructureGallery /> : null}
     </>
   );
 }

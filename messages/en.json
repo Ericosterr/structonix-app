@@ -68,7 +68,7 @@
   },
   "services": {
     "heroDescription": {
-      "estructura": "Structure is the hidden foundation of every home, determining its solidity, durability and level of execution.\n\nAll load-bearing elements, from foundations to floor slabs, are built with maximum precision and technical rigour.\n\nA perfectly executed structure is a guarantee of stability, safety and property value for many years.",
+      "estructura": "The structure is the technical foundation of every home, villa and residential project. At Structonix Sistem, we build strong, precise and long-lasting structures, paying close attention to every load-bearing element: foundations, columns, walls, slabs and floor systems.\n\nThis stage determines not only the safety and stability of the building, but also the architectural freedom of the project. A well-designed and accurately executed structure makes it possible to create open spaces, clean lines and complex construction solutions without compromising strength or quality.\n\nWe combine technical expertise, precise execution and strict quality control to deliver reliable structures built for the future. From the foundations to the final slab, every detail is developed to ensure durability, safety and long-term value for the property.",
       "ingenieria": "Engineering integrates all home systems into a unique, well-designed environment that works flawlessly.\n\nStructural, electrical, mechanical and hydraulic solutions are designed as a whole, ensuring comfort and efficiency.",
       "arquitectura": "Architecture is an expression of lifestyle.\n\nIt defines the unique character of the villa, combining aesthetics, space and functionality into a harmonious whole.",
       "acabados": "Finishes are the final touch that defines the level of a home.\n\nAttention to detail, quality of materials and precision in execution create a coherent and comfortable environment.",
@@ -82,6 +82,32 @@
       "acabados": "Finishing services by Structonix.",
       "carpinteria": "Carpentry services by Structonix.",
       "gestion-administrativa": "Administrative management by Structonix."
+    }
+  },
+  "structureGallery": {
+    "title": "Structural Concrete Construction",
+    "intro": "Our structural team delivers reinforced concrete foundations, slabs, columns and load-bearing systems for luxury villas throughout Marbella and the Costa del Sol.",
+    "images": {
+      "reinforcedFoundations": {
+        "alt": "Reinforced concrete structure for luxury villa in Marbella",
+        "caption": "Reinforced concrete foundations"
+      },
+      "concreteStructure": {
+        "alt": "Concrete structure construction on the Costa del Sol",
+        "caption": "Concrete structure in progress"
+      },
+      "slabPouring": {
+        "alt": "Concrete slab pouring in Costa del Sol",
+        "caption": "Structural slab pouring"
+      },
+      "columnFormwork": {
+        "alt": "Concrete column formwork on a structural construction site in Costa del Sol",
+        "caption": "Column formwork"
+      },
+      "aerialSlab": {
+        "alt": "Aerial view of concrete slab construction on the Costa del Sol",
+        "caption": "Slab construction progress"
+      }
     }
   },
   "investors": {

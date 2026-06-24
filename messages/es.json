@@ -68,7 +68,7 @@
   },
   "services": {
     "heroDescription": {
-      "estructura": "La estructura es la base oculta de cada vivienda, que determina su solidez, durabilidad y nivel de ejecución.\n\nTodos los elementos portantes, desde los cimientos hasta los forjados, se construyen con la máxima precisión y rigor técnico.\n\nUna estructura ejecutada a la perfección es garantía de estabilidad, seguridad y valor del inmueble durante muchos años.",
+      "estructura": "La estructura es la base técnica de cualquier vivienda, villa o proyecto residencial. En Structonix Sistem ejecutamos estructuras sólidas, precisas y duraderas, cuidando cada elemento portante: cimentaciones, pilares, muros, losas y forjados.\n\nEsta fase define la seguridad del edificio, su estabilidad a largo plazo y la libertad arquitectónica del proyecto. Una estructura bien calculada y correctamente ejecutada permite crear espacios abiertos, líneas limpias y soluciones constructivas complejas sin comprometer la resistencia ni la calidad.\n\nTrabajamos con rigor técnico, control de ejecución y atención al detalle para garantizar estructuras fiables, seguras y preparadas para el futuro. Cada proyecto se desarrolla con precisión, desde la base hasta el último forjado, aportando valor, durabilidad y confianza al inmueble.",
       "ingenieria": "La ingeniería integra todos los sistemas de la vivienda en un entorno único, bien pensado y que funciona a la perfección.\n\nLas soluciones estructurales, eléctricas, mecánicas e hidráulicas se diseñan como un todo, garantizando el confort y la eficiencia.",
       "arquitectura": "La arquitectura es una expresión del estilo de vida.\n\nConfigura el carácter único de la villa, uniendo la estética, el espacio y la funcionalidad en un todo armonioso.",
       "acabados": "Los acabados son el toque final que define el nivel de una vivienda.\n\nLa atención al detalle, la calidad de los materiales y la precisión en la ejecución forman un entorno coherente y confortable.",
@@ -82,6 +82,32 @@
       "acabados": "Servicios de acabados de Structonix.",
       "carpinteria": "Servicios de carpintería de Structonix.",
       "gestion-administrativa": "Gestión administrativa de Structonix."
+    }
+  },
+  "structureGallery": {
+    "title": "Ejecución de estructuras de hormigón",
+    "intro": "Nuestro equipo ejecuta cimentaciones, losas, pilares y estructuras de hormigón armado para villas de lujo en Marbella y toda la Costa del Sol.",
+    "images": {
+      "reinforcedFoundations": {
+        "alt": "Estructura de hormigón armado para villa de lujo en Marbella",
+        "caption": "Cimentaciones de hormigón armado"
+      },
+      "concreteStructure": {
+        "alt": "Construcción de estructura de hormigón en Costa del Sol",
+        "caption": "Estructura de hormigón en ejecución"
+      },
+      "slabPouring": {
+        "alt": "Vertido de losa de hormigón en Costa del Sol",
+        "caption": "Vertido de losa estructural"
+      },
+      "columnFormwork": {
+        "alt": "Encofrado de pilares de hormigón en obra estructural en Costa del Sol",
+        "caption": "Encofrado de pilares"
+      },
+      "aerialSlab": {
+        "alt": "Vista aérea de losa de hormigón en construcción en Costa del Sol",
+        "caption": "Avance de la losa"
+      }
     }
   },
   "investors": {

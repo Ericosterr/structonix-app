@@ -40,7 +40,7 @@ export function HomeHeroBranding() {
           STRUCTONIX
         </span>
         <span className="mt-1 block text-lg font-bold uppercase leading-none text-white sm:text-2xl md:text-3xl lg:text-[2rem]">
-          SISTEM GLOBAL, S.L.
+          SISTEM GLOBAL S. L.
         </span>
       </motion.div>
     </div>
