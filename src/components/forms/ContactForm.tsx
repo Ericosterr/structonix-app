@@ -14,6 +14,10 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { useRecaptcha } from "@/providers/RecaptchaProvider";
+import {
+  GOOGLE_ADS_CONVERSIONS,
+  trackGoogleAdsConversion,
+} from "@/lib/google-ads";
 
 type ContactFormProps = {
   className?: string;
@@ -98,6 +102,7 @@ export function ContactForm({ className }: ContactFormProps) {
 
       setStatus("success");
       reset();
+      trackGoogleAdsConversion(GOOGLE_ADS_CONVERSIONS.leadFormSubmit);
     } catch {
       setSubmitError("generic");
     }

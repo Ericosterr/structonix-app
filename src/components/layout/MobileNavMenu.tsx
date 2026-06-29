@@ -13,6 +13,10 @@ import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { HeaderAreasMenu } from "@/components/layout/HeaderAreasMenu";
 import { HeaderServicesMenu } from "@/components/layout/HeaderServicesMenu";
 import { mobileNavItemClass } from "@/components/layout/mobile-nav";
+import {
+  GOOGLE_ADS_CONVERSIONS,
+  trackGoogleAdsConversion,
+} from "@/lib/google-ads";
 import { SheetDescription, SheetTitle } from "@/components/ui/sheet";
 
 type MobileNavMenuProps = {
@@ -67,7 +71,10 @@ export function MobileNavMenu({ onNavigate }: MobileNavMenuProps) {
             target="_blank"
             rel="noopener noreferrer"
             className={cn(mobileNavItemClass, "gap-2")}
-            onClick={onNavigate}
+            onClick={() => {
+              trackGoogleAdsConversion(GOOGLE_ADS_CONVERSIONS.whatsappClick);
+              onNavigate();
+            }}
           >
             <Image
               src={site.assets.whatsappIcon}

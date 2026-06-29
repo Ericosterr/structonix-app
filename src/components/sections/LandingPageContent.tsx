@@ -24,6 +24,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { WhatsAppConversionLink } from "@/components/analytics/WhatsAppConversionLink";
 
 type LandingPageContentProps = {
   landingKey: LandingKey;
@@ -118,9 +119,13 @@ export async function LandingPageContent({
               variant="outline"
               className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white"
             >
-              <a href={company.whatsapp} target="_blank" rel="noopener noreferrer">
+              <WhatsAppConversionLink
+                href={company.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {t("common.ctaSecondary")}
-              </a>
+              </WhatsAppConversionLink>
             </Button>
           </div>
         </div>

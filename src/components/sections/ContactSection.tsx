@@ -11,6 +11,10 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/utils";
+import {
+  GOOGLE_ADS_CONVERSIONS,
+  trackGoogleAdsConversion,
+} from "@/lib/google-ads";
 
 type ContactSectionProps = {
   backgroundImage?: string;
@@ -46,6 +50,9 @@ export function ContactSection({ backgroundImage, className }: ContactSectionPro
                 <a
                   href={`tel:${company.phone}`}
                   className="flex items-start gap-3 text-lg transition-opacity hover:opacity-80"
+                  onClick={() =>
+                    trackGoogleAdsConversion(GOOGLE_ADS_CONVERSIONS.phoneClick)
+                  }
                 >
                   <Phone className="mt-1 h-5 w-5 shrink-0" aria-hidden="true" />
                   <span>{company.phone}</span>
@@ -83,7 +90,16 @@ export function ContactSection({ backgroundImage, className }: ContactSectionPro
                   asChild
                   className="bg-white text-primary hover:bg-white/90"
                 >
-                  <a href={company.whatsapp} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={company.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() =>
+                      trackGoogleAdsConversion(
+                        GOOGLE_ADS_CONVERSIONS.whatsappClick,
+                      )
+                    }
+                  >
                     <Image
                       src={site.assets.whatsappIcon}
                       alt={tCommon("whatsapp")}

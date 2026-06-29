@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Montserrat } from "next/font/google";
 import { buildFaviconIcons, buildRootMetadata } from "@/lib/seo";
+import { GOOGLE_ADS_ID } from "@/lib/google-ads";
 import "./globals.css";
-
-const GOOGLE_ADS_ID = "AW-8123699471";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",

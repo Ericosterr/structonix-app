@@ -13,6 +13,10 @@ import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { HeaderAreasMenu } from "@/components/layout/HeaderAreasMenu";
 import { HeaderServicesMenu } from "@/components/layout/HeaderServicesMenu";
 import { MobileNavMenu } from "@/components/layout/MobileNavMenu";
+import {
+  GOOGLE_ADS_CONVERSIONS,
+  trackGoogleAdsConversion,
+} from "@/lib/google-ads";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -102,7 +106,14 @@ export function Header() {
               size="sm"
               className="bg-white text-primary hover:bg-white/90"
             >
-              <a href={company.whatsapp} target="_blank" rel="noopener noreferrer">
+              <a
+                href={company.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackGoogleAdsConversion(GOOGLE_ADS_CONVERSIONS.whatsappClick)
+                }
+              >
                 {tCommon("whatsapp")}
               </a>
             </Button>
