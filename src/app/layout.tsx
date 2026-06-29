@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Montserrat } from "next/font/google";
 import { buildFaviconIcons, buildRootMetadata } from "@/lib/seo";
 import { GOOGLE_ADS_ID } from "@/lib/google-ads";
+import { buildGoogleConsentBootstrapScript } from "@/lib/consent-mode";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -25,19 +26,14 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning className={`${montserrat.variable} h-full antialiased`}>
       <head>
+        <Script id="google-consent-gtag" strategy="beforeInteractive">
+          {buildGoogleConsentBootstrapScript(GOOGLE_ADS_ID)}
+        </Script>
         <Script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}
           strategy="beforeInteractive"
         />
-        <Script id="google-ads-gtag" strategy="beforeInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GOOGLE_ADS_ID}');
-          `}
-        </Script>
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         {children}

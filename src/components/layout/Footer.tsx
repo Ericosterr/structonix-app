@@ -5,6 +5,7 @@ import { zoneNavItems } from "@config/navigation";
 import { site } from "@config/site";
 import { Link } from "@/i18n/navigation";
 import { FooterSocialIcons } from "@/components/layout/FooterSocialIcons";
+import { CookieSettingsButton } from "@/components/cookies/CookieSettingsButton";
 import { Container } from "@/components/ui/Container";
 
 export async function Footer() {
@@ -51,6 +52,7 @@ export async function Footer() {
             >
               {tFooter("privacy")}
             </Link>
+            <CookieSettingsButton className="mt-0.5 inline-block text-xs leading-snug text-white/85 underline-offset-4 transition-opacity hover:opacity-80 hover:underline" />
           </div>
 
           {/* Right — social icons */}

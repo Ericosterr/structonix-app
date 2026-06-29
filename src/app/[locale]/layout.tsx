@@ -10,6 +10,7 @@ import { LocaleAttributes } from "@/components/layout/LocaleAttributes";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { MotionProvider } from "@/providers/MotionProvider";
 import { RecaptchaProvider } from "@/providers/RecaptchaProvider";
+import { CookieConsentBanner } from "@/components/cookies/CookieConsentBanner";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -49,6 +50,7 @@ export default async function LocaleLayout({
           </main>
           <Footer />
           <FloatingWhatsApp />
+          <CookieConsentBanner />
         </MotionProvider>
       </RecaptchaProvider>
     </NextIntlClientProvider>

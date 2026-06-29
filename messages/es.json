@@ -47,6 +47,15 @@
     "facebook": "Facebook",
     "socialLinks": "Redes sociales"
   },
+  "cookies": {
+    "title": "Usamos cookies",
+    "description": "Utilizamos cookies para medir el rendimiento de nuestros anuncios, mejorar el sitio web y entender cómo los usuarios interactúan con Structonix. Puedes aceptar todas las cookies o rechazar las no esenciales.",
+    "settingsDescription": "Las cookies esenciales son necesarias para el funcionamiento del sitio. Las cookies publicitarias y analíticas son opcionales y nos ayudan a medir el rendimiento de las campañas.",
+    "acceptAll": "Aceptar todas",
+    "rejectNonEssential": "Rechazar no esenciales",
+    "cookieSettings": "Configuración de cookies",
+    "changeCookieSettings": "Cambiar configuración de cookies"
+  },
   "home": {
     "slogan": "DAMOS FORMA A LOS ESPACIOS MEDIANTE LA INGENIERÍA, LA PRECISIÓN Y LA VISIÓN, CREANDO ESTRUCTURAS DISEÑADAS PARA EL FUTURO.",
     "servicesTitle": "Servicios"
