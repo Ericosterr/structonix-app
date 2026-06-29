@@ -16,7 +16,7 @@ Set in Hostinger panel (or `.env` on VPS):
 ```env
 NEXT_PUBLIC_SITE_URL=https://structonixsistem.com
 RESEND_API_KEY=<your Resend API key>
-RESEND_FROM=Structonix <info@structonixsistem.com>
+RESEND_FROM="Structonix <info@structonixsistem.com>"
 NEXT_PUBLIC_RECAPTCHA_SITE_KEY=<reCAPTCHA v3 site key>
 RECAPTCHA_SECRET_KEY=<reCAPTCHA v3 secret key>
 ```
@@ -28,7 +28,7 @@ See `.env.example` for descriptions.
 - [ ] Create account at [resend.com](https://resend.com)
 - [ ] Add and verify domain `structonixsistem.com` (DNS records)
 - [ ] Create API key → set `RESEND_API_KEY`
-- [ ] Set `RESEND_FROM` to verified address (e.g. `info@structonixsistem.com`)
+- [ ] Set `RESEND_FROM` to verified address (e.g. `"Structonix <info@structonixsistem.com>"`)
 - [ ] Send test email via contact form after deploy
 
 ## 4. Google reCAPTCHA v3
