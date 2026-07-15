@@ -1,7 +1,10 @@
 export interface TeamMember {
   name: string;
-  position: string;
   image: string;
+  /** Legacy Spanish-only label kept for members not yet migrated to i18n. */
+  position?: string;
+  /** Translation key under `about.teamMembers.{positionKey}.position`. */
+  positionKey?: string;
 }
 
 export const teamMembers: TeamMember[] = [
@@ -89,5 +92,10 @@ export const teamMembers: TeamMember[] = [
     name: "Tolkachev Yakiv",
     position: "Albanil de Structonix",
     image: "/team/TolkachevYakivAlbanilStructonix.JPG",
+  },
+  {
+    name: "Oleg Saranchuk",
+    positionKey: "olegSaranchuk",
+    image: "/team/OlegSaranchuk.JPG",
   },
 ];

@@ -18,9 +18,18 @@ export async function TeamCardsSection({ className }: TeamCardsSectionProps) {
       <Container className="space-y-8">
         <SectionHeading title={t("equipo")} />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {teamMembers.map((member) => (
-            <TeamCard key={member.image} member={member} />
-          ))}
+          {teamMembers.map((member) => {
+            const position = member.positionKey
+              ? t(`teamMembers.${member.positionKey}.position`)
+              : (member.position ?? "");
+
+            return (
+              <TeamCard
+                key={member.image}
+                member={{ ...member, position }}
+              />
+            );
+          })}
         </div>
       </Container>
     </AnimatedSection>

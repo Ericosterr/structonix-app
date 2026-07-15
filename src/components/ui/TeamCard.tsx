@@ -13,13 +13,18 @@ type TeamCardProps = {
 };
 
 export function TeamCard({ member, className }: TeamCardProps) {
+  const altText =
+    member.name && member.position
+      ? `${member.name}, ${member.position}`
+      : member.name || "Team member";
+
   return (
     <motion.div {...hoverZoom} className={cn(className)}>
       <Card className="overflow-hidden">
         <div className="relative aspect-[3/4] w-full overflow-hidden">
           <Image
             src={member.image}
-            alt={member.name || "Team member"}
+            alt={altText}
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 33vw"

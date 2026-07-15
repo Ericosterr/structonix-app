@@ -73,7 +73,12 @@
     "gestionAdministrativaText": "En el trabajo de cada proyecto, gracias al sistema Gestión Administrativa, coordinamos la interacción de todos los especialistas, incluidos topógrafos y geodestas profesionales, que garantizan la precisión de los datos iniciales y la correcta ubicación del proyecto en el terreno.\n\nLas soluciones de ingeniería se desarrollan teniendo en cuenta todos los matices técnicos, y cada etapa de la construcción va acompañada de una estricta supervisión técnica.",
     "controlDeCalidadText": "Prestamos especial atención al control de calidad: desde la verificación de la documentación del proyecto hasta la selección y las pruebas de los materiales de construcción.\n\nLos procesos internos de control técnico nos permiten minimizar los riesgos, eliminar los errores y garantizar un alto nivel de fiabilidad y durabilidad de las instalaciones.",
     "arquitecturaEInnovacionText": "Creamos villas y propiedades inmobiliarias modernas, combinando la estética arquitectónica, las tecnologías innovadoras y las soluciones energéticamente eficientes.\n\nCada proyecto es un concepto único, pensado hasta el más mínimo detalle.",
-    "structonixSistemGlobalText": "Structonix Sistem Global SL es un equipo que asume toda la responsabilidad del resultado, garantizando una construcción llave en mano, desde la idea hasta la finalización perfecta."
+    "structonixSistemGlobalText": "Structonix Sistem Global SL es un equipo que asume toda la responsabilidad del resultado, garantizando una construcción llave en mano, desde la idea hasta la finalización perfecta.",
+    "teamMembers": {
+      "olegSaranchuk": {
+        "position": "Capataz de Acabados"
+      }
+    }
   },
   "services": {
     "heroDescription": {

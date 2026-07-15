@@ -73,7 +73,12 @@
     "gestionAdministrativaText": "In every project, thanks to our Administrative Management system, we coordinate the interaction of all specialists, including professional surveyors and geodesists, who ensure the accuracy of initial data and the correct positioning of the project on site.\n\nEngineering solutions are developed taking into account all technical nuances, and each stage of construction is accompanied by strict technical supervision.",
     "controlDeCalidadText": "We pay special attention to quality control: from verifying project documentation to selecting and testing construction materials.\n\nInternal technical control processes allow us to minimise risks, eliminate errors and guarantee a high level of reliability and durability of the installations.",
     "arquitecturaEInnovacionText": "We create modern villas and residential properties, combining architectural aesthetics, innovative technologies and energy-efficient solutions.\n\nEach project is a unique concept, thought through down to the smallest detail.",
-    "structonixSistemGlobalText": "Structonix Sistem Global SL is a team that assumes full responsibility for the result, guaranteeing a turnkey construction from idea to perfect completion."
+    "structonixSistemGlobalText": "Structonix Sistem Global SL is a team that assumes full responsibility for the result, guaranteeing a turnkey construction from idea to perfect completion.",
+    "teamMembers": {
+      "olegSaranchuk": {
+        "position": "Finishing Works Foreman"
+      }
+    }
   },
   "services": {
     "heroDescription": {
