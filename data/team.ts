@@ -10,92 +10,92 @@ export interface TeamMember {
 export const teamMembers: TeamMember[] = [
   {
     name: "Oleg Nazarov",
-    position: "CEO de Structonix",
+    positionKey: "olegNazarov",
     image: "/team/OlegFounderStructonix.jpg",
   },
   {
     name: "Dmitri Volkov",
-    position: "Jefe de obra Structonix",
+    positionKey: "dmitriVolkov",
     image: "/team/DmitriyStructonix_11.jpg",
   },
   {
     name: "Viktoria Bolshakova",
-    position: "Coordinacion y seguridad Structonix",
+    positionKey: "viktoriaBolshakova",
     image: "/team/ViktoriaStructonix.jpg",
   },
   {
     name: "Vasyl Matsur",
-    position: "Jefe de obra Structonix",
+    positionKey: "vasylMatsur",
     image: "/team/VasylMatsurStructonix.jpeg",
-  },
-  {
-    name: "Denis Yelnikov",
-    position: "Ingeniero, energias renovables",
-    image: "/team/DenisYelnikov.webp",
-  },
-  {
-    name: "Viktor Osinskiy",
-    position: "Encargado Structonix",
-    image: "/team/ViktorOsinskiy.JPG",
-  },
-  {
-    name: "Ruslan Horbachev",
-    position: "Encargado Structonix",
-    image: "/team/RuslanHorbachev.jpg",
-  },
-  {
-    name: "Smuk Volodimir",
-    position: "Maquinista Structonix",
-    image: "/team/VolodimirSmukStructonix.jpg",
-  },
-  {
-    name: "Antonio Vicente Barona",
-    position: "Arquitecto Structonix",
-    image: "/team/AntonioVicenteBarona.jpg",
-  },
-  {
-    name: "Irene Castro Tamarit",
-    position: "Tecnico en arquitectura Structonix",
-    image: "/team/IreneCastroTamarit.jpeg",
-  },
-  {
-    name: "Alexey Kuznetsov",
-    position: "Director de Technologias de la informacion",
-    image: "/team/StructonixHeadofITjpg.jpg",
-  },
-  {
-    name: "Oleksandr Besarab",
-    position: "Albanil de Structonix",
-    image: "/team/Oleksandr%20Besarab.JPG",
-  },
-  {
-    name: "Volodymir Chuenko",
-    position: "Albanil de Structonix",
-    image: "/team/VolodymirChuenko.jpg",
-  },
-  {
-    name: "Andrei Chervatiuk",
-    position: "Albanil de Structonix",
-    image: "/team/AndreiChervatiukAlbanilStructonix.jpeg",
-  },
-  {
-    name: "Vitalyi Voytenko",
-    position: "Albanil de Structonix",
-    image: "/team/VitalyiVoytenkoalbanilStructonix.jpg",
-  },
-  {
-    name: "Oleksander Dudchenko",
-    position: "Albanil de Structonix",
-    image: "/team/OleksanderDudchenkoAlbanilStructonix.JPG",
-  },
-  {
-    name: "Tolkachev Yakiv",
-    position: "Albanil de Structonix",
-    image: "/team/TolkachevYakivAlbanilStructonix.JPG",
   },
   {
     name: "Oleg Saranchuk",
     positionKey: "olegSaranchuk",
     image: "/team/OlegSaranchuk.JPG",
+  },
+  {
+    name: "Denis Yelnikov",
+    positionKey: "denisYelnikov",
+    image: "/team/DenisYelnikov.webp",
+  },
+  {
+    name: "Viktor Osinskiy",
+    positionKey: "viktorOsinskiy",
+    image: "/team/ViktorOsinskiy.JPG",
+  },
+  {
+    name: "Ruslan Horbachev",
+    positionKey: "ruslanHorbachev",
+    image: "/team/RuslanHorbachev.jpg",
+  },
+  {
+    name: "Smuk Volodimir",
+    positionKey: "smukVolodimir",
+    image: "/team/VolodimirSmukStructonix.jpg",
+  },
+  {
+    name: "Antonio Vicente Barona",
+    positionKey: "antonioVicenteBarona",
+    image: "/team/AntonioVicenteBarona.jpg",
+  },
+  {
+    name: "Irene Castro Tamarit",
+    positionKey: "ireneCastroTamarit",
+    image: "/team/IreneCastroTamarit.jpeg",
+  },
+  {
+    name: "Alexey Kuznetsov",
+    positionKey: "alexeyKuznetsov",
+    image: "/team/StructonixHeadofITjpg.jpg",
+  },
+  {
+    name: "Oleksandr Besarab",
+    positionKey: "albanilStructonix",
+    image: "/team/Oleksandr%20Besarab.JPG",
+  },
+  {
+    name: "Volodymir Chuenko",
+    positionKey: "albanilStructonix",
+    image: "/team/VolodymirChuenko.jpg",
+  },
+  {
+    name: "Andrei Chervatiuk",
+    positionKey: "albanilStructonix",
+    image: "/team/AndreiChervatiukAlbanilStructonix.jpeg",
+  },
+  {
+    name: "Vitalyi Voytenko",
+    positionKey: "albanilStructonix",
+    image: "/team/VitalyiVoytenkoalbanilStructonix.jpg",
+  },
+  {
+    name: "Oleksander Dudchenko",
+    positionKey: "albanilStructonix",
+    image: "/team/OleksanderDudchenkoAlbanilStructonix.JPG",
+  },
+  {
+    name: "Tolkachev Yakiv",
+    positionKey: "albanilStructonix",
+    image: "/team/TolkachevYakivAlbanilStructonix.JPG",
   },
 ];

@@ -75,8 +75,44 @@
     "arquitecturaEInnovacionText": "Мы создаём современные виллы и объекты недвижимости, сочетая архитектурную эстетику, инновационные технологии и энергоэффективные решения.\n\nКаждый проект — уникальная концепция, продуманная до мельчайших деталей.",
     "structonixSistemGlobalText": "Structonix Sistem Global SL — команда, которая берёт на себя полную ответственность за результат, гарантируя строительство «под ключ» — от идеи до безупречного завершения.",
     "teamMembers": {
+      "olegNazarov": {
+        "position": "Генеральный директор Structonix"
+      },
+      "dmitriVolkov": {
+        "position": "Начальник участка Structonix"
+      },
+      "viktoriaBolshakova": {
+        "position": "Координация и безопасность Structonix"
+      },
+      "vasylMatsur": {
+        "position": "Начальник участка Structonix"
+      },
       "olegSaranchuk": {
         "position": "Бригадир Отделочных Работ"
+      },
+      "denisYelnikov": {
+        "position": "Инженер, возобновляемая энергетика"
+      },
+      "viktorOsinskiy": {
+        "position": "Прораб Structonix"
+      },
+      "ruslanHorbachev": {
+        "position": "Прораб Structonix"
+      },
+      "smukVolodimir": {
+        "position": "Машинист Structonix"
+      },
+      "antonioVicenteBarona": {
+        "position": "Архитектор Structonix"
+      },
+      "ireneCastroTamarit": {
+        "position": "Техник по архитектуре Structonix"
+      },
+      "alexeyKuznetsov": {
+        "position": "Директор информационных технологий"
+      },
+      "albanilStructonix": {
+        "position": "Каменщик Structonix"
       }
     }
   },

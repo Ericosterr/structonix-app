@@ -75,8 +75,44 @@
     "arquitecturaEInnovacionText": "We create modern villas and residential properties, combining architectural aesthetics, innovative technologies and energy-efficient solutions.\n\nEach project is a unique concept, thought through down to the smallest detail.",
     "structonixSistemGlobalText": "Structonix Sistem Global SL is a team that assumes full responsibility for the result, guaranteeing a turnkey construction from idea to perfect completion.",
     "teamMembers": {
+      "olegNazarov": {
+        "position": "CEO of Structonix"
+      },
+      "dmitriVolkov": {
+        "position": "Site Manager at Structonix"
+      },
+      "viktoriaBolshakova": {
+        "position": "Coordination and Safety at Structonix"
+      },
+      "vasylMatsur": {
+        "position": "Site Manager at Structonix"
+      },
       "olegSaranchuk": {
         "position": "Finishing Works Foreman"
+      },
+      "denisYelnikov": {
+        "position": "Renewable Energy Engineer"
+      },
+      "viktorOsinskiy": {
+        "position": "Foreman at Structonix"
+      },
+      "ruslanHorbachev": {
+        "position": "Foreman at Structonix"
+      },
+      "smukVolodimir": {
+        "position": "Machine Operator at Structonix"
+      },
+      "antonioVicenteBarona": {
+        "position": "Architect at Structonix"
+      },
+      "ireneCastroTamarit": {
+        "position": "Architecture Technician at Structonix"
+      },
+      "alexeyKuznetsov": {
+        "position": "Director of Information Technology"
+      },
+      "albanilStructonix": {
+        "position": "Mason at Structonix"
       }
     }
   },
