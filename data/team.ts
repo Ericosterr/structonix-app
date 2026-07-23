@@ -93,9 +93,4 @@ export const teamMembers: TeamMember[] = [
     positionKey: "albanilStructonix",
     image: "/team/OleksanderDudchenkoAlbanilStructonix.JPG",
   },
-  {
-    name: "Tolkachev Yakiv",
-    positionKey: "albanilStructonix",
-    image: "/team/TolkachevYakivAlbanilStructonix.JPG",
-  },
 ];
