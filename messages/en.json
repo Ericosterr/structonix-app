@@ -93,11 +93,8 @@
       "denisYelnikov": {
         "position": "Renewable Energy Engineer"
       },
-      "viktorOsinskiy": {
-        "position": "Foreman at Structonix"
-      },
-      "ruslanHorbachev": {
-        "position": "Foreman at Structonix"
+      "encargado": {
+        "position": "Site Supervisor"
       },
       "smukVolodimir": {
         "position": "Machine Operator at Structonix"
@@ -113,6 +110,9 @@
       },
       "albanilStructonix": {
         "position": "Mason at Structonix"
+      },
+      "albanilOficialPrimera": {
+        "position": "Senior Bricklayer"
       }
     }
   },

@@ -44,19 +44,6 @@ export function BlogCard({
       </Link>
 
       <div className="flex flex-1 flex-col gap-3 p-5 md:p-6">
-        {post.tags.length > 0 ? (
-          <div className="flex flex-wrap gap-2">
-            {post.tags.slice(0, 3).map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        ) : null}
-
         <div className="space-y-2">
           <Link href={`/blog/${post.slug}`}>
             <h2 className="text-xl font-semibold tracking-tight transition-colors group-hover:text-primary">

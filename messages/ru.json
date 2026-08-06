@@ -93,11 +93,8 @@
       "denisYelnikov": {
         "position": "Инженер, возобновляемая энергетика"
       },
-      "viktorOsinskiy": {
-        "position": "Прораб Structonix"
-      },
-      "ruslanHorbachev": {
-        "position": "Прораб Structonix"
+      "encargado": {
+        "position": "Прораб"
       },
       "smukVolodimir": {
         "position": "Машинист Structonix"
@@ -113,6 +110,9 @@
       },
       "albanilStructonix": {
         "position": "Каменщик Structonix"
+      },
+      "albanilOficialPrimera": {
+        "position": "Каменщик 1-го разряда"
       }
     }
   },

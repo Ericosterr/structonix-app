@@ -7,7 +7,12 @@ export interface TeamMember {
   positionKey?: string;
 }
 
+/**
+ * Display order: management / specialists → Encargado → Albañil.
+ * Order in this array is the source of truth for the About Us team grid.
+ */
 export const teamMembers: TeamMember[] = [
+  // Management & specialists
   {
     name: "Oleg Nazarov",
     positionKey: "olegNazarov",
@@ -39,16 +44,6 @@ export const teamMembers: TeamMember[] = [
     image: "/team/DenisYelnikov.webp",
   },
   {
-    name: "Viktor Osinskiy",
-    positionKey: "viktorOsinskiy",
-    image: "/team/ViktorOsinskiy.JPG",
-  },
-  {
-    name: "Ruslan Horbachev",
-    positionKey: "ruslanHorbachev",
-    image: "/team/RuslanHorbachev.jpg",
-  },
-  {
     name: "Smuk Volodimir",
     positionKey: "smukVolodimir",
     image: "/team/VolodimirSmukStructonix.jpg",
@@ -68,11 +63,28 @@ export const teamMembers: TeamMember[] = [
     positionKey: "alexeyKuznetsov",
     image: "/team/StructonixHeadofITjpg.jpg",
   },
+  // Encargado
   {
-    name: "Oleksandr Besarab",
-    positionKey: "albanilStructonix",
-    image: "/team/Oleksandr%20Besarab.JPG",
+    name: "Viktor Osinskiy",
+    positionKey: "encargado",
+    image: "/team/ViktorOsinskiy.JPG",
   },
+  {
+    name: "Ruslan Horbachev",
+    positionKey: "encargado",
+    image: "/team/RuslanHorbachev.jpg",
+  },
+  {
+    name: "Yuriy Zabrodskiy",
+    positionKey: "encargado",
+    image: "/team/Yuriy_ZabrodskiyEncargadoStructonix.JPEG",
+  },
+  {
+    name: "Ivan Mishavoda",
+    positionKey: "encargado",
+    image: "/team/Ivan_MishavodaEncargadoStructonix.PNG",
+  },
+  // Albañil
   {
     name: "Volodymir Chuenko",
     positionKey: "albanilStructonix",
@@ -89,8 +101,14 @@ export const teamMembers: TeamMember[] = [
     image: "/team/VitalyiVoytenkoalbanilStructonix.jpg",
   },
   {
-    name: "Oleksander Dudchenko",
-    positionKey: "albanilStructonix",
-    image: "/team/OleksanderDudchenkoAlbanilStructonix.JPG",
+    name: "Anatoliy Kuzmich",
+    positionKey: "albanilOficialPrimera",
+    // Filename contains a literal ")" — encoded for URL safety
+    image: "/team/Anatoliy_Kuzmich%29AlbanilStructonix.PNG",
+  },
+  {
+    name: "Ruslan Asadov",
+    positionKey: "albanilOficialPrimera",
+    image: "/team/Ruslan_AsadovAlbanilStructonix.PNG",
   },
 ];
