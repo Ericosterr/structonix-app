@@ -15,7 +15,10 @@ import { NotionContent } from "@/components/blog/NotionContent";
 import { Container } from "@/components/ui/Container";
 import { Link } from "@/i18n/navigation";
 
-export const revalidate = 3600;
+/** Keep in sync with `blogConfig.revalidate` (~5 minutes). Must be a literal for Next.js. */
+export const revalidate = 300;
+/** Allow ISR for new Notion posts that were not known at build time. */
+export const dynamicParams = true;
 
 type BlogPostPageProps = {
   params: Promise<{ locale: Locale; slug: string }>;

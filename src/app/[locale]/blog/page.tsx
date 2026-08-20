@@ -7,7 +7,8 @@ import { Hero } from "@/components/sections/Hero";
 import { BlogList } from "@/components/blog/BlogList";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-export const revalidate = 3600;
+/** Keep in sync with `blogConfig.revalidate` (~5 minutes). Must be a literal for Next.js. */
+export const revalidate = 300;
 
 type BlogPageProps = {
   params: Promise<{ locale: Locale }>;

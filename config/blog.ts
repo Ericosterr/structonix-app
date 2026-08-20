@@ -1,6 +1,6 @@
 export const blogConfig = {
-  /** ISR revalidation interval (seconds). */
-  revalidate: 3600,
+  /** ISR revalidation interval (seconds). ~5 minutes keeps Notion edits fresh. */
+  revalidate: 300,
   /** Default posts per page on the blog index. */
   pageSize: 12,
   /** Maximum featured posts on the index hero. */

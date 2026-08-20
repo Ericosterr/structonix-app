@@ -4,6 +4,67 @@ import type { NotionBlock } from "@/types/blog";
 
 const WORDS_PER_MINUTE = 200;
 
+const CYRILLIC_TO_LATIN: Record<string, string> = {
+  а: "a",
+  б: "b",
+  в: "v",
+  г: "g",
+  д: "d",
+  е: "e",
+  ё: "e",
+  ж: "zh",
+  з: "z",
+  и: "i",
+  й: "y",
+  к: "k",
+  л: "l",
+  м: "m",
+  н: "n",
+  о: "o",
+  п: "p",
+  р: "r",
+  с: "s",
+  т: "t",
+  у: "u",
+  ф: "f",
+  х: "h",
+  ц: "ts",
+  ч: "ch",
+  ш: "sh",
+  щ: "sch",
+  ъ: "",
+  ы: "y",
+  ь: "",
+  э: "e",
+  ю: "yu",
+  я: "ya",
+};
+
+/**
+ * Builds a URL-safe slug from a title when Notion `slug` is empty.
+ * Prefer filling `slug` in Notion for stable permalinks.
+ */
+export function slugifyBlogTitle(title: string): string {
+  const lowered = title.trim().toLowerCase();
+  let transliterated = "";
+
+  for (const char of lowered) {
+    if (CYRILLIC_TO_LATIN[char] !== undefined) {
+      transliterated += CYRILLIC_TO_LATIN[char];
+      continue;
+    }
+    transliterated += char;
+  }
+
+  return transliterated
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .replace(/-{2,}/g, "-")
+    .slice(0, 80);
+}
+
 export function estimateReadingTimeMinutes(blocks: NotionBlock[]): number {
   const words = countWordsInBlocks(blocks);
   return Math.max(1, Math.ceil(words / WORDS_PER_MINUTE));

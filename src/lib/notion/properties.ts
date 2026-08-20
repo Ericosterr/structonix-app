@@ -5,7 +5,7 @@ import type {
 } from "@notionhq/client/build/src/api-endpoints";
 import { blogConfig } from "@config/blog";
 import type { Locale } from "@/i18n/routing";
-import { isValidBlogLocale } from "@/lib/blog-utils";
+import { isValidBlogLocale, slugifyBlogTitle } from "@/lib/blog-utils";
 import type { BlogPostSummary } from "@/types/blog";
 
 type NotionPage = PageObjectResponse | PartialPageObjectResponse;
@@ -40,6 +40,45 @@ export function getPageSlug(page: NotionPage): string {
   if (slugProp?.type === "title") {
     return richTextToPlain(slugProp.title).trim();
   }
+  if (slugProp?.type === "url" && slugProp.url) {
+    return slugProp.url.trim();
+  }
+  if (slugProp?.type === "formula" && slugProp.formula.type === "string") {
+    return (slugProp.formula.string ?? "").trim();
+  }
+  return "";
+}
+
+/**
+ * Resolves a usable slug: Notion property first, then title-based fallback.
+ * Empty Notion slugs previously caused published posts to disappear silently.
+ */
+export function resolvePageSlug(page: NotionPage): string {
+  const explicit = getPageSlug(page);
+  if (explicit) {
+    return explicit;
+  }
+
+  const fromTitle = slugifyBlogTitle(getPageTitle(page));
+  if (fromTitle) {
+    if (process.env.NODE_ENV === "development") {
+      console.warn(
+        `[notion] Missing slug for page ${"id" in page ? page.id : "?"}; derived "${fromTitle}" from title.`,
+      );
+    }
+    return fromTitle;
+  }
+
+  if ("id" in page) {
+    const fallback = `post-${page.id.replace(/-/g, "").slice(0, 12)}`;
+    if (process.env.NODE_ENV === "development") {
+      console.warn(
+        `[notion] Missing slug/title for page ${page.id}; using fallback "${fallback}".`,
+      );
+    }
+    return fallback;
+  }
+
   return "";
 }
 
@@ -123,7 +162,19 @@ export function getPagePublishedDate(page: NotionPage): string {
 export function getPageLocale(page: NotionPage): Locale | null {
   const localeProp = getProperty(page, blogConfig.properties.locale);
   if (localeProp?.type === "select" && localeProp.select?.name) {
-    const value = localeProp.select.name.toLowerCase();
+    const value = localeProp.select.name.trim().toLowerCase();
+    if (isValidBlogLocale(value)) {
+      return value;
+    }
+  }
+  if (localeProp?.type === "status" && localeProp.status?.name) {
+    const value = localeProp.status.name.trim().toLowerCase();
+    if (isValidBlogLocale(value)) {
+      return value;
+    }
+  }
+  if (localeProp?.type === "rich_text") {
+    const value = richTextToPlain(localeProp.rich_text).trim().toLowerCase();
     if (isValidBlogLocale(value)) {
       return value;
     }
@@ -174,10 +225,28 @@ export function mapPageToSummary(
     return null;
   }
 
-  const locale = getPageLocale(page);
-  const slug = getPageSlug(page);
+  if (!isPagePublished(page)) {
+    return null;
+  }
 
-  if (!locale || !slug || !isPagePublished(page)) {
+  const locale = getPageLocale(page);
+  const slug = resolvePageSlug(page);
+
+  if (!locale) {
+    if (process.env.NODE_ENV === "development") {
+      console.warn(
+        `[notion] Skipping published page ${page.id} ("${getPageTitle(page)}") — invalid/missing locale.`,
+      );
+    }
+    return null;
+  }
+
+  if (!slug) {
+    if (process.env.NODE_ENV === "development") {
+      console.warn(
+        `[notion] Skipping published page ${page.id} ("${getPageTitle(page)}") — could not resolve slug.`,
+      );
+    }
     return null;
   }
 

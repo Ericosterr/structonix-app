@@ -64,22 +64,24 @@ export async function BlogList({ locale, page = 1, labels }: BlogListProps) {
         </section>
       ) : null}
 
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-          {labels.allPostsTitle}
-        </h2>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {(showFeatured ? gridPosts : posts).map((post) => (
-            <BlogCard
-              key={post.id}
-              post={post}
-              locale={locale}
-              readMoreLabel={labels.readMore}
-              minuteLabel={labels.minuteRead}
-            />
-          ))}
-        </div>
-      </section>
+      {(showFeatured ? gridPosts : posts).length > 0 ? (
+        <section className="space-y-6">
+          <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
+            {labels.allPostsTitle}
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {(showFeatured ? gridPosts : posts).map((post) => (
+              <BlogCard
+                key={post.id}
+                post={post}
+                locale={locale}
+                readMoreLabel={labels.readMore}
+                minuteLabel={labels.minuteRead}
+              />
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {totalPages > 1 ? (
         <nav

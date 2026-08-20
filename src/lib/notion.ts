@@ -10,9 +10,9 @@ import { estimateReadingTimeFromText } from "@/lib/blog-utils";
 import { blocksToPlainText, fetchPageBlocks } from "@/lib/notion/blocks";
 import {
   getPageLocale,
-  getPageSlug,
   isPagePublished,
   mapPageToSummary,
+  resolvePageSlug,
 } from "@/lib/notion/properties";
 import type {
   BlogPost,
@@ -264,8 +264,53 @@ export async function getPostTranslationAlternates(
   }
 }
 
+async function findPublishedPageBySlug(
+  slug: string,
+  locale: Locale,
+): Promise<NotionPage | null> {
+  const notion = getNotionClient();
+
+  // Fast path: exact match on the Notion slug property.
+  const byProperty = await notion.databases.query({
+    database_id: getDatabaseId(),
+    filter: {
+      and: [
+        {
+          property: blogConfig.properties.published,
+          checkbox: { equals: true },
+        },
+        {
+          property: blogConfig.properties.locale,
+          select: { equals: locale },
+        },
+        {
+          property: blogConfig.properties.slug,
+          rich_text: { equals: slug },
+        },
+      ],
+    },
+    page_size: 1,
+  });
+
+  const propertyMatch = byProperty.results[0];
+  if (propertyMatch?.object === "page") {
+    return propertyMatch;
+  }
+
+  // Fallback: slug may be derived from title when Notion `slug` is empty.
+  const pages = await queryAllPublishedPages(locale);
+  for (const page of pages) {
+    if (resolvePageSlug(page) === slug && getPageLocale(page) === locale) {
+      return page;
+    }
+  }
+
+  return null;
+}
+
 /**
  * Returns a single published post with Notion block content.
+ * Resolves both explicit Notion slugs and title-derived fallbacks.
  */
 export async function getPostBySlug(
   slug: string,
@@ -277,38 +322,13 @@ export async function getPostBySlug(
 
   try {
     const notion = getNotionClient();
-    const response = await notion.databases.query({
-      database_id: getDatabaseId(),
-      filter: {
-        and: [
-          {
-            property: blogConfig.properties.published,
-            checkbox: { equals: true },
-          },
-          {
-            property: blogConfig.properties.locale,
-            select: { equals: locale },
-          },
-          {
-            property: blogConfig.properties.slug,
-            rich_text: { equals: slug },
-          },
-        ],
-      },
-      page_size: 1,
-    });
+    const page = await findPublishedPageBySlug(slug, locale);
 
-    const result = response.results[0];
-    if (!result || result.object !== "page" || !isPagePublished(result)) {
+    if (!page || !("id" in page) || !isPagePublished(page)) {
       return null;
     }
 
-    const page = result;
-
-    const pageLocale = getPageLocale(page);
-    const pageSlug = getPageSlug(page);
-
-    if (pageLocale !== locale || pageSlug !== slug) {
+    if (getPageLocale(page) !== locale || resolvePageSlug(page) !== slug) {
       return null;
     }
 
