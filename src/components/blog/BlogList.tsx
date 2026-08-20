@@ -1,5 +1,5 @@
 import { blogConfig } from "@config/blog";
-import { getAllPosts, getFeaturedPosts } from "@/lib/notion";
+import { getAllPosts } from "@/lib/notion";
 import type { Locale } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 import { BlogCard } from "@/components/blog/BlogCard";
@@ -11,8 +11,7 @@ type BlogListProps = {
   locale: Locale;
   page?: number;
   labels: {
-    featuredTitle: string;
-    allPostsTitle: string;
+    sectionTitle: string;
     readMore: string;
     minuteRead: string;
     empty: string;
@@ -22,20 +21,14 @@ type BlogListProps = {
 };
 
 export async function BlogList({ locale, page = 1, labels }: BlogListProps) {
-  const [{ posts, totalPages, page: currentPage }, featuredPosts] = await Promise.all([
-    getAllPosts({ locale, page, pageSize: blogConfig.pageSize }),
-    getFeaturedPosts(locale),
-  ]);
-
-  const showFeatured = currentPage === 1 && featuredPosts.length > 0;
-  const featuredIds = new Set(featuredPosts.map((post) => post.id));
-  const gridPosts =
-    currentPage === 1
-      ? posts.filter((post) => !featuredIds.has(post.id) || featuredPosts.length === 0)
-      : posts;
+  const { posts, totalPages, page: currentPage } = await getAllPosts({
+    locale,
+    page,
+    pageSize: blogConfig.pageSize,
+  });
   const t = await getTranslations("blog");
 
-  if (posts.length === 0 && !showFeatured) {
+  if (posts.length === 0) {
     return (
       <Container className="py-16">
         <p className="text-center text-muted-foreground">{labels.empty}</p>
@@ -45,43 +38,22 @@ export async function BlogList({ locale, page = 1, labels }: BlogListProps) {
 
   return (
     <Container className="space-y-12 py-12 md:py-16">
-      {showFeatured ? (
-        <section className="space-y-6">
-          <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-            {labels.featuredTitle}
-          </h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {featuredPosts.map((post) => (
-              <BlogCard
-                key={post.id}
-                post={post}
-                locale={locale}
-                readMoreLabel={labels.readMore}
-                minuteLabel={labels.minuteRead}
-              />
-            ))}
-          </div>
-        </section>
-      ) : null}
-
-      {(showFeatured ? gridPosts : posts).length > 0 ? (
-        <section className="space-y-6">
-          <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-            {labels.allPostsTitle}
-          </h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {(showFeatured ? gridPosts : posts).map((post) => (
-              <BlogCard
-                key={post.id}
-                post={post}
-                locale={locale}
-                readMoreLabel={labels.readMore}
-                minuteLabel={labels.minuteRead}
-              />
-            ))}
-          </div>
-        </section>
-      ) : null}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
+          {labels.sectionTitle}
+        </h2>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <BlogCard
+              key={post.id}
+              post={post}
+              locale={locale}
+              readMoreLabel={labels.readMore}
+              minuteLabel={labels.minuteRead}
+            />
+          ))}
+        </div>
+      </section>
 
       {totalPages > 1 ? (
         <nav

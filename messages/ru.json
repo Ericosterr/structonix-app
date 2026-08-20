@@ -305,8 +305,7 @@
   },
   "blog": {
     "subtitle": "Новости, проекты и экспертные материалы Structonix.",
-    "featuredTitle": "Избранное",
-    "allPostsTitle": "Все статьи",
+    "constructionArticles": "Статьи про строительство",
     "readMore": "Читать далее",
     "minuteRead": "мин чтения",
     "empty": "Статьи скоро появятся здесь.",

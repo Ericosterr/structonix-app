@@ -49,8 +49,7 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
         locale={locale}
         page={page}
         labels={{
-          featuredTitle: t("featuredTitle"),
-          allPostsTitle: t("allPostsTitle"),
+          sectionTitle: t("constructionArticles"),
           readMore: t("readMore"),
           minuteRead: t("minuteRead"),
           empty: t("empty"),

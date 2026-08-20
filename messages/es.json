@@ -305,8 +305,7 @@
   },
   "blog": {
     "subtitle": "Noticias, proyectos y conocimiento de Structonix.",
-    "featuredTitle": "Destacados",
-    "allPostsTitle": "Todos los artículos",
+    "constructionArticles": "Artículos sobre construcción",
     "readMore": "Leer más",
     "minuteRead": "min de lectura",
     "empty": "Próximamente publicaremos artículos aquí.",
