@@ -1,13 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { Briefcase, FileText, TrendingUp, HardHat } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { company } from "@config/company";
-import {
-  buildCareersWhatsAppUrl,
-  careerBenefitKeys,
-  careerJobKeys,
-} from "@data/careers";
+import { careerBenefitKeys, careerJobKeys, type CareerJobKey } from "@data/careers";
+import { CareerJobModal } from "@/components/careers/CareerJobModal";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -22,6 +20,7 @@ const benefitIcons = {
 
 export function CareersPageContent() {
   const t = useTranslations("careers");
+  const [activeJob, setActiveJob] = useState<CareerJobKey | null>(null);
 
   return (
     <>
@@ -31,10 +30,6 @@ export function CareersPageContent() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {careerJobKeys.map((key) => {
               const title = t(`jobs.${key}.title`);
-              const whatsappUrl = buildCareersWhatsAppUrl(
-                company.careersWhatsappPhone,
-                t("whatsappMessage", { title }),
-              );
 
               return (
                 <article
@@ -45,14 +40,12 @@ export function CareersPageContent() {
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {t(`jobs.${key}.description`)}
                   </p>
-                  <Button asChild className="mt-5 w-full sm:w-auto">
-                    <a
-                      href={whatsappUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {t("apply")}
-                    </a>
+                  <Button
+                    type="button"
+                    className="mt-5 w-full sm:w-auto"
+                    onClick={() => setActiveJob(key)}
+                  >
+                    {t("viewDetails")}
                   </Button>
                 </article>
               );
@@ -110,6 +103,17 @@ export function CareersPageContent() {
           </div>
         </Container>
       </AnimatedSection>
+
+      <CareerJobModal
+        key={activeJob ?? "closed"}
+        jobKey={activeJob}
+        open={activeJob !== null}
+        onOpenChange={(open) => {
+          if (!open) {
+            setActiveJob(null);
+          }
+        }}
+      />
     </>
   );
 }
