@@ -40,7 +40,14 @@ export function ContactSection({ backgroundImage, className }: ContactSectionPro
       ) : (
         <div className="absolute inset-0 bg-muted" />
       )}
-      <div className="absolute inset-0 bg-primary/75" />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(rgba(2, 33, 82, 0.72), rgba(2, 33, 82, 0.78))",
+        }}
+        aria-hidden
+      />
       <Container className="relative z-10">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="space-y-8 text-white">

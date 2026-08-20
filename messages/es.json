@@ -25,6 +25,7 @@
   },
   "nav": {
     "about": "Quienes Somos",
+    "careers": "Trabaja con nosotros",
     "investors": "Para Inversores",
     "calculator": "Calculador",
     "estructura": "Estructura",
@@ -59,6 +60,73 @@
   "home": {
     "slogan": "DAMOS FORMA A LOS ESPACIOS MEDIANTE LA INGENIERÍA, LA PRECISIÓN Y LA VISIÓN, CREANDO ESTRUCTURAS DISEÑADAS PARA EL FUTURO.",
     "servicesTitle": "Servicios"
+  },
+  "careers": {
+    "heroTitle": "Construye tu carrera con Structonix",
+    "heroDescription": "Buscamos profesionales de la construcción que quieran crecer con una empresa internacional de ingeniería y obra en la Costa del Sol.",
+    "vacanciesTitle": "Vacantes actuales",
+    "apply": "Postularse",
+    "whatsappMessage": "Hola! Me interesa la vacante {title} en Structonix.",
+    "benefitsTitle": "Condiciones de trabajo",
+    "benefits": {
+      "salary": {
+        "title": "Salario competitivo",
+        "text": "Remuneración competitiva, pagos puntuales y posibilidad de crecimiento profesional y salarial."
+      },
+      "contract": {
+        "title": "Contrato oficial",
+        "text": "Ofrecemos contrato de trabajo oficial en el sector de la construcción."
+      },
+      "growth": {
+        "title": "Crecimiento profesional",
+        "text": "Oportunidad de desarrollar tu carrera en proyectos reales y de alta exigencia técnica."
+      },
+      "projects": {
+        "title": "Proyectos reales",
+        "text": "Trabaja en obras de villas y proyectos residenciales de Structonix en la Costa del Sol."
+      }
+    },
+    "fallbackTitle": "¿No encontraste la vacante adecuada?",
+    "fallbackText": "Escríbenos por WhatsApp: puede que tengamos una posición adecuada para ti.",
+    "fallbackCta": "Contactar por WhatsApp",
+    "jobs": {
+      "excavatorOperator": {
+        "title": "Operador de excavadora / pala cargadora",
+        "description": "Trabajo en obras de Structonix. Se valora experiencia con maquinaria correspondiente."
+      },
+      "generalLaborer": {
+        "title": "Peón de obra",
+        "description": "Apoyo en tareas de obra en proyectos de construcción de Structonix."
+      },
+      "bricklayer": {
+        "title": "Albañil",
+        "description": "Ejecución de trabajos de albañilería en obras residenciales y estructurales."
+      },
+      "structureForeman": {
+        "title": "Maestro de estructura",
+        "description": "Coordinación y ejecución de trabajos estructurales en obra."
+      },
+      "finishingForeman": {
+        "title": "Maestro de acabados",
+        "description": "Supervisión y ejecución de acabados de calidad en proyectos residenciales."
+      },
+      "plumber": {
+        "title": "Fontanero",
+        "description": "Instalación y mantenimiento de sistemas de fontanería en obra."
+      },
+      "electrician": {
+        "title": "Electricista",
+        "description": "Instalaciones eléctricas en proyectos de construcción residencial."
+      },
+      "painterPlasterer": {
+        "title": "Pintor-yesero",
+        "description": "Trabajos de pintura y yeso en acabados de interiores y exteriores."
+      },
+      "tiler": {
+        "title": "Solador / Alicatador",
+        "description": "Colocación de revestimientos y solados en proyectos de Structonix."
+      }
+    }
   },
   "about": {
     "sobreStructonix": "Sobre Structonix",
@@ -607,6 +675,10 @@
     "about": {
       "title": "Quienes Somos | Structonix",
       "description": "Conozca Structonix Sistem Global S.L."
+    },
+    "careers": {
+      "title": "Trabaja con nosotros | Structonix",
+      "description": "Únete al equipo de Structonix. Vacantes en construcción, estructura, acabados y oficios en la Costa del Sol."
     },
     "investors": {
       "title": "Para Inversores | Structonix",

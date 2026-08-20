@@ -55,7 +55,16 @@ export function Hero({
           {/* TODO: missing hero background image */}
         </div>
       )}
-      {overlay ? <div className="absolute inset-0 bg-primary/55" /> : null}
+      {overlay ? (
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(rgba(2, 33, 82, 0.48), rgba(2, 33, 82, 0.52))",
+          }}
+          aria-hidden
+        />
+      ) : null}
       <Container
         className={cn(
           "relative z-10 flex flex-col justify-center text-primary-foreground",

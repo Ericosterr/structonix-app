@@ -1,6 +1,8 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { site } from "@config/site";
 import { getLandingPath } from "@data/landings";
+import { zoneSectionImages } from "@data/zone-section-images";
 import { relatedZones, zoneBackgrounds, zoneGeo, type ZoneSlug } from "@data/zones";
 import type { Locale } from "@/i18n/routing";
 import { getLocalizedUrl } from "@/lib/locale-path";
@@ -18,6 +20,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { cn } from "@/lib/utils";
 
 type ZonePageContentProps = {
   zona: ZoneSlug;
@@ -86,12 +89,37 @@ export async function ZonePageContent({ zona, locale }: ZonePageContentProps) {
       : [];
 
   const sections = [
-    { key: "market", title: t("common.marketTitle"), body: t(`${zona}.market`) },
-    { key: "architecture", title: t("common.architectureTitle"), body: t(`${zona}.architecture`) },
-    { key: "engineering", title: t("common.engineeringTitle"), body: t(`${zona}.engineering`) },
-    { key: "projectManagement", title: t("common.pmTitle"), body: t(`${zona}.projectManagement`) },
-    { key: "investment", title: t("common.investmentTitle"), body: t(`${zona}.investment`) },
-  ];
+    {
+      key: "market",
+      title: t("common.marketTitle"),
+      body: t(`${zona}.market`),
+      image: zoneSectionImages.market,
+    },
+    {
+      key: "architecture",
+      title: t("common.architectureTitle"),
+      body: t(`${zona}.architecture`),
+      image: zoneSectionImages.architecture,
+    },
+    {
+      key: "engineering",
+      title: t("common.engineeringTitle"),
+      body: t(`${zona}.engineering`),
+      image: zoneSectionImages.engineering,
+    },
+    {
+      key: "projectManagement",
+      title: t("common.pmTitle"),
+      body: t(`${zona}.projectManagement`),
+      image: zoneSectionImages.projectManagement,
+    },
+    {
+      key: "investment",
+      title: t("common.investmentTitle"),
+      body: t(`${zona}.investment`),
+      image: zoneSectionImages.investment,
+    },
+  ] as const;
 
   return (
     <>
@@ -142,16 +170,41 @@ export async function ZonePageContent({ zona, locale }: ZonePageContentProps) {
         </Container>
       </AnimatedSection>
 
-      {sections.map((section) => (
-        <AnimatedSection key={section.key} className="border-t border-border py-12 md:py-16">
-          <Container className="max-w-3xl space-y-4">
-            <SectionHeading title={section.title} />
-            <div className="space-y-4 leading-relaxed text-foreground/90">
-              {paragraphs(section.body)}
-            </div>
-          </Container>
-        </AnimatedSection>
-      ))}
+      {sections.map((section, index) => {
+        const imageFirst = index % 2 === 1;
+
+        return (
+          <AnimatedSection
+            key={section.key}
+            className="border-t border-border py-12 md:py-16"
+          >
+            <Container>
+              <div
+                className={cn(
+                  "grid items-center gap-8 lg:grid-cols-2 lg:gap-12",
+                  imageFirst && "lg:[&>*:first-child]:order-2",
+                )}
+              >
+                <div className="space-y-4">
+                  <SectionHeading title={section.title} />
+                  <div className="space-y-4 leading-relaxed text-foreground/90">
+                    {paragraphs(section.body)}
+                  </div>
+                </div>
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[var(--radius-card)] shadow-[var(--shadow-soft)]">
+                  <Image
+                    src={section.image}
+                    alt={section.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+              </div>
+            </Container>
+          </AnimatedSection>
+        );
+      })}
 
       <AnimatedSection className="border-t border-border bg-muted/40 py-14 md:py-20">
         <Container className="space-y-6">

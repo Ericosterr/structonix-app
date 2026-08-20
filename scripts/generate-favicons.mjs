@@ -7,7 +7,7 @@ const ROOT = join(import.meta.dirname, "..");
 const SOURCE = join(ROOT, "public/logo/StructonixLogoWhite.jpg");
 const OUT_DIR = join(ROOT, "public");
 
-const BRAND = { r: 15, g: 1, b: 106, a: 255 };
+const BRAND = { r: 2, g: 33, b: 82, a: 255 };
 const WHITE_THRESHOLD = 48;
 const CONTENT_MARGIN_RATIO = 0.04;
 const ICON_PADDING_RATIO = 0.1;

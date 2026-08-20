@@ -25,6 +25,7 @@
   },
   "nav": {
     "about": "About Us",
+    "careers": "Careers",
     "investors": "For Investors",
     "calculator": "Calculator",
     "estructura": "Structure",
@@ -59,6 +60,73 @@
   "home": {
     "slogan": "WE SHAPE SPACES THROUGH ENGINEERING, PRECISION AND VISION, CREATING STRUCTURES DESIGNED FOR THE FUTURE.",
     "servicesTitle": "Services"
+  },
+  "careers": {
+    "heroTitle": "Build your career with Structonix",
+    "heroDescription": "We are looking for construction professionals ready to grow with an international engineering and building company on the Costa del Sol.",
+    "vacanciesTitle": "Open positions",
+    "apply": "Apply now",
+    "whatsappMessage": "Hello! I am interested in the {title} position at Structonix.",
+    "benefitsTitle": "Working conditions",
+    "benefits": {
+      "salary": {
+        "title": "Competitive salary",
+        "text": "Competitive pay with on-time payments and opportunities for further professional and career growth."
+      },
+      "contract": {
+        "title": "Official employment",
+        "text": "We provide an official employment contract in the construction sector."
+      },
+      "growth": {
+        "title": "Professional growth",
+        "text": "Develop your career on real, high-standard construction projects."
+      },
+      "projects": {
+        "title": "Real projects",
+        "text": "Work on villa and residential builds delivered by Structonix on the Costa del Sol."
+      }
+    },
+    "fallbackTitle": "Didn't find the right role?",
+    "fallbackText": "Message us on WhatsApp — we may have a suitable opening for you.",
+    "fallbackCta": "Contact via WhatsApp",
+    "jobs": {
+      "excavatorOperator": {
+        "title": "Excavator / loader operator",
+        "description": "Work on Structonix construction sites. Experience with relevant machinery is an advantage."
+      },
+      "generalLaborer": {
+        "title": "General labourer",
+        "description": "Support construction tasks on Structonix project sites."
+      },
+      "bricklayer": {
+        "title": "Bricklayer / mason",
+        "description": "Masonry works on residential and structural construction projects."
+      },
+      "structureForeman": {
+        "title": "Structural works foreman",
+        "description": "Coordination and execution of structural works on site."
+      },
+      "finishingForeman": {
+        "title": "Finishing works foreman",
+        "description": "Supervision and delivery of quality finishes on residential projects."
+      },
+      "plumber": {
+        "title": "Plumber",
+        "description": "Installation and maintenance of plumbing systems on construction sites."
+      },
+      "electrician": {
+        "title": "Electrician",
+        "description": "Electrical installations for residential construction projects."
+      },
+      "painterPlasterer": {
+        "title": "Painter / plasterer",
+        "description": "Painting and plastering works for interior and exterior finishes."
+      },
+      "tiler": {
+        "title": "Tiler",
+        "description": "Tile and flooring installation on Structonix projects."
+      }
+    }
   },
   "about": {
     "sobreStructonix": "About Structonix",
@@ -607,6 +675,10 @@
     "about": {
       "title": "About Us | Structonix",
       "description": "Learn about Structonix Sistem Global S.L."
+    },
+    "careers": {
+      "title": "Careers | Structonix",
+      "description": "Explore construction career opportunities at Structonix and join our team of professionals working on high-quality construction projects."
     },
     "investors": {
       "title": "For Investors | Structonix",

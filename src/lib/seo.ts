@@ -298,6 +298,7 @@ export function buildLocalBusinessJsonLd({
 export const staticRoutes = [
   "/",
   "/quienes-somos",
+  "/carrera",
   "/servicios/estructura",
   "/servicios/ingenieria",
   "/servicios/arquitectura",

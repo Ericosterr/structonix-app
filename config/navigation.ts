@@ -25,6 +25,7 @@ export const serviceSlugs: ServiceSlug[] = [
 
 export const mainNavItems: NavItem[] = [
   { key: "about", href: "/quienes-somos" },
+  { key: "careers", href: "/carrera" },
   { key: "investors", href: "/para-inversores" },
   { key: "blog", href: "/blog" },
 ];

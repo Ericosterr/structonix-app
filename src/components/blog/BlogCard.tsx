@@ -23,7 +23,7 @@ export function BlogCard({
   return (
     <article
       className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] bg-background shadow-[var(--shadow-soft)] transition-shadow hover:shadow-[0_12px_40px_rgba(15,1,106,0.12)]",
+        "group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] bg-background shadow-[var(--shadow-soft)] transition-shadow hover:shadow-[0_12px_40px_rgba(2,33,82,0.12)]",
         className,
       )}
     >
