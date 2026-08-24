@@ -111,4 +111,9 @@ export const teamMembers: TeamMember[] = [
     positionKey: "albanilOficialPrimera",
     image: "/team/Ruslan_AsadovAlbanilStructonix.PNG",
   },
+  {
+    name: "Juan Miguel",
+    positionKey: "albanil",
+    image: "/team/JuanMiguelStructonixAlbanil.PNG",
+  },
 ];
