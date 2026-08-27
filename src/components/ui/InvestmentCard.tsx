@@ -35,15 +35,24 @@ export function InvestmentCard({ project, className }: InvestmentCardProps) {
   const tInvestors = useTranslations("investors");
   const [open, setOpen] = useState(false);
   const pdfSrc = versionedPdfUrl(project.pdf, project.pdfVersion);
+  const projectLabel = project.title || project.id;
+  const moreInfoLabel = `${t("moreInfo")} — ${projectLabel}`;
+
+  const openDetails = () => {
+    setOpen(true);
+  };
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <motion.div {...hoverZoom} className={cn("group relative overflow-hidden rounded-[var(--radius-card)]", className)}>
+      <motion.div
+        {...hoverZoom}
+        className={cn("group relative overflow-hidden rounded-[var(--radius-card)]", className)}
+      >
         <div className="relative aspect-[4/3] w-full bg-muted">
           {project.image ? (
             <Image
               src={project.image}
-              alt={project.title || project.id}
+              alt={projectLabel}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -53,7 +62,17 @@ export function InvestmentCard({ project, className }: InvestmentCardProps) {
               {/* TODO: missing investor project image */}
             </div>
           )}
-          <div className="absolute inset-0 flex items-end bg-gradient-to-t from-primary/80 to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+
+          {/* Mobile: full-image tap target (same action as Learn more) */}
+          <button
+            type="button"
+            className="absolute inset-0 z-10 md:hidden active:opacity-90"
+            aria-label={moreInfoLabel}
+            onClick={openDetails}
+          />
+
+          {/* Desktop: hover overlay with Learn more button */}
+          <div className="pointer-events-none absolute inset-0 hidden items-end bg-gradient-to-t from-primary/80 to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:pointer-events-auto md:flex">
             <DialogTrigger asChild>
               <Button variant="secondary" className="w-full">
                 {t("moreInfo")}
@@ -78,7 +97,7 @@ export function InvestmentCard({ project, className }: InvestmentCardProps) {
 
       <DialogContent className="max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>{project.title || project.id}</DialogTitle>
+          <DialogTitle>{projectLabel}</DialogTitle>
         </DialogHeader>
         <div className="grid gap-6 md:grid-cols-2">
           <div className="space-y-4">
@@ -86,7 +105,7 @@ export function InvestmentCard({ project, className }: InvestmentCardProps) {
               <>
                 <iframe
                   src={pdfSrc}
-                  title={project.title || project.id}
+                  title={projectLabel}
                   className="h-64 w-full rounded-[var(--radius-button)] border border-border"
                 />
                 <Button asChild variant="outline" className="w-full">
