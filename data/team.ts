@@ -88,7 +88,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Volodymir Chuenko",
     positionKey: "albanilStructonix",
-    image: "/team/VolodymirChuenko.jpg",
+    image: "/team/VovaChuenkoStructonix.JPG",
   },
   {
     name: "Andrei Chervatiuk",
