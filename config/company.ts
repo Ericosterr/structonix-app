@@ -1,9 +1,9 @@
 export const company = {
   companyName: "Structonix Sistem Global S.L.",
-  phone: "+34645018598",
+  phone: "+34604427398",
   email: "info@structonixsistem.com",
   address: "Calle Teide, 3/2 Benalmadena, Malaga 29831",
-  whatsapp: "https://wa.me/34645018598",
+  whatsapp: "https://wa.me/34604427398",
   instagram: "https://www.instagram.com/structonixsistemglobal",
   youtube: "https://www.youtube.com/@StructonixGlobal",
   /** Careers / recruitment WhatsApp (separate from main contact). */

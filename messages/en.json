@@ -2,6 +2,9 @@
   "common": {
     "calculator": "Calculator",
     "whatsapp": "WhatsApp",
+    "call": "Call",
+    "callAria": "Show phone number",
+    "recaptchaDisclosure": "This site is protected by reCAPTCHA and the Google <privacy>Privacy Policy</privacy> and <terms>Terms of Service</terms> apply.",
     "moreInfo": "More Information",
     "viewPdf": "View PDF",
     "downloadPdf": "Download PDF",
@@ -448,7 +451,7 @@
     "sections": {
       "controller": {
         "title": "1. Data controller",
-        "content": "The data controller responsible for processing your personal data is Structonix Sistem Global S.L., tax ID (CIF) B24937930, registered address at Calle Teide, 3/2 Benalmadena, Malaga 29831, Spain.\n\nContact email: info@structonixsistem.com\nContact phone: +34645018598\nWebsite: https://structonixsistem.com"
+        "content": "The data controller responsible for processing your personal data is Structonix Sistem Global S.L., tax ID (CIF) B24937930, registered address at Calle Teide, 3/2 Benalmadena, Malaga 29831, Spain.\n\nContact email: info@structonixsistem.com\nContact phone: +34604427398\nWebsite: https://structonixsistem.com"
       },
       "dataCollected": {
         "title": "2. Personal data we process",
@@ -492,7 +495,7 @@
       },
       "contact": {
         "title": "12. Contact",
-        "content": "For any enquiry related to this Privacy Policy or the processing of your personal data, contact us at:\n\nStructonix Sistem Global S.L.\nCIF B24937930\nCalle Teide, 3/2 Benalmadena, Malaga 29831, Spain\nEmail: info@structonixsistem.com\nPhone: +34645018598"
+        "content": "For any enquiry related to this Privacy Policy or the processing of your personal data, contact us at:\n\nStructonix Sistem Global S.L.\nCIF B24937930\nCalle Teide, 3/2 Benalmadena, Malaga 29831, Spain\nEmail: info@structonixsistem.com\nPhone: +34604427398"
       }
     }
   },

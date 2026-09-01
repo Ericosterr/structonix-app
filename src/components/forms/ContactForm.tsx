@@ -171,6 +171,32 @@ export function ContactForm({ className }: ContactFormProps) {
       {errorMessage ? (
         <p className="text-sm text-destructive">{errorMessage}</p>
       ) : null}
+      {isConfigured ? (
+        <p className="text-xs leading-relaxed text-muted-foreground">
+          {tCommon.rich("recaptchaDisclosure", {
+            privacy: (chunks) => (
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:opacity-80"
+              >
+                {chunks}
+              </a>
+            ),
+            terms: (chunks) => (
+              <a
+                href="https://policies.google.com/terms"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:opacity-80"
+              >
+                {chunks}
+              </a>
+            ),
+          })}
+        </p>
+      ) : null}
     </form>
   );
 }

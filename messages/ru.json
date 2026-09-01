@@ -2,6 +2,9 @@
   "common": {
     "calculator": "Калькулятор",
     "whatsapp": "WhatsApp",
+    "call": "Позвонить",
+    "callAria": "Показать номер телефона",
+    "recaptchaDisclosure": "Этот сайт защищён reCAPTCHA, действуют <privacy>Политика конфиденциальности</privacy> и <terms>Условия использования</terms> Google.",
     "moreInfo": "Подробнее",
     "viewPdf": "Открыть PDF",
     "downloadPdf": "Скачать PDF",
@@ -436,7 +439,7 @@
     "premiumRate": "2300 €/м²"
   },
   "contact": {
-    "formTitle": "Контакт",
+    "formTitle": "Контакты",
     "nombre": "Имя",
     "email": "Email",
     "telefono": "Телефон",
@@ -448,7 +451,7 @@
     "sections": {
       "controller": {
         "title": "1. Оператор персональных данных",
-        "content": "Оператором персональных данных является Structonix Sistem Global S.L., CIF B24937930, адрес: Calle Teide, 3/2 Benalmadena, Malaga 29831, Испания.\n\nКонтактный email: info@structonixsistem.com\nКонтактный телефон: +34645018598\nВеб-сайт: https://structonixsistem.com"
+        "content": "Оператором персональных данных является Structonix Sistem Global S.L., CIF B24937930, адрес: Calle Teide, 3/2 Benalmadena, Malaga 29831, Испания.\n\nКонтактный email: info@structonixsistem.com\nКонтактный телефон: +34604427398\nВеб-сайт: https://structonixsistem.com"
       },
       "dataCollected": {
         "title": "2. Обрабатываемые персональные данные",
@@ -492,7 +495,7 @@
       },
       "contact": {
         "title": "12. Контакт",
-        "content": "По любым вопросам, связанным с этой Политикой конфиденциальности или обработкой ваших персональных данных, свяжитесь с нами:\n\nStructonix Sistem Global S.L.\nCIF B24937930\nCalle Teide, 3/2 Benalmadena, Malaga 29831, Испания\nEmail: info@structonixsistem.com\nТелефон: +34645018598"
+        "content": "По любым вопросам, связанным с этой Политикой конфиденциальности или обработкой ваших персональных данных, свяжитесь с нами:\n\nStructonix Sistem Global S.L.\nCIF B24937930\nCalle Teide, 3/2 Benalmadena, Malaga 29831, Испания\nEmail: info@structonixsistem.com\nТелефон: +34604427398"
       }
     }
   },

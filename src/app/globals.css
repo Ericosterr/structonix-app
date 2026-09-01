@@ -56,3 +56,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
 }
+
+/* reCAPTCHA v3: badge may be hidden when Google disclosure is shown in the form flow. */
+.grecaptcha-badge {
+  visibility: hidden;
+}

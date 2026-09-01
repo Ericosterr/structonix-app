@@ -5,7 +5,7 @@ import { routing } from "@/i18n/routing";
 import { buildOrganizationJsonLd } from "@/lib/seo";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
+import { FloatingPhone } from "@/components/layout/FloatingPhone";
 import { LocaleAttributes } from "@/components/layout/LocaleAttributes";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { MotionProvider } from "@/providers/MotionProvider";
@@ -49,7 +49,7 @@ export default async function LocaleLayout({
             <PageTransition>{children}</PageTransition>
           </main>
           <Footer />
-          <FloatingWhatsApp />
+          <FloatingPhone />
           <CookieConsentBanner />
         </MotionProvider>
       </RecaptchaProvider>
