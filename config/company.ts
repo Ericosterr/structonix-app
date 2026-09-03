@@ -3,11 +3,12 @@ export const company = {
   phone: "+34604427398",
   email: "info@structonixsistem.com",
   address: "Calle Teide, 3/2 Benalmadena, Malaga 29831",
-  whatsapp: "https://wa.me/34604427398",
-  instagram: "https://www.instagram.com/structonixsistemglobal",
+  whatsapp: "https://wa.me/34645018598",
+  instagram:
+    "https://www.instagram.com/structonixglobal?igsi=MTZwbW5zYWVwbmdieA%3D%3D&utm_source=qr",
   youtube: "https://www.youtube.com/@StructonixGlobal",
-  /** Careers / recruitment WhatsApp (separate from main contact). */
-  careersWhatsappPhone: "34642868804",
+  /** Careers / recruitment WhatsApp. */
+  careersWhatsappPhone: "34645018598",
   careersEmail: "structonixglobal@gmail.com",
   // TODO: Provide final Facebook URL
   facebook: "",
