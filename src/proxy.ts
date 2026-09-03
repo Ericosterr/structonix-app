@@ -1,35 +1,24 @@
 import createMiddleware from "next-intl/middleware";
-import { NextRequest, NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 import { routing } from "./i18n/routing";
-import {
-  DOCUMENT_RESPONSE_VARY,
-  shouldForceHtmlDocument,
-  withHtmlDocumentHeaders,
-} from "./lib/rsc-document-guard";
+import { applySafePageCacheHeaders } from "./lib/rsc-document-guard";
 
 const intlMiddleware = createMiddleware(routing);
 
-function applyDocumentResponseHeaders(response: NextResponse): NextResponse {
-  response.headers.set(
-    "Cache-Control",
-    "private, no-cache, no-store, max-age=0, must-revalidate",
-  );
-  response.headers.set("Vary", DOCUMENT_RESPONSE_VARY);
+/**
+ * Locale routing + anti-CDN-poison cache headers.
+ *
+ * Do not attempt to delete `RSC` / Flight request headers here: Next.js 16
+ * re-injects them after Proxy, so HTML vs Flight is decided by the real
+ * incoming headers. Shared caches must never store those responses by URL alone.
+ */
+export default function proxy(request: NextRequest) {
+  const response = intlMiddleware(request);
+  applySafePageCacheHeaders(response.headers);
   return response;
 }
 
-export default function proxy(request: NextRequest) {
-  const forceHtml = shouldForceHtmlDocument(request);
-
-  const normalizedRequest = forceHtml
-    ? new NextRequest(request.url, { headers: withHtmlDocumentHeaders(request) })
-    : request;
-
-  const response = intlMiddleware(normalizedRequest);
-
-  return forceHtml ? applyDocumentResponseHeaders(response) : response;
-}
-
 export const config = {
+  // Do not run on API, Next internals, or any path with a file extension.
   matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
 };
