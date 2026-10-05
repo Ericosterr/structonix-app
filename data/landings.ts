@@ -137,13 +137,13 @@ export const landingLinks: Record<LandingKey, LandingKey[]> = {
     "obra-nueva-marbella",
   ],
   "builders-costa-del-sol": [
-    "villa-construction-marbella",
     "construction-company-marbella",
+    "villa-construction-marbella",
     "constructora-marbella",
   ],
   "construction-company-marbella": [
+    "villa-construction-marbella",
     "constructora-marbella",
-    "project-management-marbella",
     "builders-costa-del-sol",
   ],
   "project-management-marbella": [

@@ -7,7 +7,6 @@ import { Hero } from "@/components/sections/Hero";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { GalleryCarousel } from "@/components/ui/GalleryCarousel";
 import { ImageSlider } from "@/components/ui/ImageSlider";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { StructureGallery } from "@/components/services/StructureGallery";
 
 type ServicePageContentProps = {
@@ -55,7 +54,9 @@ export async function ServicePageContent({ slug }: ServicePageContentProps) {
         size={isRedesigned ? "tall" : "default"}
       >
         <div className="max-w-3xl space-y-6">
-          <SectionHeading title={title} className="text-primary-foreground" />
+          <h1 className="text-2xl font-semibold tracking-tight text-primary-foreground md:text-3xl lg:text-4xl">
+            {title}
+          </h1>
           {heroDescription ? (
             <div className="space-y-4 text-base leading-relaxed text-white/90 md:text-lg">
               {heroDescription.split("\n\n").map((paragraph) => (

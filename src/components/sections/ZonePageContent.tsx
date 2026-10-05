@@ -28,9 +28,11 @@ type ZonePageContentProps = {
 };
 
 const SERVICE_LINKS = [
-  { href: "/servicios/arquitectura", key: "arquitectura" },
-  { href: "/servicios/ingenieria", key: "ingenieria" },
   { href: "/servicios/estructura", key: "estructura" },
+  { href: "/servicios/ingenieria", key: "ingenieria" },
+  { href: "/servicios/arquitectura", key: "arquitectura" },
+  { href: "/servicios/acabados", key: "acabados" },
+  { href: "/servicios/carpinteria", key: "carpinteria" },
   { href: "/servicios/gestion-administrativa", key: "gestion-administrativa" },
 ] as const;
 
@@ -77,16 +79,31 @@ export async function ZonePageContent({ zona, locale }: ZonePageContentProps) {
           const tLandings = await getTranslations("landings");
           return (
             [
-              "constructora-marbella",
-              "villa-construction-marbella",
               "construction-company-marbella",
+              "villa-construction-marbella",
+              "constructora-marbella",
+              "builders-costa-del-sol",
             ] as const
           ).map((key) => ({
             href: getLandingPath(key, locale),
             label: tLandings(`${key}.linkLabel`),
           }));
         })()
-      : [];
+      : zona === "costa-del-sol"
+        ? await (async () => {
+            const tLandings = await getTranslations("landings");
+            return (
+              [
+                "builders-costa-del-sol",
+                "construction-company-marbella",
+                "villa-construction-marbella",
+              ] as const
+            ).map((key) => ({
+              href: getLandingPath(key, locale),
+              label: tLandings(`${key}.linkLabel`),
+            }));
+          })()
+        : [];
 
   const sections = [
     {
