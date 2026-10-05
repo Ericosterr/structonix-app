@@ -28,6 +28,34 @@ const paths = [
   "/ru/servicios/ingenieria",
 ];
 
+/** Retired Marbella commercial URLs that must 301 to the primary page. */
+const expectedRedirects = [
+  {
+    path: "/en/villa-construction-marbella",
+    to: "/en/construction-company-marbella",
+  },
+  {
+    path: "/en/general-contractor-marbella",
+    to: "/en/construction-company-marbella",
+  },
+  {
+    path: "/construccion-villas-marbella",
+    to: "/empresa-constructora-marbella",
+  },
+  {
+    path: "/constructora-marbella",
+    to: "/empresa-constructora-marbella",
+  },
+  {
+    path: "/ru/stroitelstvo-vill-v-marbele",
+    to: "/ru/stroitelnaya-kompaniya-marbelya",
+  },
+  {
+    path: "/ru/generalnyy-podryadchik-marbelya",
+    to: "/ru/stroitelnaya-kompaniya-marbelya",
+  },
+];
+
 function textBetween(html, startRe, endRe) {
   const start = html.match(startRe);
   if (!start) return null;
@@ -152,9 +180,48 @@ async function auditPath(path) {
   };
 }
 
+async function auditRedirect(entry) {
+  const url = `${base}${entry.path}`;
+  const flags = [];
+  try {
+    const res = await fetch(url, {
+      redirect: "manual",
+      headers: { Accept: "text/html" },
+      cache: "no-store",
+    });
+    const location = res.headers.get("location") || "";
+    if (res.status !== 301 && res.status !== 308) {
+      flags.push(`ERROR expected-301 got-${res.status}`);
+    }
+    const normalized = location.replace(base, "");
+    if (!normalized.endsWith(entry.to) && normalized !== entry.to) {
+      flags.push(`ERROR redirect-target:${location || "missing"}`);
+    }
+    return {
+      level: flags.length ? "ERROR" : "PASS",
+      url,
+      status: res.status,
+      title: null,
+      flags: flags.length ? flags : [`PASS redirect->${entry.to}`],
+      redirectTo: location,
+    };
+  } catch (error) {
+    return {
+      level: "ERROR",
+      url,
+      status: 0,
+      title: null,
+      flags: [`ERROR fetch:${error.message}`],
+    };
+  }
+}
+
 const results = [];
 for (const path of paths) {
   results.push(await auditPath(path));
+}
+for (const entry of expectedRedirects) {
+  results.push(await auditRedirect(entry));
 }
 
 const titles = new Map();

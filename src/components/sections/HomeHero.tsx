@@ -1,9 +1,12 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { homeFeaturedServices } from "@config/navigation";
 import { backgrounds } from "@data/backgrounds";
+import { getLandingPath } from "@data/landings";
+import type { Locale } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 import { Hero } from "@/components/sections/Hero";
 import { HomeHeroBranding } from "@/components/sections/HomeHeroBranding";
 import { ServiceShortcutButton } from "@/components/ui/ServiceShortcutButton";
@@ -13,6 +16,9 @@ import type { GalleryKey } from "@data/galleries";
 export function HomeHero() {
   const t = useTranslations("home");
   const tNav = useTranslations("nav");
+  const locale = useLocale() as Locale;
+  const marbellaHref = getLandingPath("construction-company-marbella", locale);
+  const costaHref = getLandingPath("builders-costa-del-sol", locale);
 
   return (
     <Hero backgroundImage={backgrounds.home.hero} size="screen">
@@ -27,6 +33,22 @@ export function HomeHero() {
           >
             {t("slogan")}
           </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
+            className="flex max-w-3xl flex-wrap gap-x-4 gap-y-2 text-sm text-white/90 md:text-base"
+          >
+            <Link href={marbellaHref} className="underline-offset-4 hover:underline">
+              {t("linkMarbella")}
+            </Link>
+            <Link href={costaHref} className="underline-offset-4 hover:underline">
+              {t("linkCosta")}
+            </Link>
+            <Link href="/zonas/marbella" className="underline-offset-4 hover:underline">
+              {t("linkMarbellaAreas")}
+            </Link>
+          </motion.p>
         </div>
 
         <motion.div
@@ -40,7 +62,11 @@ export function HomeHero() {
               key={slug}
               href={`/servicios/${slug}`}
               label={tNav(slug)}
-              service={slug === "gestion-administrativa" ? "gestion-administrativa" : (slug as GalleryKey)}
+              service={
+                slug === "gestion-administrativa"
+                  ? "gestion-administrativa"
+                  : (slug as GalleryKey)
+              }
             />
           ))}
         </motion.div>

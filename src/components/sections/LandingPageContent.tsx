@@ -121,6 +121,24 @@ export async function LandingPageContent({
               variant="outline"
               className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white"
             >
+              <Link href="#contacto">{t("common.ctaEstimate")}</Link>
+            </Button>
+            {company.phone ? (
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white"
+              >
+                <a href={`tel:${company.phone}`}>{t("common.ctaCall")}</a>
+              </Button>
+            ) : null}
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white"
+            >
               <WhatsAppConversionLink
                 href={company.whatsapp}
                 target="_blank"

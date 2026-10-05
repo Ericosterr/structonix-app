@@ -2,10 +2,15 @@ import { backgrounds } from "./backgrounds";
 import { zoneGeo } from "./zones";
 import { routing, type Locale } from "@/i18n/routing";
 
+/**
+ * Active commercial landing pages.
+ *
+ * Marbella commercial intent is consolidated into
+ * `construction-company-marbella` (villa + general contractor cluster).
+ * Retired slugs are redirected via next.config.ts.
+ */
 export const landingKeys = [
-  "constructora-marbella",
   "arquitecto-marbella",
-  "villa-construction-marbella",
   "builders-costa-del-sol",
   "construction-company-marbella",
   "project-management-marbella",
@@ -16,30 +21,14 @@ export const landingKeys = [
 export type LandingKey = (typeof landingKeys)[number];
 
 /**
- * Localized slug per locale. This is the single source of truth for the
- * Marbella construction SEO cluster: routing, hreflang, canonical and sitemap
- * are all derived from here.
- *
- * Note: the brief assigned the same EN/RU slug to both "Constructora Marbella"
- * and "Construction Company Marbella". Two pages cannot share a URL, so
- * "constructora-marbella" uses the distinct "general-contractor" slug in EN/RU
- * while "construction-company-marbella" keeps the requested slugs.
+ * Localized slug per locale. This is the single source of truth for active
+ * landing URLs: routing, hreflang, canonical and sitemap are derived from here.
  */
 export const landingSlugs: Record<LandingKey, Record<Locale, string>> = {
-  "constructora-marbella": {
-    es: "constructora-marbella",
-    en: "general-contractor-marbella",
-    ru: "generalnyy-podryadchik-marbelya",
-  },
   "arquitecto-marbella": {
     es: "arquitecto-marbella",
     en: "architect-marbella",
     ru: "arhitektor-marbelya",
-  },
-  "villa-construction-marbella": {
-    es: "construccion-villas-marbella",
-    en: "villa-construction-marbella",
-    ru: "stroitelstvo-vill-v-marbele",
   },
   "builders-costa-del-sol": {
     es: "constructora-costa-del-sol",
@@ -68,6 +57,32 @@ export const landingSlugs: Record<LandingKey, Record<Locale, string>> = {
   },
 };
 
+/**
+ * Retired Marbella commercial URLs consolidated into
+ * `construction-company-marbella`. Kept here as documentation for redirects.
+ */
+export const retiredMarbellaLandingRedirects: Array<{
+  sourceByLocale: Record<Locale, string>;
+  targetKey: LandingKey;
+}> = [
+  {
+    sourceByLocale: {
+      es: "construccion-villas-marbella",
+      en: "villa-construction-marbella",
+      ru: "stroitelstvo-vill-v-marbele",
+    },
+    targetKey: "construction-company-marbella",
+  },
+  {
+    sourceByLocale: {
+      es: "constructora-marbella",
+      en: "general-contractor-marbella",
+      ru: "generalnyy-podryadchik-marbelya",
+    },
+    targetKey: "construction-company-marbella",
+  },
+];
+
 /** Reverse lookup: which landing page does a localized slug belong to? */
 export function getLandingKeyBySlug(
   locale: Locale,
@@ -88,14 +103,6 @@ export function getLandingPath(key: LandingKey, locale: Locale): string {
 
 /**
  * Canonical locale-switching resolver for landing pages.
- *
- * Given the current locale and its localized slug, returns the equivalent
- * localized slug in the target locale — always through the central slug map.
- * Returns `null` when the slug is not a landing page (so callers can fall back
- * to default next-intl locale switching for every other route).
- *
- * This is the single source of truth used by the language switcher; never
- * hardcode per-locale slug replacements anywhere else.
  */
 export function getLocalizedLandingSlug(
   currentLocale: Locale,
@@ -118,56 +125,43 @@ export const landingLocales: Locale[] = [...routing.locales];
 
 /**
  * Semantic cluster: which sibling landing pages each page links to.
- * Builds a topical-authority interlinking structure.
  */
 export const landingLinks: Record<LandingKey, LandingKey[]> = {
-  "constructora-marbella": [
-    "arquitecto-marbella",
-    "project-management-marbella",
-    "villa-construction-marbella",
-  ],
   "arquitecto-marbella": [
-    "constructora-marbella",
+    "construction-company-marbella",
     "obra-nueva-marbella",
-    "villa-construction-marbella",
-  ],
-  "villa-construction-marbella": [
     "builders-costa-del-sol",
-    "arquitecto-marbella",
-    "obra-nueva-marbella",
   ],
   "builders-costa-del-sol": [
     "construction-company-marbella",
-    "villa-construction-marbella",
-    "constructora-marbella",
+    "arquitecto-marbella",
+    "obra-nueva-marbella",
   ],
   "construction-company-marbella": [
-    "villa-construction-marbella",
-    "constructora-marbella",
     "builders-costa-del-sol",
+    "arquitecto-marbella",
+    "project-management-marbella",
   ],
   "project-management-marbella": [
     "construction-company-marbella",
-    "constructora-marbella",
     "renovation-marbella",
+    "builders-costa-del-sol",
   ],
   "obra-nueva-marbella": [
+    "construction-company-marbella",
     "arquitecto-marbella",
-    "villa-construction-marbella",
     "renovation-marbella",
   ],
   "renovation-marbella": [
+    "construction-company-marbella",
     "obra-nueva-marbella",
     "project-management-marbella",
-    "arquitecto-marbella",
   ],
 };
 
-/** Hero background per page. Replace with real Marbella photography for stronger EEAT. */
+/** Hero background per page. */
 export const landingBackgrounds: Record<LandingKey, string> = {
-  "constructora-marbella": backgrounds.services.estructura,
   "arquitecto-marbella": backgrounds.services.arquitectura,
-  "villa-construction-marbella": backgrounds.services.acabados,
   "builders-costa-del-sol": backgrounds.investors,
   "construction-company-marbella": backgrounds.services.ingenieria,
   "project-management-marbella": backgrounds.services.gestionAdministrativa,
@@ -175,14 +169,12 @@ export const landingBackgrounds: Record<LandingKey, string> = {
   "renovation-marbella": backgrounds.services.carpinteria,
 };
 
-/** Geo + areaServed for LocalBusiness / GeneralContractor schema. */
+/** Geo + areaServed for page-level schema areaServed. */
 export const landingGeo: Record<
   LandingKey,
   { lat: number; lng: number; region: string; areaServed: string }
 > = {
-  "constructora-marbella": { ...zoneGeo.marbella, areaServed: "Marbella" },
   "arquitecto-marbella": { ...zoneGeo.marbella, areaServed: "Marbella" },
-  "villa-construction-marbella": { ...zoneGeo.marbella, areaServed: "Marbella" },
   "builders-costa-del-sol": {
     ...zoneGeo["costa-del-sol"],
     areaServed: "Costa del Sol",
@@ -195,14 +187,6 @@ export const landingGeo: Record<
 
 /**
  * Import-time integrity assertion (runs at build and on every server start).
- *
- * Guarantees the slug map is the single, consistent source of truth so locale
- * switching can never silently regress into a 404:
- *  - every landing key defines a slug for every locale
- *  - no two pages share a slug within the same locale (would break routing)
- *  - each slug resolves back to its own key (reverse lookup round-trip)
- *  - cross-locale switching always resolves through the central map, i.e.
- *    es-slug -> en-slug -> ru-slug -> es-slug returns to the original
  */
 function assertLandingSlugIntegrity(): void {
   const seenPerLocale = new Map<string, LandingKey>();

@@ -4,13 +4,13 @@ export const company = {
   phone: "+34604427398",
   email: "info@structonixsistem.com",
   /** Display string used in footer/contact UI. */
-  address: "Calle Teide, 3/2 Benalmadena, Malaga 29831",
+  address: "Calle Teide, 3/2 Benalmadena, Malaga 29631",
   /** Structured HQ address for schema (matches published company details). */
   addressStructured: {
     streetAddress: "Calle Teide, 3/2",
     addressLocality: "Benalmádena",
     addressRegion: "Málaga",
-    postalCode: "29831",
+    postalCode: "29631",
     addressCountry: "ES",
   },
   /** Approximate HQ coordinates (Benalmádena) — not a Marbella branch office. */

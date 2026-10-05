@@ -73,37 +73,20 @@ export async function ZonePageContent({ zona, locale }: ZonePageContentProps) {
 
   const otherZones = relatedZones.filter((zone) => zone !== zona);
 
-  const marbellaServiceLinks =
-    zona === "marbella"
+  const commercialLinks =
+    zona === "marbella" || zona === "costa-del-sol"
       ? await (async () => {
           const tLandings = await getTranslations("landings");
-          return (
-            [
-              "construction-company-marbella",
-              "villa-construction-marbella",
-              "constructora-marbella",
-              "builders-costa-del-sol",
-            ] as const
-          ).map((key) => ({
+          const keys =
+            zona === "marbella"
+              ? (["construction-company-marbella", "builders-costa-del-sol"] as const)
+              : (["builders-costa-del-sol", "construction-company-marbella"] as const);
+          return keys.map((key) => ({
             href: getLandingPath(key, locale),
             label: tLandings(`${key}.linkLabel`),
           }));
         })()
-      : zona === "costa-del-sol"
-        ? await (async () => {
-            const tLandings = await getTranslations("landings");
-            return (
-              [
-                "builders-costa-del-sol",
-                "construction-company-marbella",
-                "villa-construction-marbella",
-              ] as const
-            ).map((key) => ({
-              href: getLandingPath(key, locale),
-              label: tLandings(`${key}.linkLabel`),
-            }));
-          })()
-        : [];
+      : [];
 
   const sections = [
     {
@@ -259,7 +242,7 @@ export async function ZonePageContent({ zona, locale }: ZonePageContentProps) {
                 {t(`${zone}.name`)}
               </Link>
             ))}
-            {marbellaServiceLinks.map((link) => (
+            {commercialLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

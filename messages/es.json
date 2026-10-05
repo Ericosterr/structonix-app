@@ -62,7 +62,10 @@
   },
   "home": {
     "slogan": "DAMOS FORMA A LOS ESPACIOS MEDIANTE LA INGENIERÍA, LA PRECISIÓN Y LA VISIÓN, CREANDO ESTRUCTURAS DISEÑADAS PARA EL FUTURO.",
-    "servicesTitle": "Servicios"
+    "servicesTitle": "Servicios",
+    "linkMarbella": "Empresa constructora en Marbella",
+    "linkCosta": "Empresa constructora en la Costa del Sol",
+    "linkMarbellaAreas": "Zonas de Marbella donde trabajamos"
   },
   "careers": {
     "heroTitle": "Construye tu carrera con Structonix",
@@ -439,7 +442,7 @@
     "premiumRate": "2300 €/m²"
   },
   "contact": {
-    "formTitle": "Contacto",
+    "formTitle": "Solicitar consulta / presupuesto",
     "nombre": "Nombre",
     "email": "Email",
     "telefono": "Teléfono",
@@ -451,7 +454,7 @@
     "sections": {
       "controller": {
         "title": "1. Responsable del tratamiento",
-        "content": "El responsable del tratamiento de sus datos personales es Structonix Sistem Global S.L., con CIF B24937930, domicilio en Calle Teide, 3/2 Benalmadena, Malaga 29831, España.\n\nCorreo electrónico de contacto: info@structonixsistem.com\nTeléfono de contacto: +34604427398\nSitio web: https://structonixsistem.com"
+        "content": "El responsable del tratamiento de sus datos personales es Structonix Sistem Global S.L., con CIF B24937930, domicilio en Calle Teide, 3/2 Benalmadena, Malaga 29631, España.\n\nCorreo electrónico de contacto: info@structonixsistem.com\nTeléfono de contacto: +34604427398\nSitio web: https://structonixsistem.com"
       },
       "dataCollected": {
         "title": "2. Datos personales que tratamos",
@@ -495,7 +498,7 @@
       },
       "contact": {
         "title": "12. Contacto",
-        "content": "Para cualquier consulta relacionada con esta Política de Privacidad o el tratamiento de sus datos personales, puede contactarnos en:\n\nStructonix Sistem Global S.L.\nCIF B24937930\nCalle Teide, 3/2 Benalmadena, Malaga 29831, España\nEmail: info@structonixsistem.com\nTeléfono: +34604427398"
+        "content": "Para cualquier consulta relacionada con esta Política de Privacidad o el tratamiento de sus datos personales, puede contactarnos en:\n\nStructonix Sistem Global S.L.\nCIF B24937930\nCalle Teide, 3/2 Benalmadena, Malaga 29631, España\nEmail: info@structonixsistem.com\nTeléfono: +34604427398"
       }
     }
   },
@@ -529,10 +532,10 @@
     },
     "marbella": {
       "name": "Marbella",
-      "h1": "Servicios de construcción en Marbella",
-      "heroTagline": "Construcción de villas de lujo llave en mano, arquitectura, ingeniería y gestión de proyectos para clientes internacionales en Marbella, la Milla de Oro y Nueva Andalucía.",
-      "overviewTitle": "Construir en Marbella",
-      "overview": "Marbella es el centro de la construcción residencial de lujo en la Costa del Sol, atrayendo a compradores y promotores de toda Europa, Oriente Medio y la CEI. Structonix entrega villas contemporáneas, reformas integrales y promociones de obra nueva, gestionando cada etapa desde la due diligence del terreno y las licencias hasta la entrega.\n\nNuestro equipo de más de 40 arquitectos, ingenieros y gestores de proyectos trabaja como una unidad integrada, justo lo que necesitan los propietarios internacionales que construyen a distancia. Coordinamos las licencias municipales, el proyecto técnico y la ejecución en obra para que el cliente mantenga el control total sin tener que vivir en España durante la obra.",
+      "h1": "Zonas de construcción en Marbella",
+      "heroTagline": "Guía geográfica de dónde trabaja Structonix en Marbella y zonas próximas. Para la intención comercial del proyecto, continúe a la página principal de empresa constructora en Marbella.",
+      "overviewTitle": "Marbella como área de servicio",
+      "overview": "Esta página es el hub geográfico de Marbella. Explica cobertura y contexto local. No es la página comercial principal de “empresa constructora Marbella”.\n\nPara construcción de villas, llave en mano, contratista general y consultas de proyecto, use la página dedicada de empresa constructora en Marbella.",
       "market": "La demanda en Marbella se concentra en la Milla de Oro, el Valle del Golf de Nueva Andalucía, Sierra Blanca y el corredor de playa al este. Los terrenos son escasos y caros, por lo que la mayoría de los proyectos son obra nueva premium en las pocas parcelas disponibles o esquemas de derribo y reconstrucción. La calidad constructiva, la eficiencia energética y la distinción del diseño son los principales diferenciadores, y los plazos de la licencia de primera ocupación (LPO) son críticos en cualquier plan realista.",
       "architecture": "Diseñamos villas mediterráneas modernas y contemporáneas adaptadas al PGOU de Marbella, la orientación de la parcela y las vistas al mar. Nuestro servicio de arquitectura cubre el diseño conceptual, la tramitación de licencias y la documentación técnica completa, equilibrando la ambición del diseño con lo que el ayuntamiento de Marbella realmente aprobará.",
       "engineering": "Las parcelas en ladera y las condiciones costeras de Marbella exigen una ingeniería estructural y de instalaciones sólida. Resolvemos cimentaciones para terreno con pendiente, estructuras de contención, piscinas y sótanos, además de los sistemas de clima, agua y energía que requiere una villa de alto nivel según la normativa española.",
@@ -540,24 +543,24 @@
       "investment": "Marbella combina una fuerte revalorización con demanda de alquiler durante todo el año en el segmento de lujo. Apoyamos a los inversores con estrategias de construir para vender y construir para alquilar, estudios de viabilidad y proyectos elegibles para Golden Visa, en coordinación con nuestro programa Para Inversores.",
       "faq": [
         {
-          "q": "¿Cuánto cuesta construir una villa en Marbella?",
-          "a": "La construcción de villas de lujo en Marbella varía de precio premium a ultra-premium por metro cuadrado según la parcela, los acabados, la piscina y el sótano. Ofrecemos un desglose detallado tras revisar su parcela y su brief."
+          "q": "¿Qué barrios de Marbella cubre este hub?",
+          "a": "Este hub geográfico cubre Marbella y zonas habituales como Nueva Andalucía, Puerto Banús, la Milla de Oro, Sierra Blanca, Nagüeles, Los Monteros, Elviria, San Pedro de Alcántara, Guadalmina, así como Benahavís y Estepona cuando las condiciones del proyecto lo permiten."
         },
         {
-          "q": "¿Cuánto tarda la construcción de una villa en Marbella?",
-          "a": "Una villa llave en mano suele tardar de 14 a 24 meses incluyendo diseño y licencias. La licencia de obra mayor y la de primera ocupación (LPO) son los principales condicionantes de plazo, y planificamos en torno a ellas desde el primer día."
+          "q": "¿Es esta la página principal para contratar una constructora en Marbella?",
+          "a": "No. Esta página es el hub geográfico de área de servicio. Para intención comercial — villas, llave en mano y contratista general — use la página dedicada de empresa constructora en Marbella."
         },
         {
-          "q": "¿Pueden los propietarios extranjeros construir sin vivir en España?",
-          "a": "Sí. Nuestro servicio de gestión de proyectos está diseñado para propietarios a distancia. Gestionamos licencias, contratistas y control de calidad en su nombre e informamos del avance."
+          "q": "¿Cómo elegir zona en Marbella para construir?",
+          "a": "Accesos, normativa, terreno y requisitos de comunidad cambian por barrio. Use este hub para contexto local y continúe a la página de empresa constructora en Marbella para valorar el proyecto."
         },
         {
-          "q": "¿Gestionan las licencias de obra en Marbella?",
-          "a": "Sí. Nuestro equipo de gestión administrativa tramita todo el proceso de licencias con el ayuntamiento de Marbella, incluida la obra mayor, la primera ocupación y la certificación energética."
+          "q": "¿Trabajan fuera del centro de Marbella?",
+          "a": "Sí. Structonix también opera en la Costa del Sol: Benalmádena, Málaga, Mijas, Fuengirola, Estepona, Benahavís y Torremolinos. Consulte la página de constructora Costa del Sol para la cobertura regional."
         },
         {
-          "q": "¿En qué zonas de Marbella construyen?",
-          "a": "Trabajamos en la Milla de Oro, Nueva Andalucía, Sierra Blanca, Marbella Este y zonas próximas, así como en los vecinos Benahavís y Estepona."
+          "q": "¿Dónde solicitar una consulta para un proyecto en Marbella?",
+          "a": "Use la página de empresa constructora en Marbella o su formulario de contacto. Este hub explica la geografía; la página comercial es la vía de conversión."
         }
       ]
     },
@@ -664,213 +667,6 @@
       ]
     }
   },
-  "serviceLocations": {
-    "common": {
-      "breadcrumbHome": "Inicio",
-      "trustTitle": "Por qué los clientes confían en Structonix",
-      "processTitle": "Nuestro proceso de construcción",
-      "whyTitle": "Por qué construir con Structonix",
-      "integrationTitle": "Arquitectura e ingeniería, plenamente integradas",
-      "turnkeyTitle": "Construcción de villas llave en mano",
-      "relatedTitle": "Descubre más",
-      "faqTitle": "Preguntas frecuentes",
-      "ctaPrimary": "Solicitar consulta",
-      "ctaSecondary": "Hablemos de su proyecto",
-      "zoneMarbella": "Construir en Marbella",
-      "zoneCosta": "Construir en la Costa del Sol",
-      "investors": "Para inversores"
-    },
-    "construction-company-marbella": {
-      "breadcrumb": "Empresa de construcción en Marbella",
-      "h1": "Empresa de Construcción en Marbella",
-      "heroTagline": "Structonix es una empresa de construcción integral en Marbella que entrega villas de lujo llave en mano con arquitectura, ingeniería y gestión de proyectos bajo un mismo techo para clientes internacionales.",
-      "introTitle": "Una empresa de construcción integral en Marbella",
-      "intro": "Elegir la empresa de construcción adecuada en Marbella es la decisión más importante de cualquier proyecto de villa. El mercado es exigente: parcelas escasas en la Milla de Oro y Nueva Andalucía, normas urbanísticas estrictas del PGOU, parcelas en ladera en Sierra Blanca y propietarios internacionales que esperan tanto calidad de diseño como fiabilidad absoluta.\n\nStructonix es una empresa de construcción integrada que combina arquitectura, ingeniería y gestión de proyectos en un único equipo de más de 40 especialistas. Esto significa un solo contrato, un único responsable y un solo equipo a cargo de su villa desde el primer boceto hasta la entrega de llaves: justo lo que necesitan los propietarios que construyen desde el extranjero.",
-      "trust": [
-        {
-          "value": "40+",
-          "label": "arquitectos, ingenieros y jefes de proyecto en plantilla"
-        },
-        {
-          "value": "A + I + C",
-          "label": "arquitectura, ingeniería y construcción bajo un mismo techo"
-        },
-        {
-          "value": "100%",
-          "label": "licencias y permisos gestionados por usted"
-        },
-        {
-          "value": "EN · RU · ES",
-          "label": "atención multilingüe para propietarios internacionales"
-        }
-      ],
-      "process": [
-        {
-          "title": "Consulta y viabilidad",
-          "text": "Revisamos su parcela, brief y presupuesto, evaluamos las restricciones del PGOU y definimos un plan y un rango de coste realistas para su villa en Marbella."
-        },
-        {
-          "title": "Arquitectura e ingeniería",
-          "text": "Nuestro equipo integrado elabora el diseño y el proyecto técnico completo, con estructura, instalaciones y arquitectura coordinadas desde el primer día."
-        },
-        {
-          "title": "Licencias y permisos",
-          "text": "Gestionamos la licencia de obra mayor, la de primera ocupación (LPO) y la certificación energética con el ayuntamiento de Marbella."
-        },
-        {
-          "title": "Construcción",
-          "text": "Construimos con gremios verificados bajo un estricto control de calidad, con informes de avance estructurados para propietarios a distancia."
-        },
-        {
-          "title": "Entrega",
-          "text": "Entregamos su villa terminada, con documentación, garantías y repasos resueltos."
-        }
-      ],
-      "why": [
-        {
-          "title": "Un equipo integrado, un contrato",
-          "text": "Arquitectura, ingeniería y construcción están en el mismo equipo, eliminando las brechas de coordinación y la dilución de responsabilidades de las obras con múltiples proveedores."
-        },
-        {
-          "title": "Profundo conocimiento de Marbella",
-          "text": "Construimos en la Milla de Oro, Nueva Andalucía, Sierra Blanca y Marbella Este, y conocemos cómo aprueba proyectos cada ayuntamiento y comunidad."
-        },
-        {
-          "title": "Pensado para propietarios a distancia",
-          "text": "Gestionamos licencias, contratistas y calidad en su nombre, con informes transparentes para que construya con confianza desde el extranjero."
-        },
-        {
-          "title": "Calidad y transparencia",
-          "text": "Alcance fijo, presupuestos claros y control de calidad documentado protegen su inversión en cada etapa."
-        }
-      ],
-      "integration": "La mayoría de los problemas en los proyectos de villas en Marbella surgen de la brecha entre diseño y construcción. Structonix la elimina manteniendo arquitectura, ingeniería y construcción en un único equipo responsable. Nuestros arquitectos diseñan dentro del marco urbanístico de Marbella, nuestros ingenieros resuelven cimentaciones en ladera, estructura e instalaciones, y nuestro equipo administrativo gestiona cada licencia, de modo que nada queda entre disciplinas.",
-      "turnkey": "Como empresa de construcción llave en mano, entregamos su villa terminada y lista para vivir. Desde la due diligence del terreno y el diseño hasta licencias, construcción y primera ocupación, trata con un único socio. Tanto si construye una residencia principal, una villa vacacional o una propiedad de inversión en Marbella y la Costa del Sol, alineamos la obra con sus objetivos, incluidos proyectos elegibles para Golden Visa coordinados con nuestro programa de inversores.",
-      "ctaBlockTitle": "Construya su villa en Marbella con un único socio de confianza",
-      "ctaBlockText": "Cuéntenos su parcela y su visión. Evaluaremos la viabilidad, esbozaremos un presupuesto y un calendario realistas y le mostraremos cómo un equipo integrado entrega una mejor obra.",
-      "faq": [
-        {
-          "q": "¿Qué diferencia a Structonix de otras empresas de construcción en Marbella?",
-          "a": "Combinamos arquitectura, ingeniería, construcción y gestión de proyectos en un equipo propio de más de 40 especialistas. Obtiene un único responsable del diseño a la entrega, algo poco común en Marbella e ideal para propietarios internacionales."
-        },
-        {
-          "q": "¿Construyen en todas las zonas de Marbella?",
-          "a": "Sí. Construimos en la Milla de Oro, Nueva Andalucía, Sierra Blanca y Marbella Este, así como en los vecinos Benahavís y Estepona en la Costa del Sol."
-        },
-        {
-          "q": "¿Pueden gestionar todo el proyecto si vivo en el extranjero?",
-          "a": "Sí. Nuestro servicio de gestión de proyectos está diseñado para propietarios a distancia. Gestionamos licencias, contratistas y control de calidad e informamos del avance."
-        },
-        {
-          "q": "¿Gestionan los permisos y licencias de obra?",
-          "a": "Sí. Nuestro equipo administrativo tramita todo el proceso de licencias con el ayuntamiento de Marbella, incluida la obra mayor, la primera ocupación y la certificación energética."
-        },
-        {
-          "q": "¿Cuánto cuesta construir una villa en Marbella?",
-          "a": "Depende de la parcela, el diseño, los acabados, la piscina y el sótano. Tras revisar su parcela y su brief ofrecemos un desglose de coste detallado y transparente en lugar de una cifra genérica."
-        },
-        {
-          "q": "¿Cuánto tarda en construirse una villa?",
-          "a": "Una villa llave en mano suele tardar de 14 a 24 meses incluyendo diseño y licencias, siendo la obra mayor y la primera ocupación los principales condicionantes de plazo."
-        }
-      ]
-    },
-    "villa-construction-marbella": {
-      "breadcrumb": "Construcción de villas en Marbella",
-      "h1": "Construcción de Villas en Marbella",
-      "heroTagline": "Construcción de villas de lujo llave en mano en Marbella: de la parcela y el diseño a las licencias, la obra y la entrega, gestionado de principio a fin para propietarios internacionales.",
-      "introTitle": "Construcción de villas de lujo llave en mano en Marbella",
-      "intro": "Construir una villa en Marbella debería ser la parte más gratificante de tener propiedad en la Costa del Sol, no la más estresante. La realidad es que la construcción de villas a medida aquí implica parcelas premium escasas, una exigente ingeniería en ladera en zonas como Sierra Blanca y La Zagaleta, y un proceso de licencias estricto que puede paralizar un proyecto durante meses si se gestiona mal.\n\nStructonix entrega construcción de villas llave en mano como un único equipo integrado de más de 40 arquitectos, ingenieros y jefes de proyecto. Asumimos la responsabilidad de toda la obra, de modo que su villa se entrega con la calidad, el presupuesto y el plazo acordados, con plena visibilidad en todo momento.",
-      "trust": [
-        {
-          "value": "40+",
-          "label": "arquitectos, ingenieros y jefes de proyecto en plantilla"
-        },
-        {
-          "value": "Llave en mano",
-          "label": "diseño, licencias, obra y entrega de principio a fin"
-        },
-        {
-          "value": "Milla de Oro",
-          "label": "a Nueva Andalucía, Sierra Blanca y La Zagaleta"
-        },
-        {
-          "value": "EN · RU · ES",
-          "label": "atención multilingüe para propietarios internacionales"
-        }
-      ],
-      "process": [
-        {
-          "title": "Parcela y viabilidad",
-          "text": "Evaluamos la orientación, las vistas, las normas del PGOU y las condiciones del terreno de su parcela para confirmar qué se puede construir y a qué coste."
-        },
-        {
-          "title": "Diseño",
-          "text": "Nuestros arquitectos diseñan una villa a medida de la parcela y su estilo de vida, optimizando las vistas al mar y la vida interior-exterior."
-        },
-        {
-          "title": "Ingeniería y licencias",
-          "text": "Calculamos cimentación, estructura, piscina e instalaciones y obtenemos las licencias de obra y primera ocupación."
-        },
-        {
-          "title": "Construcción",
-          "text": "Construimos con gremios verificados y un estricto control de calidad, informando del avance para que los propietarios a distancia estén plenamente informados."
-        },
-        {
-          "title": "Entrega",
-          "text": "Su villa se entrega terminada, con documentación, garantías y repasos resueltos, lista para disfrutar."
-        }
-      ],
-      "why": [
-        {
-          "title": "Diseño y obra, un solo equipo",
-          "text": "Su arquitecto y su constructor son el mismo equipo responsable, por lo que la villa que se le muestra es la villa que recibe."
-        },
-        {
-          "title": "Experiencia en ladera y parcelas con vistas",
-          "text": "Resolvemos las cimentaciones, contenciones y piscinas que exigen las parcelas de Marbella y Benahavís para liberar sus vistas con seguridad."
-        },
-        {
-          "title": "Presupuesto y plazo transparentes",
-          "text": "El alcance fijo y los informes claros evitan sorpresas, algo crítico al construir una villa de alto valor desde el extranjero."
-        },
-        {
-          "title": "Entrega lista para inversión",
-          "text": "Construimos con estándares que protegen el valor de reventa y alquiler, con proyectos elegibles para Golden Visa apoyados por nuestro equipo de inversores."
-        }
-      ],
-      "integration": "Una gran villa en Marbella depende de que la arquitectura y la ingeniería trabajen como una sola. Structonix mantiene ambas en plantilla: nuestros arquitectos diseñan según las normas de Marbella y su brief, mientras nuestros ingenieros resuelven las cimentaciones, la estructura, las piscinas y las instalaciones que exigen las parcelas en ladera y con vistas. Junto con nuestra gestión de proyectos, esta integración hace predecible una obra llave en mano.",
-      "turnkey": "Llave en mano significa que construye una vez, con un socio, y recibe una villa completa. Gestionamos la due diligence del terreno, el diseño, las licencias, la construcción y la primera ocupación en Marbella y toda la Costa del Sol. Desde obra nueva contemporánea en la Milla de Oro hasta villas a medida en Sierra Blanca y La Zagaleta, alineamos cada decisión con sus objetivos: vivienda familiar, residencia vacacional o villa de inversión.",
-      "ctaBlockTitle": "Inicie su villa en Marbella con un equipo único y responsable",
-      "ctaBlockText": "Comparta su parcela y su visión y esbozaremos una dirección de diseño, un presupuesto y un calendario realistas, mostrándole cómo la entrega llave en mano elimina el riesgo de construir en el extranjero.",
-      "faq": [
-        {
-          "q": "¿Qué incluye la construcción de villas llave en mano en Marbella?",
-          "a": "Cubre todo el proceso: evaluación de la parcela, diseño arquitectónico, ingeniería, licencias, construcción y entrega. Recibe una villa completa de un único equipo responsable en lugar de coordinar varias empresas."
-        },
-        {
-          "q": "¿En qué zonas de Marbella construyen villas?",
-          "a": "En la Milla de Oro, Nueva Andalucía, Sierra Blanca, Marbella Este y La Zagaleta, así como en Benahavís y Estepona en la Costa del Sol."
-        },
-        {
-          "q": "¿Pueden construir una villa mientras vivo en el extranjero?",
-          "a": "Sí. La entrega llave en mano con gestión de proyectos integrada está diseñada para propietarios a distancia. Gestionamos todo en obra e informamos del avance sin que tenga que viajar."
-        },
-        {
-          "q": "¿Cuánto cuesta la construcción de una villa en Marbella?",
-          "a": "Depende de la parcela, el diseño, el nivel de acabado, la piscina y el sótano. Ofrecemos una estimación detallada y transparente tras revisar su parcela y su brief, no un precio genérico."
-        },
-        {
-          "q": "¿Cuánto tarda en construirse una villa en Marbella?",
-          "a": "Una villa llave en mano suele tardar de 14 a 24 meses incluyendo diseño y licencias. Integramos el plazo de licencias en el plan desde el inicio."
-        },
-        {
-          "q": "¿Se encargan del diseño además de la construcción?",
-          "a": "Sí. Arquitectura, ingeniería y construcción son internas, por lo que diseño y obra los gestiona un solo equipo, base de una construcción llave en mano fiable."
-        }
-      ]
-    }
-  },
   "landings": {
     "common": {
       "breadcrumbHome": "Inicio",
@@ -880,50 +676,9 @@
       "relatedTitle": "Páginas relacionadas",
       "servicesTitle": "Descubre nuestros servicios",
       "zoneMarbella": "Construir en Marbella",
-      "zoneCosta": "Construir en la Costa del Sol"
-    },
-    "constructora-marbella": {
-      "h1": "Constructora en Marbella",
-      "linkLabel": "Constructora Marbella",
-      "heroTagline": "Structonix es una constructora en Marbella que entrega villas y residencias de lujo con un único equipo responsable del diseño, la obra y las licencias.",
-      "introTitle": "Su constructora en Marbella",
-      "intro": "Una constructora coordina todos los gremios, proveedores y autorizaciones de una obra y asume la responsabilidad del resultado final. En Marbella, donde los proyectos abarcan la Milla de Oro, Nueva Andalucía y Sierra Blanca, esa línea única de responsabilidad es lo que mantiene una obra de lujo en plazo y presupuesto.\n\nStructonix actúa como su constructora con arquitectura, ingeniería y gestión de proyectos propias, de modo que el mismo equipo que diseña su villa también la construye y responde por su calidad.",
-      "sections": [
-        {
-          "title": "Qué aporta una constructora",
-          "body": "Planificamos la obra, contratamos y supervisamos cada gremio, controlamos materiales y calidad y gestionamos la seguridad en obra. Usted recibe un contrato, un presupuesto y un único responsable en lugar de coordinar varias empresas."
-        },
-        {
-          "title": "Responsabilidad de un solo punto",
-          "body": "Cuando diseño, ingeniería y construcción dependen de una sola constructora, no quedan huecos por los que se filtren los problemas. Controlamos el programa de principio a fin, algo decisivo para quien construye una vivienda de alto valor desde el extranjero."
-        },
-        {
-          "title": "Experiencia real en Marbella",
-          "body": "Conocemos cómo aprueba e inspecciona obras cada ayuntamiento y urbanización cerrada, y construimos con los estándares que exige el mercado premium de Marbella: la base de una relación fiable con su constructora."
-        }
-      ],
-      "faq": [
-        {
-          "q": "¿Qué diferencia hay entre una constructora y un contratista?",
-          "a": "Una constructora planifica, contrata y supervisa todos los gremios y asume la responsabilidad global de presupuesto, plazo y calidad, además de ejecutar la obra. Structonix ofrece esa responsabilidad integral."
-        },
-        {
-          "q": "¿La constructora gestiona las licencias en Marbella?",
-          "a": "Sí. Gestionamos la licencia de obra, la de primera ocupación y la certificación energética con el ayuntamiento de Marbella como parte del servicio."
-        },
-        {
-          "q": "¿Pueden construir una villa diseñada por otro arquitecto?",
-          "a": "Sí. Podemos construir a partir de un proyecto de terceros, aunque la mayoría de clientes prefiere nuestro modelo integrado de diseño y construcción para un mejor control de coste y calidad."
-        },
-        {
-          "q": "¿Cómo controlan el presupuesto?",
-          "a": "Trabajamos con un alcance definido y mediciones detalladas, contratamos los gremios de forma competitiva e informamos de los costes con transparencia durante toda la obra."
-        },
-        {
-          "q": "¿Qué zonas alrededor de Marbella cubren?",
-          "a": "La Milla de Oro, Nueva Andalucía, Sierra Blanca, Marbella Este y los vecinos Benahavís y Estepona en la Costa del Sol."
-        }
-      ]
+      "zoneCosta": "Construir en la Costa del Sol",
+      "ctaEstimate": "Solicitar presupuesto",
+      "ctaCall": "Llámenos"
     },
     "arquitecto-marbella": {
       "h1": "Arquitecto en Marbella",
@@ -965,49 +720,6 @@
         {
           "q": "¿En qué estilos arquitectónicos trabajan?",
           "a": "Desde villas contemporáneas minimalistas hasta diseños mediterráneos modernos y cálidos, siempre adaptados a la parcela, las vistas y el contexto urbanístico de Marbella."
-        }
-      ]
-    },
-    "villa-construction-marbella": {
-      "h1": "Construcción de Villas en Marbella",
-      "linkLabel": "Construcción de Villas Marbella",
-      "heroTagline": "Construcción de villas de lujo llave en mano en Marbella — parcela, diseño, licencias, obra y entrega por un único equipo integrado.",
-      "introTitle": "Construcción de villas llave en mano en Marbella",
-      "intro": "Construir una villa en Marbella implica parcelas premium escasas, una exigente ingeniería en ladera y un proceso de licencias estricto. Bien gestionado, es la forma más gratificante de tener exactamente la casa que desea en la Costa del Sol.\n\nStructonix entrega construcción de villas llave en mano como un único equipo de arquitectos, ingenieros y jefes de proyecto, asumiendo toda la obra desde la cimentación hasta el último repaso.",
-      "sections": [
-        {
-          "title": "De la parcela a la entrega",
-          "body": "Evaluamos su parcela, diseñamos la villa, calculamos la estructura y la piscina, obtenemos las licencias y construimos hasta la finalización: un solo socio en todo el recorrido."
-        },
-        {
-          "title": "Ingeniería para parcelas de Marbella",
-          "body": "Las parcelas en pendiente de Sierra Blanca y las parcelas con vistas de Marbella exigen cimentaciones, contenciones y drenajes serios. Nuestra ingeniería libera esas vistas con seguridad y durabilidad."
-        },
-        {
-          "title": "Calidad verificable a distancia",
-          "body": "Los informes estructurados de avance y el control de calidad estricto permiten a los propietarios seguir su villa desde el extranjero con confianza en cada etapa."
-        }
-      ],
-      "faq": [
-        {
-          "q": "¿Qué incluye la construcción de villas llave en mano?",
-          "a": "Todo, desde la evaluación de la parcela, el diseño y la ingeniería hasta las licencias, la construcción y la entrega, por un único equipo responsable en lugar de empresas separadas."
-        },
-        {
-          "q": "¿Cuánto cuesta construir una villa en Marbella?",
-          "a": "Depende de la parcela, el diseño, los acabados, la piscina y el sótano. Ofrecemos un desglose de coste detallado y transparente tras revisar su parcela y su brief."
-        },
-        {
-          "q": "¿Cuánto se tarda en construir una villa en Marbella?",
-          "a": "Una villa llave en mano suele tardar de 14 a 24 meses incluyendo diseño y licencias, siendo la licencia de obra y la de primera ocupación los principales condicionantes de plazo."
-        },
-        {
-          "q": "¿Pueden construir en una parcela empinada o con vistas al mar?",
-          "a": "Sí. Las parcelas en ladera y con vistas son una de nuestras fortalezas de ingeniería, desde cimentaciones profundas hasta estructuras de contención y piscinas infinity."
-        },
-        {
-          "q": "¿Construyen villas fuera de Marbella?",
-          "a": "Sí, por toda la Costa del Sol incluyendo Benahavís y Estepona; consulte nuestra página de Constructora Costa del Sol."
         }
       ]
     },
@@ -1075,27 +787,43 @@
       "sections": [
         {
           "title": "Construcción de villas en Marbella",
-          "body": "Construir una villa en Marbella suele combinar condicionantes de parcela, licencias municipales y un alto nivel de acabado. Structonix apoya obra nueva y vivienda a medida a través de estructura, coordinación de ingeniería, acabados y control de proyecto.\n\nSegún el encargo, el alcance puede incluir estructura de hormigón armado, coordinación de instalaciones, acabados interiores y exteriores, y un proceso de entrega ordenado. No publicamos plazos ni precios inventados: se definen tras revisar parcela, proyecto y estado de licencia."
+          "body": "Construir una villa en Marbella combina condicionantes de parcela, licencias municipales y un alto nivel de acabado. Structonix apoya obra nueva y vivienda a medida mediante estructura, coordinación de ingeniería, acabados y control de proyecto.\n\nSegún el encargo, el alcance puede incluir hormigón armado, instalaciones, acabados y una entrega ordenada. Los plazos y presupuestos se definen tras revisar parcela, planos y licencia."
+        },
+        {
+          "title": "Contratista general en Marbella",
+          "body": "Como contratista general en Marbella, Structonix coordina gremios y subcontratas, planificación, visibilidad de presupuesto, calidad, supervisión técnica y documentación de obra.\n\nEs especialmente útil para propietarios internacionales o no residentes que necesitan reporting claro y un interlocutor responsable."
         },
         {
           "title": "Construcción llave en mano en Marbella",
-          "body": "La construcción llave en mano funciona cuando diseño, permisos, obra e instalaciones se coordinan en lugar de repartirse entre proveedores desconectados. Una secuencia habitual de Structonix es:\n\n1. Evaluación de parcela y proyecto\n2. Coordinación de arquitectura e ingeniería\n3. Apoyo en planificación y licencias\n4. Preparación de obra\n5. Ejecución estructural\n6. Coordinación de instalaciones\n7. Acabados\n8. Control de calidad\n9. Entrega final\n\nEl alcance exacto se acuerda por escrito. El valor está en la continuidad técnica de principio a fin."
+          "body": "La construcción llave en mano funciona cuando diseño, permisos, obra e instalaciones se coordinan. Una secuencia habitual es:\n\n1. Evaluación de parcela y proyecto\n2. Coordinación de arquitectura e ingeniería\n3. Apoyo en planificación y licencias\n4. Preparación de obra\n5. Ejecución estructural\n6. Coordinación de instalaciones\n7. Acabados\n8. Control de calidad\n9. Entrega final\n\nEl alcance exacto se acuerda por escrito."
         },
         {
-          "title": "Gestión como contratista general en Marbella",
-          "body": "Como contratista general, Structonix coordina gremios y subcontratas, planificación de obra, visibilidad de presupuesto, controles de calidad, supervisión técnica y documentación de obra.\n\nEsto es especialmente útil para propietarios internacionales o no residentes que necesitan reporting claro. Obtiene un proceso estructurado con responsabilidades definidas, no una cadena informal de interlocutores."
+          "title": "Construcción residencial en Marbella",
+          "body": "Además de villas de alto standing, Structonix apoya construcción residencial cuando se necesita un paquete técnico coordinado: viviendas de obra nueva y trabajos residenciales complejos con ingeniería, estructura y acabados bajo un mismo modelo de gestión."
         },
         {
-          "title": "Por qué Structonix",
-          "body": "Los clientes eligen Structonix cuando quieren capacidad de ciclo completo sin fragmentar arquitectura, ingeniería y construcción entre empresas no relacionadas. Nuestros diferenciadores reales son la entrega multidisciplinar, la supervisión técnica, el control de plazo y documentación, y la comunicación multilingüe.\n\nNo afirmamos ser “la mejor” o “número 1” en Marbella. Nos centramos en ejecución responsable, comunicación transparente y calidad comprobable en obra."
+          "title": "Servicios de construcción en Marbella",
+          "body": "El paquete de construcción en Marbella puede combinar estructura, ingeniería, arquitectura, acabados, carpintería/ventanas cuando procede y gestión administrativa / de proyecto.\n\nUse las páginas de servicios para el detalle de capacidad y vuelva aquí cuando la intención sea elegir empresa constructora en Marbella."
         },
         {
-          "title": "Zonas donde trabajamos alrededor de Marbella",
-          "body": "Trabajamos en Marbella y zonas próximas habituales en encargos residenciales: Nueva Andalucía, Puerto Banús, Milla de Oro, Sierra Blanca, Nagüeles, Los Monteros, Elviria, San Pedro de Alcántara, Guadalmina, Benahavís y Estepona.\n\nPara la cobertura regional más amplia, consulte nuestra página de Costa del Sol. No creamos páginas de barrio sin contenido propio y valor comercial real."
+          "title": "Ingeniería y arquitectura",
+          "body": "Arquitectura e ingeniería forman parte del modelo integrado de Structonix. Alinear diseño y paquete técnico con la ejecución reduce desfases frecuentes en obras de Marbella.\n\nPodemos entregar estas disciplinas junto con la construcción o incorporarnos a un proyecto existente."
+        },
+        {
+          "title": "Trabajos de estructura",
+          "body": "La estructura es clave en villas y vivienda en Marbella, especialmente en parcelas en ladera o con acceso limitado. Coordinamos hormigón armado y ejecución estructural con supervisión de ingeniería y control de calidad."
+        },
+        {
+          "title": "Gestión de construcción",
+          "body": "La gestión de construcción cubre plazo, presupuesto, coordinación de subcontratas, calidad y documentación. Para clientes internacionales suele marcar la diferencia entre una obra transparente y una opaca."
+        },
+        {
+          "title": "Zonas donde trabajamos en Marbella",
+          "body": "Trabajamos en Marbella y zonas próximas: Nueva Andalucía, Puerto Banús, Milla de Oro, Sierra Blanca, Nagüeles, Los Monteros, Elviria, San Pedro de Alcántara, Guadalmina, Benahavís y Estepona.\n\nPara contexto geográfico sin competir por la keyword comercial, vea el hub de Marbella. Para cobertura regional, vea la página de Costa del Sol."
         },
         {
           "title": "Proceso de construcción",
-          "body": "Toda obra seria empieza con claridad: qué se construye, bajo qué licencia, con qué paquete técnico y quién responde en cada fase. Structonix alinea planos, condiciones de parcela y requisitos administrativos antes de acelerar la ejecución.\n\nDurante la obra seguimos estructura, instalaciones y acabados respecto al alcance acordado. Al final priorizamos una entrega práctica: trabajos completados, pendientes y documentación necesaria."
+          "body": "Toda obra seria empieza con claridad: qué se construye, bajo qué licencia, con qué paquete técnico y quién responde en cada fase. Durante la obra seguimos estructura, instalaciones y acabados respecto al alcance acordado."
         }
       ],
       "faq": [
@@ -1299,8 +1027,8 @@
     },
     "zones": {
       "marbella": {
-        "title": "Construcción en Marbella | Zonas y hub de proyecto | Structonix",
-        "description": "Hub geográfico de construcción en Marbella y zonas próximas. Continúe a las páginas comerciales de Structonix para empresa constructora, villas y llave en mano."
+        "title": "Zonas de construcción en Marbella | Hub geográfico | Structonix",
+        "description": "Hub geográfico de barrios y áreas de servicio en Marbella. Para construcción comercial de villas y llave en mano, continúe a la página de empresa constructora Structonix en Marbella."
       },
       "benahavis": {
         "title": "Construcción de Villas de Lujo en Benahavís | Structonix",
@@ -1316,21 +1044,13 @@
       }
     },
     "landings": {
-      "constructora-marbella": {
-        "title": "Constructora en Marbella | Villas de Lujo | Structonix",
-        "description": "Constructora en Marbella para villas de lujo: un solo equipo para diseño, obra y licencias en la Milla de Oro, Nueva Andalucía y Sierra Blanca."
-      },
       "arquitecto-marbella": {
         "title": "Arquitecto en Marbella | Diseño de Villas de Lujo | Structonix",
         "description": "Arquitecto en Marbella para villas de lujo: diseño conceptual, licencias urbanísticas (PGOU) y documentación técnica completa por un equipo integrado de arquitectura e ingeniería."
       },
-      "villa-construction-marbella": {
-        "title": "Construcción de Villas en Marbella | Villas Llave en Mano | Structonix",
-        "description": "Construcción de villas de lujo llave en mano en Marbella: parcela, diseño, licencias, obra y entrega por un equipo integrado. Milla de Oro, Nueva Andalucía y Sierra Blanca."
-      },
       "builders-costa-del-sol": {
-        "title": "Constructora Costa del Sol | Villas | Structonix",
-        "description": "Construcción integral de villas y vivienda en la Costa del Sol. Ingeniería, estructura, gestión de proyecto y obra llave en mano por Structonix."
+        "title": "Empresa constructora Costa del Sol | Construcción de villas | Structonix",
+        "description": "Construcción de villas y vivienda en la Costa del Sol. Ingeniería, estructura, gestión de obra y entrega llave en mano por Structonix."
       },
       "construction-company-marbella": {
         "title": "Empresa constructora Marbella | Construcción de villas | Structonix",
@@ -1347,16 +1067,6 @@
       "renovation-marbella": {
         "title": "Reformas en Marbella | Reforma de Villas de Lujo | Structonix",
         "description": "Reforma de villas y apartamentos de lujo en Marbella: modernización a estándares contemporáneos con control total del proyecto y gestión de licencias."
-      }
-    },
-    "serviceLocations": {
-      "construction-company-marbella": {
-        "title": "Empresa constructora Marbella | Construcción de villas | Structonix",
-        "description": "Structonix ofrece construcción integral de villas y vivienda en Marbella: ingeniería, estructura, gestión de proyecto y entrega llave en mano."
-      },
-      "villa-construction-marbella": {
-        "title": "Construcción de Villas en Marbella | Villas Llave en Mano | Structonix",
-        "description": "Construcción de villas de lujo llave en mano en Marbella: parcela, diseño, licencias, obra y entrega por un equipo integrado. Milla de Oro, Nueva Andalucía y Sierra Blanca."
       }
     },
     "services": {
