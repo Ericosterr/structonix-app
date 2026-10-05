@@ -1,5 +1,4 @@
 import { Jimp, intToRGBA } from "jimp";
-import toIco from "to-ico";
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -11,6 +10,68 @@ const BRAND = { r: 2, g: 33, b: 82, a: 255 };
 const WHITE_THRESHOLD = 48;
 const CONTENT_MARGIN_RATIO = 0.04;
 const ICON_PADDING_RATIO = 0.1;
+
+/**
+ * Build a Windows ICO container that embeds PNG payloads (Vista+ format).
+ * Accepts PNG buffers for sizes such as 16x16, 32x32, and 48x48.
+ */
+function pngBuffersToIco(pngBuffers) {
+  if (!Array.isArray(pngBuffers) || pngBuffers.length === 0) {
+    throw new Error("pngBuffersToIco requires at least one PNG buffer.");
+  }
+
+  const images = pngBuffers.map((buffer, index) => {
+    if (!Buffer.isBuffer(buffer) || buffer.length < 24) {
+      throw new Error(`PNG buffer #${index} is empty or too short.`);
+    }
+    if (
+      buffer[0] !== 0x89 ||
+      buffer[1] !== 0x50 ||
+      buffer[2] !== 0x4e ||
+      buffer[3] !== 0x47
+    ) {
+      throw new Error(`PNG buffer #${index} is not a valid PNG.`);
+    }
+
+    const width = buffer.readUInt32BE(16);
+    const height = buffer.readUInt32BE(20);
+    if (width < 1 || height < 1 || width > 256 || height > 256) {
+      throw new Error(
+        `PNG buffer #${index} has unsupported size ${width}x${height}.`,
+      );
+    }
+
+    return { buffer, width, height };
+  });
+
+  const headerSize = 6;
+  const entrySize = 16;
+  const dataOffset = headerSize + entrySize * images.length;
+  const totalSize =
+    dataOffset + images.reduce((sum, image) => sum + image.buffer.length, 0);
+  const ico = Buffer.alloc(totalSize);
+
+  ico.writeUInt16LE(0, 0); // reserved
+  ico.writeUInt16LE(1, 2); // type: icon
+  ico.writeUInt16LE(images.length, 4);
+
+  let offset = dataOffset;
+  images.forEach((image, index) => {
+    const entryOffset = headerSize + index * entrySize;
+    ico.writeUInt8(image.width === 256 ? 0 : image.width, entryOffset);
+    ico.writeUInt8(image.height === 256 ? 0 : image.height, entryOffset + 1);
+    ico.writeUInt8(0, entryOffset + 2); // color count (0 = no palette)
+    ico.writeUInt8(0, entryOffset + 3); // reserved
+    ico.writeUInt16LE(1, entryOffset + 4); // color planes
+    ico.writeUInt16LE(32, entryOffset + 6); // bits per pixel
+    ico.writeUInt32LE(image.buffer.length, entryOffset + 8);
+    ico.writeUInt32LE(offset, entryOffset + 12);
+    image.buffer.copy(ico, offset);
+    offset += image.buffer.length;
+  });
+
+  return ico;
+}
 
 function findContentBounds(image) {
   const { width, height } = image.bitmap;
@@ -91,8 +152,9 @@ async function main() {
     pngBuffers.push(await icon.getBuffer("image/png"));
   }
 
-  writeFileSync(join(OUT_DIR, "favicon.ico"), await toIco(pngBuffers));
-  console.log("Wrote favicon.ico (16, 32, 48)");
+  const favicon = pngBuffersToIco(pngBuffers);
+  writeFileSync(join(OUT_DIR, "favicon.ico"), favicon);
+  console.log(`Wrote favicon.ico (16, 32, 48) — ${favicon.length} bytes`);
 }
 
 main().catch((error) => {
