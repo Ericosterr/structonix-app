@@ -1,5 +1,12 @@
 export const galleries = {
   estructura: [
+    "/services/estructura/Structonix-construction-1.JPG",
+    "/services/estructura/Structonix-construction-2.JPG",
+    "/services/estructura/Structonix-construction-3.JPG",
+    "/services/estructura/Structonix-construction-4.JPG",
+    "/services/estructura/Structonix-construction-5.JPG",
+    "/services/estructura/Structonix-construction-6.JPG",
+    "/services/estructura/Structonix-construction-7.JPG",
     "/services/estructura/estructura-1.jpeg",
     "/services/estructura/estructura-2.jpeg",
     "/services/estructura/estructura-3.jpeg",
