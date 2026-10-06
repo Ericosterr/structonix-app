@@ -34,9 +34,11 @@ type LandingPageContentProps = {
 type Section = { title: string; body: string };
 
 const SERVICE_LINKS = [
-  { href: "/servicios/arquitectura", key: "arquitectura" },
-  { href: "/servicios/ingenieria", key: "ingenieria" },
   { href: "/servicios/estructura", key: "estructura" },
+  { href: "/servicios/ingenieria", key: "ingenieria" },
+  { href: "/servicios/arquitectura", key: "arquitectura" },
+  { href: "/servicios/acabados", key: "acabados" },
+  { href: "/servicios/carpinteria", key: "carpinteria" },
   { href: "/servicios/gestion-administrativa", key: "gestion-administrativa" },
 ] as const;
 
@@ -119,6 +121,24 @@ export async function LandingPageContent({
               variant="outline"
               className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white"
             >
+              <Link href="#contacto">{t("common.ctaEstimate")}</Link>
+            </Button>
+            {company.phone ? (
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white"
+              >
+                <a href={`tel:${company.phone}`}>{t("common.ctaCall")}</a>
+              </Button>
+            ) : null}
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white"
+            >
               <WhatsAppConversionLink
                 href={company.whatsapp}
                 target="_blank"
@@ -195,10 +215,22 @@ export async function LandingPageContent({
               {t("common.zoneMarbella")}
             </Link>
             <Link
+              href="/zonas/costa-del-sol"
+              className="rounded-[var(--radius-button)] border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
+            >
+              {t("common.zoneCosta")}
+            </Link>
+            <Link
               href="/para-inversores"
               className="rounded-[var(--radius-button)] border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
             >
               {tNav("investors")}
+            </Link>
+            <Link
+              href="#contacto"
+              className="rounded-[var(--radius-button)] border border-primary/40 bg-primary/5 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
+            >
+              {t("common.ctaPrimary")}
             </Link>
           </div>
         </Container>

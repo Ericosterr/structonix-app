@@ -28,9 +28,11 @@ type ZonePageContentProps = {
 };
 
 const SERVICE_LINKS = [
-  { href: "/servicios/arquitectura", key: "arquitectura" },
-  { href: "/servicios/ingenieria", key: "ingenieria" },
   { href: "/servicios/estructura", key: "estructura" },
+  { href: "/servicios/ingenieria", key: "ingenieria" },
+  { href: "/servicios/arquitectura", key: "arquitectura" },
+  { href: "/servicios/acabados", key: "acabados" },
+  { href: "/servicios/carpinteria", key: "carpinteria" },
   { href: "/servicios/gestion-administrativa", key: "gestion-administrativa" },
 ] as const;
 
@@ -71,17 +73,15 @@ export async function ZonePageContent({ zona, locale }: ZonePageContentProps) {
 
   const otherZones = relatedZones.filter((zone) => zone !== zona);
 
-  const marbellaServiceLinks =
-    zona === "marbella"
+  const commercialLinks =
+    zona === "marbella" || zona === "costa-del-sol"
       ? await (async () => {
           const tLandings = await getTranslations("landings");
-          return (
-            [
-              "constructora-marbella",
-              "villa-construction-marbella",
-              "construction-company-marbella",
-            ] as const
-          ).map((key) => ({
+          const keys =
+            zona === "marbella"
+              ? (["construction-company-marbella", "builders-costa-del-sol"] as const)
+              : (["builders-costa-del-sol", "construction-company-marbella"] as const);
+          return keys.map((key) => ({
             href: getLandingPath(key, locale),
             label: tLandings(`${key}.linkLabel`),
           }));
@@ -242,7 +242,7 @@ export async function ZonePageContent({ zona, locale }: ZonePageContentProps) {
                 {t(`${zone}.name`)}
               </Link>
             ))}
-            {marbellaServiceLinks.map((link) => (
+            {commercialLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

@@ -42,6 +42,52 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    // Consolidate overlapping Marbella commercial URLs into the primary
+    // construction-company page. Keep locale-prefixed and default-locale forms.
+    return [
+      {
+        source: "/en/villa-construction-marbella",
+        destination: "/en/construction-company-marbella",
+        permanent: true,
+      },
+      {
+        source: "/en/general-contractor-marbella",
+        destination: "/en/construction-company-marbella",
+        permanent: true,
+      },
+      {
+        source: "/construccion-villas-marbella",
+        destination: "/empresa-constructora-marbella",
+        permanent: true,
+      },
+      {
+        source: "/constructora-marbella",
+        destination: "/empresa-constructora-marbella",
+        permanent: true,
+      },
+      {
+        source: "/es/construccion-villas-marbella",
+        destination: "/empresa-constructora-marbella",
+        permanent: true,
+      },
+      {
+        source: "/es/constructora-marbella",
+        destination: "/empresa-constructora-marbella",
+        permanent: true,
+      },
+      {
+        source: "/ru/stroitelstvo-vill-v-marbele",
+        destination: "/ru/stroitelnaya-kompaniya-marbelya",
+        permanent: true,
+      },
+      {
+        source: "/ru/generalnyy-podryadchik-marbelya",
+        destination: "/ru/stroitelnaya-kompaniya-marbelya",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

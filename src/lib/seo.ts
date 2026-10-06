@@ -181,35 +181,37 @@ export function buildLocalizedSlugMetadata({
 
 export function buildOrganizationJsonLd() {
   const logoUrl = `${site.baseUrl}${site.assets.companyLogo}`;
-  const sameAs = [company.instagram, company.youtube].filter(Boolean);
+  const sameAs = [company.instagram, company.youtube, company.facebook].filter(
+    Boolean,
+  );
+  const organizationId = `${site.baseUrl}/#organization`;
 
   return {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        name: company.companyName,
-        url: site.baseUrl,
-        logo: logoUrl,
-        ...(sameAs.length > 0 ? { sameAs } : {}),
-        ...(company.email ? { email: company.email } : {}),
-        ...(company.phone ? { telephone: company.phone } : {}),
-      },
-      {
-        "@type": "LocalBusiness",
-        name: company.companyName,
-        url: site.baseUrl,
-        image: logoUrl,
-        ...(company.address ? { address: company.address } : {}),
-        ...(company.phone ? { telephone: company.phone } : {}),
-        ...(company.email ? { email: company.email } : {}),
-      },
-      {
-        "@type": "ConstructionCompany",
-        name: company.companyName,
-        url: site.baseUrl,
-      },
-    ],
+    "@type": ["Organization", "GeneralContractor"],
+    "@id": organizationId,
+    name: company.companyName,
+    legalName: company.legalName,
+    url: site.baseUrl,
+    logo: logoUrl,
+    image: logoUrl,
+    ...(sameAs.length > 0 ? { sameAs } : {}),
+    ...(company.email ? { email: company.email } : {}),
+    ...(company.phone ? { telephone: company.phone } : {}),
+    address: {
+      "@type": "PostalAddress",
+      ...company.addressStructured,
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: company.geo.lat,
+      longitude: company.geo.lng,
+    },
+    areaServed: company.areaServed.map((name) => ({
+      "@type": "Place",
+      name,
+    })),
+    availableLanguage: company.availableLanguage,
   };
 }
 
@@ -250,48 +252,45 @@ type LocalBusinessInput = {
   geo: { lat: number; lng: number; region: string };
 };
 
+/**
+ * Page-level contractor entity for local/landing pages.
+ * Uses the verified HQ address in Benalmádena and declares the commercial
+ * focus via areaServed — never invents a Marbella branch office.
+ */
 export function buildLocalBusinessJsonLd({
   name,
   url,
   areaServed,
-  geo,
 }: LocalBusinessInput) {
   const logoUrl = `${site.baseUrl}${site.assets.companyLogo}`;
+  const organizationId = `${site.baseUrl}/#organization`;
 
   return {
     "@context": "https://schema.org",
-    "@type": "GeneralContractor",
-    "@id": `${url}#localbusiness`,
-    name,
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
     url,
-    image: logoUrl,
-    logo: logoUrl,
-    ...(company.phone ? { telephone: company.phone } : {}),
-    ...(company.email ? { email: company.email } : {}),
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Calle Teide, 3/2",
-      addressLocality: "Benalmádena",
-      addressRegion: geo.region,
-      postalCode: "29631",
-      addressCountry: "ES",
+    name,
+    isPartOf: { "@id": organizationId },
+    about: {
+      "@type": "GeneralContractor",
+      "@id": organizationId,
+      name: company.companyName,
+      url: site.baseUrl,
+      telephone: company.phone,
+      email: company.email,
+      address: {
+        "@type": "PostalAddress",
+        ...company.addressStructured,
+      },
+      areaServed: {
+        "@type": "AdministrativeArea",
+        name: areaServed,
+      },
+      image: logoUrl,
+      logo: logoUrl,
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: geo.lat,
-      longitude: geo.lng,
-    },
-    areaServed: {
-      "@type": "City",
-      name: areaServed,
-    },
-    knowsAbout: [
-      "Luxury villa construction",
-      "Architecture",
-      "Engineering",
-      "Construction project management",
-      "Real estate development",
-    ],
+    primaryImageOfPage: logoUrl,
   };
 }
 
