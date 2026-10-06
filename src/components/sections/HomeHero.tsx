@@ -25,6 +25,14 @@ export function HomeHero() {
       <div className="flex flex-col justify-center gap-8 lg:gap-10">
         <div className="space-y-6">
           <HomeHeroBranding />
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+            className="max-w-3xl text-2xl font-semibold tracking-tight text-white md:text-3xl lg:text-4xl"
+          >
+            {t("h1")}
+          </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
