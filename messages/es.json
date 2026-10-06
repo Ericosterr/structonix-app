@@ -65,7 +65,8 @@
     "servicesTitle": "Servicios",
     "linkMarbella": "Empresa constructora en Marbella",
     "linkCosta": "Empresa constructora en la Costa del Sol",
-    "linkMarbellaAreas": "Zonas de Marbella donde trabajamos"
+    "linkMarbellaAreas": "Zonas de Marbella donde trabajamos",
+    "h1": "Empresa Constructora en Marbella y Costa del Sol"
   },
   "careers": {
     "heroTitle": "Construye tu carrera con Structonix",
@@ -999,7 +1000,7 @@
   "seo": {
     "home": {
       "title": "Structonix | Construcción e ingeniería en la Costa del Sol",
-      "description": "Structonix Sistem Global S.L. — construcción de ciclo completo, ingeniería y arquitectura para villas y vivienda en Marbella y la Costa del Sol."
+      "description": "Structonix Sistem Global S.L. ofrece construcción integral, ingeniería y arquitectura para villas y vivienda en Marbella y en toda la Costa del Sol."
     },
     "about": {
       "title": "Quienes Somos | Structonix",
@@ -1040,7 +1041,7 @@
       },
       "costa-del-sol": {
         "title": "Construcción en la Costa del Sol | Hub regional | Structonix",
-        "description": "Hub regional de construcción en la Costa del Sol. Compare mercados costeros y continúe a Marbella y a las páginas de servicios para la intención comercial del proyecto."
+        "description": "Hub regional de construcción en la Costa del Sol. Compare mercados costeros y continúe a Marbella y a las páginas de servicios para proyectos."
       }
     },
     "landings": {
@@ -1050,11 +1051,11 @@
       },
       "builders-costa-del-sol": {
         "title": "Empresa constructora Costa del Sol | Structonix",
-        "description": "Construcción de villas y vivienda en la Costa del Sol. Ingeniería, estructura, gestión de obra y entrega llave en mano por Structonix."
+        "description": "Construcción de villas y vivienda en toda la Costa del Sol, con ingeniería, estructura, gestión de obra y entrega llave en mano."
       },
       "construction-company-marbella": {
-        "title": "Empresa constructora Marbella | Construcción de villas | Structonix",
-        "description": "Structonix ofrece construcción integral de villas y vivienda en Marbella: ingeniería, estructura, gestión de proyecto y entrega llave en mano."
+        "title": "Empresa constructora en Marbella | Structonix",
+        "description": "Structonix ofrece construcción integral de villas y vivienda en Marbella, con ingeniería, estructura, gestión de proyecto y entrega llave en mano."
       },
       "project-management-marbella": {
         "title": "Gestión de Proyectos de Construcción en Marbella | Structonix",
@@ -1065,7 +1066,7 @@
         "description": "Villas y viviendas de obra nueva en Marbella: construcción moderna y eficiente, de la parcela y la licencia a la entrega, gestionada de principio a fin por Structonix."
       },
       "renovation-marbella": {
-        "title": "Reformas en Marbella | Reforma de Villas de Lujo | Structonix",
+        "title": "Reformas en Marbella | Villas de lujo | Structonix",
         "description": "Reforma de villas y apartamentos de lujo en Marbella: modernización a estándares contemporáneos con control total del proyecto y gestión de licencias."
       }
     },

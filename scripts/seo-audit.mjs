@@ -146,6 +146,25 @@ async function auditPath(path) {
   else if (description.length < 50 || description.length > 170) {
     flags.push("WARNING description-length");
   }
+
+  // Detect obvious metadata concatenation bugs (no spaces), not soft heuristics.
+  const malformedMetaPatterns = [
+    /villaand/i,
+    /acrossthe/i,
+    /comercialdel/i,
+    /commercialdel/i,
+    /todedicated/i,
+    /continueto/i,
+    /enlaCosta/i,
+    /delaCosta/i,
+  ];
+  for (const value of [title, description].filter(Boolean)) {
+    for (const pattern of malformedMetaPatterns) {
+      if (pattern.test(value)) {
+        flags.push(`ERROR malformed-meta:${pattern.source}`);
+      }
+    }
+  }
   if (!canonical) flags.push("ERROR missing-canonical");
   else if (!canonical.startsWith("https://structonixsistem.com")) {
     flags.push("ERROR canonical-host");

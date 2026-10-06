@@ -65,7 +65,8 @@
     "servicesTitle": "Services",
     "linkMarbella": "Construction company in Marbella",
     "linkCosta": "Construction company on the Costa del Sol",
-    "linkMarbellaAreas": "Marbella areas we serve"
+    "linkMarbellaAreas": "Marbella areas we serve",
+    "h1": "Construction Company in Marbella & Costa del Sol"
   },
   "careers": {
     "heroTitle": "Build your career with Structonix",
@@ -999,7 +1000,7 @@
   "seo": {
     "home": {
       "title": "Structonix | Construction & Engineering on the Costa del Sol",
-      "description": "Structonix Sistem Global S.L. — full-cycle construction, engineering and architecture for villas and homes in Marbella and the Costa del Sol."
+      "description": "Structonix Sistem Global S.L. provides full-cycle construction, engineering and architecture for villas and homes in Marbella and across the Costa del Sol."
     },
     "about": {
       "title": "About Us | Structonix",
@@ -1040,7 +1041,7 @@
       },
       "costa-del-sol": {
         "title": "Construction on the Costa del Sol | Regional Hub | Structonix",
-        "description": "Regional hub for construction across the Costa del Sol. Compare coastal markets and continue to dedicated Marbella and service pages for commercial project intent."
+        "description": "Regional hub for construction on the Costa del Sol. Compare coastal markets, then continue to the Marbella and service pages for commercial project intent."
       }
     },
     "landings": {
@@ -1050,10 +1051,10 @@
       },
       "builders-costa-del-sol": {
         "title": "Construction Company Costa del Sol | Structonix",
-        "description": "Full-cycle villa and residential construction across the Costa del Sol. Engineering, structural works, project management and turnkey delivery by Structonix."
+        "description": "Full-cycle villa and residential construction across the Costa del Sol, including engineering, structural works, project management and turnkey delivery."
       },
       "construction-company-marbella": {
-        "title": "Construction Company Marbella | Villa Construction | Structonix",
+        "title": "Construction Company Marbella | Structonix",
         "description": "Structonix provides full-cycle villa and residential construction in Marbella, including engineering, structural works, project management and turnkey delivery."
       },
       "project-management-marbella": {
@@ -1065,13 +1066,13 @@
         "description": "New-build villas and homes in Marbella — modern, energy-efficient construction from plot and licensing to handover, managed end to end by Structonix."
       },
       "renovation-marbella": {
-        "title": "Renovation in Marbella | Luxury Villa Refurbishment | Structonix",
+        "title": "Renovation in Marbella | Luxury Villas | Structonix",
         "description": "Luxury villa and apartment renovation in Marbella — modernising properties to contemporary standards with full project control and licensing."
       }
     },
     "services": {
       "estructura": {
-        "title": "Structural Works | Reinforced Concrete Construction | Structonix",
+        "title": "Structural Works | Reinforced Concrete | Structonix",
         "description": "Structural works and reinforced concrete construction for villas and residential projects on the Costa del Sol, coordinated with engineering and project management."
       },
       "ingenieria": {
