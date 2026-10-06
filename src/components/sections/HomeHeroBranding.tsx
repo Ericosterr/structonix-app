@@ -36,14 +36,14 @@ export function HomeHeroBranding() {
         animate="visible"
         className="min-w-0 text-center font-sans sm:text-left"
       >
-        <h1 className="min-w-0 text-center font-sans sm:text-left">
+        <p className="min-w-0 text-center font-sans sm:text-left">
           <span className="block text-[2.25rem] font-bold uppercase leading-none text-white sm:text-5xl md:text-6xl lg:text-7xl">
             STRUCTONIX
           </span>
           <span className="mt-1 block text-lg font-bold uppercase leading-none text-white sm:text-2xl md:text-3xl lg:text-[2rem]">
             SISTEM GLOBAL S. L.
           </span>
-        </h1>
+        </p>
       </motion.div>
     </div>
   );
