@@ -56,6 +56,23 @@ const expectedRedirects = [
   },
 ];
 
+/** Exact malformed metadata tokens (missing spaces). Do not strip spaces before matching. */
+const malformedMetaTokens = [
+  "ofrececonstrucción",
+  "theCosta",
+  "villaand",
+  "конструктив,управление",
+  "entoda",
+  "gestiónde",
+  "andresidential",
+  "техническаяподдержка",
+  "acrossthe",
+  "comercialdel",
+  "commercialdel",
+  "todedicated",
+  "continueto",
+];
+
 function textBetween(html, startRe, endRe) {
   const start = html.match(startRe);
   if (!start) return null;
@@ -147,21 +164,13 @@ async function auditPath(path) {
     flags.push("WARNING description-length");
   }
 
-  // Detect obvious metadata concatenation bugs (no spaces), not soft heuristics.
-  const malformedMetaPatterns = [
-    /villaand/i,
-    /acrossthe/i,
-    /comercialdel/i,
-    /commercialdel/i,
-    /todedicated/i,
-    /continueto/i,
-    /enlaCosta/i,
-    /delaCosta/i,
-  ];
+  // Detect exact known metadata concatenation bugs (missing spaces).
+  // Keep this list literal / low-noise — do not strip spaces before matching.
   for (const value of [title, description].filter(Boolean)) {
-    for (const pattern of malformedMetaPatterns) {
-      if (pattern.test(value)) {
-        flags.push(`ERROR malformed-meta:${pattern.source}`);
+    const lower = value.toLocaleLowerCase();
+    for (const token of malformedMetaTokens) {
+      if (lower.includes(token.toLocaleLowerCase())) {
+        flags.push(`ERROR malformed-meta:${token}`);
       }
     }
   }
@@ -233,6 +242,64 @@ async function auditRedirect(entry) {
       flags: [`ERROR fetch:${error.message}`],
     };
   }
+}
+
+function collectSeoStrings(node, path, out) {
+  if (!node || typeof node !== "object") return;
+  if (Array.isArray(node)) {
+    node.forEach((item, index) => collectSeoStrings(item, `${path}[${index}]`, out));
+    return;
+  }
+  for (const [key, value] of Object.entries(node)) {
+    const next = path ? `${path}.${key}` : key;
+    if (typeof value === "string" && (key === "title" || key === "description")) {
+      out.push({ path: next, value });
+    } else if (value && typeof value === "object") {
+      collectSeoStrings(value, next, out);
+    }
+  }
+}
+
+async function auditSourceMessages() {
+  const { readFile } = await import("node:fs/promises");
+  const { dirname, join } = await import("node:path");
+  const { fileURLToPath } = await import("node:url");
+  const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+  const flags = [];
+
+  for (const locale of ["en", "es", "ru"]) {
+    const filePath = join(root, "messages", `${locale}.json`);
+    const data = JSON.parse(await readFile(filePath, "utf8"));
+    const entries = [];
+    collectSeoStrings(data.seo || {}, `messages/${locale}.json#seo`, entries);
+    for (const entry of entries) {
+      const lower = entry.value.toLocaleLowerCase();
+      for (const token of malformedMetaTokens) {
+        if (lower.includes(token.toLocaleLowerCase())) {
+          flags.push(`ERROR source-malformed-meta:${token}@${entry.path}`);
+        }
+      }
+      // Missing space after comma before a letter (e.g. "конструктив,управление").
+      if (/,[^\s0-9"'[{]/.test(entry.value)) {
+        flags.push(`ERROR source-comma-spacing@${entry.path}`);
+      }
+    }
+  }
+
+  return {
+    level: flags.length ? "ERROR" : "PASS",
+    url: "source://messages/{en,es,ru}.json#seo",
+    status: flags.length ? 0 : 200,
+    title: null,
+    flags: flags.length ? flags : ["PASS source-meta-spacing"],
+  };
+}
+
+const sourceAudit = await auditSourceMessages();
+if (sourceAudit.level === "ERROR") {
+  console.log(JSON.stringify({ base, sourceAudit }, null, 2));
+  console.error(`seo-audit: source metadata spacing FAILED`);
+  process.exit(1);
 }
 
 const results = [];
