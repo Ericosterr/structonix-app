@@ -1,5 +1,18 @@
 export const galleries = {
   estructura: [
+    "/services/estructura/Structonix-villa-construction-marbella-2026.JPG",
+    "/services/estructura/Structonix-villa-construction-marbella-2026-1.JPG",
+    "/services/estructura/Structonix-villa-construction-marbella-2026-2.JPG",
+    "/services/estructura/Structonix-villa-construction-marbella-2026-3.JPG",
+    "/services/estructura/Structonix-villa-construction-marbella-2026-4.JPG",
+    "/services/estructura/Structonix-villa-construction-marbella-2026-5.JPG",
+    "/services/estructura/Structonix-villa-construction-marbella-2026-6.JPG",
+    "/services/estructura/Structonix-villa-construction-marbella-2026-7.JPG",
+    "/services/estructura/Structonix-villa-construction-marbella-2026-8.JPG",
+    "/services/estructura/Structonix-villa-construction-marbella-2026-9.JPG",
+    "/services/estructura/Structonix-villa-construction-marbella-2026-10.JPG",
+    "/services/estructura/Structonix-villa-construction-marbella-2026-11.JPG",
+    "/services/estructura/Structonix-villa-construction-marbella-2026-12.JPG",
     "/services/estructura/Structonix-construction-1.JPG",
     "/services/estructura/Structonix-construction-2.JPG",
     "/services/estructura/Structonix-construction-3.JPG",
