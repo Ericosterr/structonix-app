@@ -2,7 +2,7 @@ export const company = {
   companyName: "Structonix Sistem Global S.L.",
   legalName: "Structonix Sistem Global S.L.",
   phone: "+34604427398",
-  email: "info@structonixsistem.com",
+  email: "structonixglobal@gmail.com",
   /** Display string used in footer/contact UI. */
   address: "Calle Teide, 3/2 Benalmadena, Malaga 29631",
   /** Structured HQ address for schema (matches published company details). */
