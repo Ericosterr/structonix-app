@@ -33,15 +33,31 @@ export function getOgImageUrl(): string {
   return getAbsoluteAssetUrl(site.assets.ogImage);
 }
 
+/**
+ * Favicon strategy (single source in metadata; no competing tags):
+ * - /favicon.ico — classic browser request
+ * - /icon.png — App Router file convention asset (src/app/icon.png)
+ * - sized PNGs — Google / PWA useful fallbacks
+ * - /apple-icon.png — App Router apple-icon (src/app/apple-icon.png)
+ * - /apple-touch-icon.png — conventional iOS path (public alias, same artwork)
+ *
+ * Explicit metadata.icons replaces automatic file-convention injection, so we
+ * list App Router URLs here instead of relying on a second auto-injected set.
+ */
 export function buildFaviconIcons(): NonNullable<Metadata["icons"]> {
   return {
     icon: [
-      { url: "/favicon.ico" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+      { url: "/icon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/icon-48x48.png", sizes: "48x48", type: "image/png" },
-      { url: "/icon-96x96.png", sizes: "96x96", type: "image/png" },
       { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   };
 }
 
