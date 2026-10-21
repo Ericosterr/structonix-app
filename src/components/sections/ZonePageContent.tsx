@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { getServicePath, type ServiceSlug } from "@config/navigation";
 import { site } from "@config/site";
 import { getLandingPath } from "@data/landings";
 import { zoneSectionImages } from "@data/zone-section-images";
@@ -27,13 +28,13 @@ type ZonePageContentProps = {
   locale: Locale;
 };
 
-const SERVICE_LINKS = [
-  { href: "/servicios/estructura", key: "estructura" },
-  { href: "/servicios/ingenieria", key: "ingenieria" },
-  { href: "/servicios/arquitectura", key: "arquitectura" },
-  { href: "/servicios/acabados", key: "acabados" },
-  { href: "/servicios/carpinteria", key: "carpinteria" },
-  { href: "/servicios/gestion-administrativa", key: "gestion-administrativa" },
+const SERVICE_KEYS = [
+  "estructura",
+  "ingenieria",
+  "arquitectura",
+  "acabados",
+  "carpinteria",
+  "gestion-administrativa",
 ] as const;
 
 function paragraphs(text: string) {
@@ -210,13 +211,13 @@ export async function ZonePageContent({ zona, locale }: ZonePageContentProps) {
         <Container className="space-y-6">
           <SectionHeading title={t("common.servicesTitle")} />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {SERVICE_LINKS.map((service) => (
+            {SERVICE_KEYS.map((key) => (
               <Link
-                key={service.key}
-                href={service.href}
+                key={key}
+                href={getServicePath(key as ServiceSlug, locale)}
                 className="rounded-[var(--radius-card)] border border-border bg-background p-5 font-medium shadow-[var(--shadow-soft)] transition-colors hover:bg-muted"
               >
-                {tNav(service.key)} <span aria-hidden="true">→</span>
+                {tNav(key)} <span aria-hidden="true">→</span>
               </Link>
             ))}
           </div>

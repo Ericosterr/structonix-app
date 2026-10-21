@@ -35,7 +35,7 @@
     "ingenieria": "Engineering",
     "arquitectura": "Architecture",
     "acabados": "Finishes",
-    "carpinteria": "Carpentry",
+    "carpinteria": "Window Installation",
     "gestion-administrativa": "Administrative Management",
     "blog": "Blog",
     "areas": "Areas"
@@ -401,7 +401,7 @@
       "ingenieria": "Engineering services by Structonix.",
       "arquitectura": "Architecture services by Structonix.",
       "acabados": "Finishing services by Structonix.",
-      "carpinteria": "Carpentry services by Structonix.",
+      "carpinteria": "Window installation services by Structonix.",
       "gestion-administrativa": "Administrative management by Structonix."
     }
   },
@@ -1088,8 +1088,8 @@
         "description": "Interior and exterior finishes for residential and villa construction, delivered with project control and technical coordination."
       },
       "carpinteria": {
-        "title": "Carpentry & Windows | Construction Joinery | Structonix",
-        "description": "Carpentry and window-related construction works for residential projects, coordinated within the wider Structonix build package."
+        "title": "Window Installation | Aluminium Windows | Structonix",
+        "description": "Window installation for residential and villa projects on the Costa del Sol, coordinated within the wider Structonix build package."
       },
       "gestion-administrativa": {
         "title": "Project & Administrative Management | Structonix",

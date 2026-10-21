@@ -1,38 +1,54 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
-import { serviceSlugs, type ServiceSlug } from "@config/navigation";
+import {
+  getServiceKeyByPublicSlug,
+  getServicePublicSlug,
+  serviceSlugs,
+  type ServiceSlug,
+} from "@config/navigation";
 import { generateServiceMetadata } from "@/lib/page-metadata";
-import type { Locale } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 import { ServicePageContent } from "@/components/sections/ServicePageContent";
+
+export const dynamicParams = false;
 
 type ServicePageProps = {
   params: Promise<{ locale: Locale; slug: string }>;
 };
 
-function isServiceSlug(slug: string): slug is ServiceSlug {
-  return (serviceSlugs as readonly string[]).includes(slug);
-}
-
-export function generateStaticParams() {
-  return serviceSlugs.map((slug) => ({ slug }));
+export function generateStaticParams({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const locale = params.locale as Locale;
+  return serviceSlugs.map((key) => ({
+    slug: getServicePublicSlug(key, locale),
+  }));
 }
 
 export async function generateMetadata({
   params,
 }: ServicePageProps): Promise<Metadata> {
   const { locale, slug } = await params;
-  if (!isServiceSlug(slug)) return {};
-  return generateServiceMetadata(locale, slug);
+  const key = getServiceKeyByPublicSlug(locale, slug);
+  if (!key) return {};
+  return generateServiceMetadata(locale, key);
 }
 
 export default async function ServicePage({ params }: ServicePageProps) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  if (!isServiceSlug(slug)) {
+  if (!(routing.locales as readonly string[]).includes(locale)) {
     notFound();
   }
 
-  return <ServicePageContent slug={slug} />;
+  const key = getServiceKeyByPublicSlug(locale, slug);
+  if (!key) {
+    notFound();
+  }
+
+  return <ServicePageContent slug={key as ServiceSlug} />;
 }

@@ -35,7 +35,7 @@
     "ingenieria": "Инженерия",
     "arquitectura": "Архитектура",
     "acabados": "Отделка",
-    "carpinteria": "Алюминиевые Окна",
+    "carpinteria": "Монтаж окон",
     "gestion-administrativa": "Административное управление",
     "blog": "Блог",
     "areas": "Регионы"
@@ -401,7 +401,7 @@
       "ingenieria": "Инженерные услуги Structonix.",
       "arquitectura": "Архитектурные услуги Structonix.",
       "acabados": "Услуги по отделке от Structonix.",
-      "carpinteria": "Столярные услуги Structonix.",
+      "carpinteria": "Услуги монтажа окон Structonix.",
       "gestion-administrativa": "Административное управление Structonix."
     }
   },
@@ -1088,8 +1088,8 @@
         "description": "Внутренняя и наружная отделка для жилья и вилл с контролем проекта и технической координацией."
       },
       "carpinteria": {
-        "title": "Столярка и окна | Строительные работы | Structonix",
-        "description": "Столярные и оконные работы для жилых проектов в составе строительного пакета Structonix."
+        "title": "Монтаж окон | Алюминиевые окна | Structonix",
+        "description": "Монтаж окон для жилых проектов и вилл на Коста-дель-Соль в составе строительного пакета Structonix."
       },
       "gestion-administrativa": {
         "title": "Управление проектом и административное сопровождение | Structonix",

@@ -22,10 +22,10 @@ export function ServiceShortcutButton({
   className,
 }: ServiceShortcutButtonProps) {
   return (
-    <motion.div {...hoverScale} className={cn(className)}>
+    <motion.div {...hoverScale} className={cn("h-full", className)}>
       <Link
         href={href}
-        className="flex flex-col items-center gap-2 rounded-[var(--radius-button)] border border-white/20 bg-white/10 px-3 py-4 text-center backdrop-blur-sm transition-colors hover:bg-white/20"
+        className="flex h-full min-h-[7.5rem] flex-col items-center justify-center gap-2 rounded-[var(--radius-button)] border border-white/20 bg-white/10 px-3 py-4 text-center backdrop-blur-sm transition-colors hover:bg-white/20 sm:min-h-[8rem]"
       >
         {service === "gestion-administrativa" ? (
           <ServiceIconAdmin className="bg-white/15 text-white" />
@@ -36,7 +36,7 @@ export function ServiceShortcutButton({
             className="bg-white/15 text-white [&_svg]:text-white"
           />
         )}
-        <span className="text-xs font-medium leading-tight text-white sm:text-sm">
+        <span className="flex min-h-[2.5em] items-center justify-center text-xs font-medium leading-tight text-white sm:text-sm">
           {label}
         </span>
       </Link>

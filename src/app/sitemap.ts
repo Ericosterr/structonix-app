@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site } from "@config/site";
+import { getServicePath, serviceSlugs } from "@config/navigation";
 import { landingKeys, landingSlugs } from "@data/landings";
 import { zoneSlugs } from "@data/zones";
 import { routing } from "@/i18n/routing";
@@ -17,6 +18,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: new Date(),
         changeFrequency: path === "/blog" ? "weekly" : "monthly",
         priority: path === "/" ? 1 : path === "/blog" ? 0.85 : 0.8,
+      });
+    }
+
+    for (const key of serviceSlugs) {
+      entries.push({
+        url: getLocalizedUrl(site.baseUrl, locale, getServicePath(key, locale)),
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.8,
       });
     }
 

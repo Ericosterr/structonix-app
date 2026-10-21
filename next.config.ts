@@ -86,6 +86,27 @@ const nextConfig: NextConfig = {
         destination: "/ru/stroitelnaya-kompaniya-marbelya",
         permanent: true,
       },
+      // Window installation service: retire shared `carpinteria` slug.
+      {
+        source: "/servicios/carpinteria",
+        destination: "/servicios/instalacion-de-ventanas",
+        permanent: true,
+      },
+      {
+        source: "/es/servicios/carpinteria",
+        destination: "/servicios/instalacion-de-ventanas",
+        permanent: true,
+      },
+      {
+        source: "/en/servicios/carpinteria",
+        destination: "/en/servicios/window-installation",
+        permanent: true,
+      },
+      {
+        source: "/ru/servicios/carpinteria",
+        destination: "/ru/servicios/montazh-okon",
+        permanent: true,
+      },
     ];
   },
   async headers() {

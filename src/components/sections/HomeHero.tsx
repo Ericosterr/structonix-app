@@ -2,7 +2,7 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { homeFeaturedServices } from "@config/navigation";
+import { getServicePath, homeFeaturedServices } from "@config/navigation";
 import { backgrounds } from "@data/backgrounds";
 import { getLandingPath } from "@data/landings";
 import type { Locale } from "@/i18n/routing";
@@ -68,7 +68,7 @@ export function HomeHero() {
           {homeFeaturedServices.map((slug) => (
             <ServiceShortcutButton
               key={slug}
-              href={`/servicios/${slug}`}
+              href={getServicePath(slug, locale)}
               label={tNav(slug)}
               service={
                 slug === "gestion-administrativa"

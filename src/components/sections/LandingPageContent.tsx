@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { company } from "@config/company";
+import { getServicePath, type ServiceSlug } from "@config/navigation";
 import { site } from "@config/site";
 import {
   getLandingPath,
@@ -33,13 +34,13 @@ type LandingPageContentProps = {
 
 type Section = { title: string; body: string };
 
-const SERVICE_LINKS = [
-  { href: "/servicios/estructura", key: "estructura" },
-  { href: "/servicios/ingenieria", key: "ingenieria" },
-  { href: "/servicios/arquitectura", key: "arquitectura" },
-  { href: "/servicios/acabados", key: "acabados" },
-  { href: "/servicios/carpinteria", key: "carpinteria" },
-  { href: "/servicios/gestion-administrativa", key: "gestion-administrativa" },
+const SERVICE_KEYS = [
+  "estructura",
+  "ingenieria",
+  "arquitectura",
+  "acabados",
+  "carpinteria",
+  "gestion-administrativa",
 ] as const;
 
 function paragraphs(text: string) {
@@ -199,13 +200,13 @@ export async function LandingPageContent({
         <Container className="space-y-6">
           <SectionHeading title={t("common.servicesTitle")} />
           <div className="flex flex-wrap gap-3">
-            {SERVICE_LINKS.map((service) => (
+            {SERVICE_KEYS.map((key) => (
               <Link
-                key={service.key}
-                href={service.href}
+                key={key}
+                href={getServicePath(key as ServiceSlug, locale)}
                 className="rounded-[var(--radius-button)] border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
               >
-                {tNav(service.key)}
+                {tNav(key)}
               </Link>
             ))}
             <Link

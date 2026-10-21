@@ -35,7 +35,7 @@
     "ingenieria": "Ingenieria",
     "arquitectura": "Arquitectura",
     "acabados": "Acabados",
-    "carpinteria": "Carpinteria",
+    "carpinteria": "Instalación de Ventanas",
     "gestion-administrativa": "Gestion Administrativa",
     "blog": "Blog",
     "areas": "Zonas"
@@ -401,7 +401,7 @@
       "ingenieria": "Servicios de ingeniería de Structonix.",
       "arquitectura": "Servicios de arquitectura de Structonix.",
       "acabados": "Servicios de acabados de Structonix.",
-      "carpinteria": "Servicios de carpintería de Structonix.",
+      "carpinteria": "Servicios de instalación de ventanas de Structonix.",
       "gestion-administrativa": "Gestión administrativa de Structonix."
     }
   },
@@ -1088,8 +1088,8 @@
         "description": "Acabados interiores y exteriores para vivienda y villas, con control de proyecto y coordinación técnica."
       },
       "carpinteria": {
-        "title": "Carpintería y ventanas | Obra | Structonix",
-        "description": "Carpintería y trabajos relacionados con ventanas en proyectos residenciales, coordinados dentro del paquete de obra de Structonix."
+        "title": "Instalación de Ventanas | Ventanas de aluminio | Structonix",
+        "description": "Instalación de ventanas para vivienda y villas en la Costa del Sol, coordinada dentro del paquete de obra de Structonix."
       },
       "gestion-administrativa": {
         "title": "Gestión de proyecto y administrativa | Structonix",
