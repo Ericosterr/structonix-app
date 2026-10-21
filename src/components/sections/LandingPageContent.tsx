@@ -210,13 +210,13 @@ export async function LandingPageContent({
               </Link>
             ))}
             <Link
-              href="/zonas/marbella"
+              href={getLandingPath("construction-company-marbella", locale)}
               className="rounded-[var(--radius-button)] border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
             >
               {t("common.zoneMarbella")}
             </Link>
             <Link
-              href="/zonas/costa-del-sol"
+              href={getLandingPath("builders-costa-del-sol", locale)}
               className="rounded-[var(--radius-button)] border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
             >
               {t("common.zoneCosta")}

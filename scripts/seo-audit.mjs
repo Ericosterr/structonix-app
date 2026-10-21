@@ -11,12 +11,6 @@ const paths = [
   "/",
   "/en",
   "/ru",
-  "/zonas/marbella",
-  "/en/zonas/marbella",
-  "/ru/zonas/marbella",
-  "/zonas/costa-del-sol",
-  "/en/zonas/costa-del-sol",
-  "/ru/zonas/costa-del-sol",
   "/empresa-constructora-marbella",
   "/en/construction-company-marbella",
   "/ru/stroitelnaya-kompaniya-marbelya",
@@ -68,6 +62,54 @@ const expectedRedirects = [
   {
     path: "/ru/servicios/carpinteria",
     to: "/ru/servicios/montazh-okon",
+  },
+  {
+    path: "/zonas/marbella",
+    to: "/empresa-constructora-marbella",
+  },
+  {
+    path: "/en/zonas/marbella",
+    to: "/en/construction-company-marbella",
+  },
+  {
+    path: "/ru/zonas/marbella",
+    to: "/ru/stroitelnaya-kompaniya-marbelya",
+  },
+  {
+    path: "/zonas/costa-del-sol",
+    to: "/constructora-costa-del-sol",
+  },
+  {
+    path: "/en/zonas/costa-del-sol",
+    to: "/en/builders-costa-del-sol",
+  },
+  {
+    path: "/ru/zonas/costa-del-sol",
+    to: "/ru/stroiteli-costa-del-sol",
+  },
+  {
+    path: "/zonas/benahavis",
+    to: "/constructora-costa-del-sol",
+  },
+  {
+    path: "/en/zonas/benahavis",
+    to: "/en/builders-costa-del-sol",
+  },
+  {
+    path: "/ru/zonas/benahavis",
+    to: "/ru/stroiteli-costa-del-sol",
+  },
+  {
+    path: "/zonas/estepona",
+    to: "/constructora-costa-del-sol",
+  },
+  {
+    path: "/en/zonas/estepona",
+    to: "/en/builders-costa-del-sol",
+  },
+  {
+    path: "/ru/zonas/estepona",
+    to: "/ru/stroiteli-costa-del-sol",
   },
 ];
 

@@ -10,7 +10,6 @@ import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { InstagramIcon, YoutubeIcon } from "@/components/ui/social-icons";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
-import { HeaderAreasMenu } from "@/components/layout/HeaderAreasMenu";
 import { HeaderServicesMenu } from "@/components/layout/HeaderServicesMenu";
 import { mobileNavItemClass } from "@/components/layout/mobile-nav";
 import {
@@ -46,7 +45,6 @@ export function MobileNavMenu({ onNavigate }: MobileNavMenuProps) {
           {tNav(item.key)}
         </Link>
       ))}
-      <HeaderAreasMenu variant="mobile" onNavigate={onNavigate} />
       <HeaderServicesMenu variant="mobile" onNavigate={onNavigate} />
       <Link href="/calculador" className={mobileNavItemClass} onClick={onNavigate}>
         {tCommon("calculator")}
