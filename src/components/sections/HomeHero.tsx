@@ -53,9 +53,6 @@ export function HomeHero() {
             <Link href={costaHref} className="underline-offset-4 hover:underline">
               {t("linkCosta")}
             </Link>
-            <Link href="/zonas/marbella" className="underline-offset-4 hover:underline">
-              {t("linkMarbellaAreas")}
-            </Link>
           </motion.p>
         </div>
 

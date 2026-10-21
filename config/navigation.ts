@@ -1,4 +1,3 @@
-import { zoneSlugs } from "@data/zones";
 import type { Locale } from "@/i18n/routing";
 
 export type ServiceSlug =
@@ -103,16 +102,6 @@ export const mainNavItems: NavItem[] = [
   { key: "investors", href: "/para-inversores" },
   { key: "blog", href: "/blog" },
 ];
-
-/**
- * Single source of truth for the Areas/Zones navigation. Generated from the
- * same `zoneSlugs` that produce the /zonas/[zona] pages, so adding a new zone
- * automatically adds it to the header and footer navigation.
- */
-export const zoneNavItems: NavItem[] = zoneSlugs.map((slug) => ({
-  key: slug,
-  href: `/zonas/${slug}`,
-}));
 
 /** Service nav keys; resolve `href` with `getServicePath(key, locale)`. */
 export const serviceNavItems: Array<{ key: ServiceSlug }> = serviceSlugs.map(

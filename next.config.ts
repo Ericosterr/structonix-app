@@ -107,6 +107,87 @@ const nextConfig: NextConfig = {
         destination: "/ru/servicios/montazh-okon",
         permanent: true,
       },
+      // Retired geographic /zonas hubs → commercial landing pages.
+      {
+        source: "/zonas/marbella",
+        destination: "/empresa-constructora-marbella",
+        permanent: true,
+      },
+      {
+        source: "/es/zonas/marbella",
+        destination: "/empresa-constructora-marbella",
+        permanent: true,
+      },
+      {
+        source: "/en/zonas/marbella",
+        destination: "/en/construction-company-marbella",
+        permanent: true,
+      },
+      {
+        source: "/ru/zonas/marbella",
+        destination: "/ru/stroitelnaya-kompaniya-marbelya",
+        permanent: true,
+      },
+      {
+        source: "/zonas/costa-del-sol",
+        destination: "/constructora-costa-del-sol",
+        permanent: true,
+      },
+      {
+        source: "/es/zonas/costa-del-sol",
+        destination: "/constructora-costa-del-sol",
+        permanent: true,
+      },
+      {
+        source: "/en/zonas/costa-del-sol",
+        destination: "/en/builders-costa-del-sol",
+        permanent: true,
+      },
+      {
+        source: "/ru/zonas/costa-del-sol",
+        destination: "/ru/stroiteli-costa-del-sol",
+        permanent: true,
+      },
+      {
+        source: "/zonas/benahavis",
+        destination: "/constructora-costa-del-sol",
+        permanent: true,
+      },
+      {
+        source: "/es/zonas/benahavis",
+        destination: "/constructora-costa-del-sol",
+        permanent: true,
+      },
+      {
+        source: "/en/zonas/benahavis",
+        destination: "/en/builders-costa-del-sol",
+        permanent: true,
+      },
+      {
+        source: "/ru/zonas/benahavis",
+        destination: "/ru/stroiteli-costa-del-sol",
+        permanent: true,
+      },
+      {
+        source: "/zonas/estepona",
+        destination: "/constructora-costa-del-sol",
+        permanent: true,
+      },
+      {
+        source: "/es/zonas/estepona",
+        destination: "/constructora-costa-del-sol",
+        permanent: true,
+      },
+      {
+        source: "/en/zonas/estepona",
+        destination: "/en/builders-costa-del-sol",
+        permanent: true,
+      },
+      {
+        source: "/ru/zonas/estepona",
+        destination: "/ru/stroiteli-costa-del-sol",
+        permanent: true,
+      },
     ];
   },
   async headers() {

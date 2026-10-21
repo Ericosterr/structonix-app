@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { site } from "@config/site";
 import { getServicePath, serviceSlugs } from "@config/navigation";
 import { landingKeys, landingSlugs } from "@data/landings";
-import { zoneSlugs } from "@data/zones";
 import { routing } from "@/i18n/routing";
 import { getLocalizedUrl } from "@/lib/locale-path";
 import { getAllPublishedSlugs } from "@/lib/notion";
@@ -27,15 +26,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: new Date(),
         changeFrequency: "monthly",
         priority: 0.8,
-      });
-    }
-
-    for (const zona of zoneSlugs) {
-      entries.push({
-        url: getLocalizedUrl(site.baseUrl, locale, `/zonas/${zona}`),
-        lastModified: new Date(),
-        changeFrequency: "monthly",
-        priority: 0.9,
       });
     }
 
