@@ -70,11 +70,6 @@ export const teamMembers: TeamMember[] = [
     image: "/team/ViktorOsinskiy.JPG",
   },
   {
-    name: "Ruslan Horbachev",
-    positionKey: "encargado",
-    image: "/team/RuslanHorbachev.jpg",
-  },
-  {
     name: "Yuriy Zabrodskiy",
     positionKey: "encargado",
     image: "/team/Yuriy_ZabrodskiyEncargadoStructonix.JPEG",
