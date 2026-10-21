@@ -96,6 +96,29 @@ export function getServiceKeyByPublicSlug(
   return null;
 }
 
+/**
+ * Canonical locale-switching resolver for service pages.
+ * Maps `/servicios/{publicSlug}` in `currentLocale` to the localized path
+ * for `nextLocale` (locale-relative, no prefix).
+ */
+export function getLocalizedServicePath(
+  currentLocale: Locale,
+  pathname: string,
+  nextLocale: Locale,
+): string | null {
+  const match = pathname.match(/^\/servicios\/([^/]+)\/?$/);
+  if (!match) {
+    return null;
+  }
+
+  const key = getServiceKeyByPublicSlug(currentLocale, match[1]);
+  if (!key) {
+    return null;
+  }
+
+  return getServicePath(key, nextLocale);
+}
+
 export const mainNavItems: NavItem[] = [
   { key: "about", href: "/quienes-somos" },
   { key: "careers", href: "/carrera" },

@@ -6,6 +6,7 @@ import { getPathname, usePathname } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { syncLocaleCookie } from "@/lib/sync-locale-cookie";
 import { getLocalizedLandingSlug } from "@data/landings";
+import { getLocalizedServicePath } from "@config/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -70,9 +71,10 @@ export function LanguageSwitcher({
    * Resolve the destination path for a locale switch. One canonical resolution
    * order, no hardcoded slug replacements:
    *  1. Landing pages -> central slug map in `data/landings.ts`.
-   *  2. Blog posts -> per-locale slug from the page's own hreflang alternate
+   *  2. Service pages -> central public-slug map in `config/navigation.ts`.
+   *  3. Blog posts -> per-locale slug from the page's own hreflang alternate
    *     (falls back to the blog index so a missing translation never 404s).
-   *  3. Everything else -> slug-stable, just swap the locale prefix.
+   *  4. Everything else -> slug-stable, just swap the locale prefix.
    */
   const resolveLocaleHref = (nextLocale: Locale): string => {
     const currentSlug = pathname.replace(/^\//, "");
@@ -84,6 +86,15 @@ export function LanguageSwitcher({
     );
     if (mappedLandingSlug) {
       return getPathname({ href: `/${mappedLandingSlug}`, locale: nextLocale });
+    }
+
+    const mappedServicePath = getLocalizedServicePath(
+      locale,
+      pathname,
+      nextLocale,
+    );
+    if (mappedServicePath) {
+      return getPathname({ href: mappedServicePath, locale: nextLocale });
     }
 
     if (pathname.startsWith("/blog/")) {
