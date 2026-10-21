@@ -142,7 +142,18 @@ type LocalizedSlugMetadataInput = {
   title: string;
   description: string;
   slugByLocale: Record<Locale, string>;
+  /** Optional path prefix without trailing slash, e.g. `/servicios`. */
+  pathPrefix?: string;
 };
+
+function localizedSlugPath(
+  slugByLocale: Record<Locale, string>,
+  locale: Locale,
+  pathPrefix = "",
+): string {
+  const slug = slugByLocale[locale];
+  return pathPrefix ? `${pathPrefix}/${slug}` : `/${slug}`;
+}
 
 /**
  * Metadata for pages whose slug differs per locale (localized URLs).
@@ -153,8 +164,9 @@ export function buildLocalizedSlugMetadata({
   title,
   description,
   slugByLocale,
+  pathPrefix = "",
 }: LocalizedSlugMetadataInput): Metadata {
-  const path = `/${slugByLocale[locale]}`;
+  const path = localizedSlugPath(slugByLocale, locale, pathPrefix);
   const canonical = getLocalizedUrl(site.baseUrl, locale, path);
   const images = buildOgImages();
 
@@ -167,13 +179,17 @@ export function buildLocalizedSlugMetadata({
         ...Object.fromEntries(
           routing.locales.map((loc) => [
             loc,
-            getLocalizedUrl(site.baseUrl, loc, `/${slugByLocale[loc]}`),
+            getLocalizedUrl(
+              site.baseUrl,
+              loc,
+              localizedSlugPath(slugByLocale, loc, pathPrefix),
+            ),
           ]),
         ),
         "x-default": getLocalizedUrl(
           site.baseUrl,
           routing.defaultLocale,
-          `/${slugByLocale[routing.defaultLocale]}`,
+          localizedSlugPath(slugByLocale, routing.defaultLocale, pathPrefix),
         ),
       },
     },
@@ -310,16 +326,11 @@ export function buildLocalBusinessJsonLd({
   };
 }
 
+/** Non-service static routes. Service URLs come from `getServicePath` (localized). */
 export const staticRoutes = [
   "/",
   "/quienes-somos",
   "/carrera",
-  "/servicios/estructura",
-  "/servicios/ingenieria",
-  "/servicios/arquitectura",
-  "/servicios/acabados",
-  "/servicios/carpinteria",
-  "/servicios/gestion-administrativa",
   "/para-inversores",
   "/blog",
   "/calculador",

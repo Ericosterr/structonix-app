@@ -26,6 +26,9 @@ const paths = [
   "/servicios/estructura",
   "/en/servicios/arquitectura",
   "/ru/servicios/ingenieria",
+  "/servicios/instalacion-de-ventanas",
+  "/en/servicios/window-installation",
+  "/ru/servicios/montazh-okon",
 ];
 
 /** Retired Marbella commercial URLs that must 301 to the primary page. */
@@ -53,6 +56,18 @@ const expectedRedirects = [
   {
     path: "/ru/generalnyy-podryadchik-marbelya",
     to: "/ru/stroitelnaya-kompaniya-marbelya",
+  },
+  {
+    path: "/servicios/carpinteria",
+    to: "/servicios/instalacion-de-ventanas",
+  },
+  {
+    path: "/en/servicios/carpinteria",
+    to: "/en/servicios/window-installation",
+  },
+  {
+    path: "/ru/servicios/carpinteria",
+    to: "/ru/servicios/montazh-okon",
   },
 ];
 

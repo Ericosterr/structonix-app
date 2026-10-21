@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { buildLocalizedSlugMetadata, buildPageMetadata } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
-import type { ServiceSlug } from "@config/navigation";
+import {
+  servicePublicSlugs,
+  type ServiceSlug,
+} from "@config/navigation";
 import {
   getLandingSlugByLocale,
   type LandingKey,
@@ -33,10 +36,14 @@ export async function generateServiceMetadata(
   locale: Locale,
   slug: ServiceSlug,
 ): Promise<Metadata> {
-  return generatePageMetadata({
+  const t = await getTranslations({ locale, namespace: `seo.services.${slug}` });
+
+  return buildLocalizedSlugMetadata({
     locale,
-    path: `/servicios/${slug}`,
-    namespace: `seo.services.${slug}`,
+    title: t("title"),
+    description: t("description"),
+    slugByLocale: servicePublicSlugs[slug],
+    pathPrefix: "/servicios",
   });
 }
 
