@@ -1,12 +1,17 @@
 "use client";
 
+import type { MouseEvent } from "react";
 import { usePathname as useFullPathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import { getPathname, usePathname } from "@/i18n/navigation";
+import { usePathname } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { syncLocaleCookie } from "@/lib/sync-locale-cookie";
 import { getLocalizedLandingSlug } from "@data/landings";
-import { getLocalizedServicePath } from "@config/navigation";
+import {
+  resolveServiceLocaleHref,
+  stripLocalePrefix,
+  toPublicLocalePath,
+} from "@config/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -53,6 +58,40 @@ function getHreflangPath(locale: Locale): string | null {
   }
 }
 
+/**
+ * Final public browser pathname for a locale switch.
+ * Must not be passed through next-intl Link/getPathname again.
+ */
+export function resolveLocaleHref(
+  pathname: string,
+  currentLocale: Locale,
+  nextLocale: Locale,
+): string {
+  const neutralPath = stripLocalePrefix(pathname);
+  const currentSlug = neutralPath.replace(/^\//, "");
+
+  const mappedLandingSlug = getLocalizedLandingSlug(
+    currentLocale,
+    currentSlug,
+    nextLocale,
+  );
+  if (mappedLandingSlug) {
+    return toPublicLocalePath(`/${mappedLandingSlug}`, nextLocale);
+  }
+
+  const mappedServiceHref = resolveServiceLocaleHref(neutralPath, nextLocale);
+  if (mappedServiceHref) {
+    return mappedServiceHref;
+  }
+
+  if (neutralPath.startsWith("/blog/")) {
+    const alternate = getHreflangPath(nextLocale);
+    return alternate ?? toPublicLocalePath("/blog", nextLocale);
+  }
+
+  return toPublicLocalePath(neutralPath, nextLocale);
+}
+
 type LanguageSwitcherProps = {
   variant: "desktop" | "mobile";
   onLocaleChange?: () => void;
@@ -67,57 +106,29 @@ export function LanguageSwitcher({
   const pathname = usePathname();
   const fullPathname = useFullPathname();
 
-  /**
-   * Resolve the destination path for a locale switch. One canonical resolution
-   * order, no hardcoded slug replacements:
-   *  1. Landing pages -> central slug map in `data/landings.ts`.
-   *  2. Service pages -> central public-slug map in `config/navigation.ts`.
-   *  3. Blog posts -> per-locale slug from the page's own hreflang alternate
-   *     (falls back to the blog index so a missing translation never 404s).
-   *  4. Everything else -> slug-stable, just swap the locale prefix.
-   */
-  const resolveLocaleHref = (nextLocale: Locale): string => {
-    const currentSlug = pathname.replace(/^\//, "");
+  // Prefer next-intl's locale-neutral pathname; fall back to the browser path.
+  const pathForResolve =
+    pathname.startsWith("/servicios/") || pathname.length > 1
+      ? pathname
+      : fullPathname;
 
-    const mappedLandingSlug = getLocalizedLandingSlug(
-      locale,
-      currentSlug,
-      nextLocale,
-    );
-    if (mappedLandingSlug) {
-      return getPathname({ href: `/${mappedLandingSlug}`, locale: nextLocale });
-    }
+  const hrefFor = (nextLocale: Locale) =>
+    resolveLocaleHref(pathForResolve, locale, nextLocale);
 
-    const mappedServicePath = getLocalizedServicePath(
-      locale,
-      pathname,
-      nextLocale,
-    );
-    if (mappedServicePath) {
-      return getPathname({ href: mappedServicePath, locale: nextLocale });
-    }
-
-    if (pathname.startsWith("/blog/")) {
-      const alternate = getHreflangPath(nextLocale);
-      return (
-        alternate ?? getPathname({ href: "/blog", locale: nextLocale })
-      );
-    }
-
-    return getPathname({ href: pathname, locale: nextLocale });
-  };
-
-  const switchLocale = (nextLocale: Locale) => {
+  const onLocaleClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    nextLocale: Locale,
+  ) => {
     if (nextLocale === locale) {
+      event.preventDefault();
       onLocaleChange?.();
       return;
     }
 
-    // Hard navigation guarantees a full HTML document response.
-    // router.replace() uses RSC flight fetches that break on CDN/mobile production.
-    // Sync NEXT_LOCALE first so unprefixed ES URLs are not redirected by middleware.
+    // Sync NEXT_LOCALE before navigation so unprefixed ES URLs resolve correctly.
     syncLocaleCookie(fullPathname, locale, nextLocale);
-    window.location.assign(resolveLocaleHref(nextLocale));
+    onLocaleChange?.();
+    // Navigate via the anchor href (final public path). Do not re-localize.
   };
 
   if (variant === "mobile") {
@@ -131,17 +142,18 @@ export function LanguageSwitcher({
         aria-label={t("language")}
       >
         {routing.locales.map((nextLocale) => (
-          <button
+          <a
             key={nextLocale}
-            type="button"
-            onClick={() => switchLocale(nextLocale)}
+            href={hrefFor(nextLocale)}
+            hrefLang={nextLocale}
+            onClick={(event) => onLocaleClick(event, nextLocale)}
             className={cn(
               "min-h-11 px-2 text-sm font-medium text-white transition-opacity hover:opacity-80",
               locale === nextLocale && "font-semibold underline underline-offset-4",
             )}
           >
             {localeLabels[nextLocale]}
-          </button>
+          </a>
         ))}
       </div>
     );
@@ -157,11 +169,14 @@ export function LanguageSwitcher({
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         {routing.locales.map((nextLocale) => (
-          <DropdownMenuItem
-            key={nextLocale}
-            onClick={() => switchLocale(nextLocale)}
-          >
-            {localeLabels[nextLocale]}
+          <DropdownMenuItem key={nextLocale} asChild>
+            <a
+              href={hrefFor(nextLocale)}
+              hrefLang={nextLocale}
+              onClick={(event) => onLocaleClick(event, nextLocale)}
+            >
+              {localeLabels[nextLocale]}
+            </a>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
