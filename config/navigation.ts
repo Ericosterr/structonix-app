@@ -97,26 +97,78 @@ export function getServiceKeyByPublicSlug(
 }
 
 /**
- * Canonical locale-switching resolver for service pages.
- * Maps `/servicios/{publicSlug}` in `currentLocale` to the localized path
- * for `nextLocale` (locale-relative, no prefix).
+ * Resolve a public service slug to its internal key by scanning every locale.
+ * Needed for language switching: next-intl `usePathname()` is locale-stripped
+ * (`/servicios/montazh-okon`), so the slug must be recognized regardless of
+ * which locale originally produced it.
+ */
+export function getServiceKeyByAnyPublicSlug(
+  publicSlug: string,
+): ServiceSlug | null {
+  for (const key of serviceSlugs) {
+    const byLocale = servicePublicSlugs[key];
+    for (const locale of Object.keys(byLocale) as Locale[]) {
+      if (byLocale[locale] === publicSlug) {
+        return key;
+      }
+    }
+  }
+  return null;
+}
+
+/**
+ * Strip an optional `/en` or `/ru` prefix. next-intl `usePathname()` is usually
+ * already locale-neutral, but language switching must stay correct if a full
+ * browser pathname is passed instead.
+ */
+export function stripLocalePrefix(pathname: string): string {
+  const stripped = pathname.replace(/^\/(en|ru)(?=\/|$)/, "");
+  return stripped === "" ? "/" : stripped;
+}
+
+/** Final public browser pathname for `localePrefix: "as-needed"`. */
+export function toPublicLocalePath(path: string, locale: Locale): string {
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  if (locale === "es") {
+    return normalized;
+  }
+  return `/${locale}${normalized}`;
+}
+
+/**
+ * Locale-relative service path for `nextLocale`, or null if not a service page.
+ * Accepts locale-neutral or prefixed pathnames.
  */
 export function getLocalizedServicePath(
-  currentLocale: Locale,
   pathname: string,
   nextLocale: Locale,
 ): string | null {
-  const match = pathname.match(/^\/servicios\/([^/]+)\/?$/);
+  const match = stripLocalePrefix(pathname).match(/^\/servicios\/([^/]+)\/?$/);
   if (!match) {
     return null;
   }
 
-  const key = getServiceKeyByPublicSlug(currentLocale, match[1]);
+  const key = getServiceKeyByAnyPublicSlug(match[1]);
   if (!key) {
     return null;
   }
 
   return getServicePath(key, nextLocale);
+}
+
+/**
+ * Final public browser href for switching locale on a service page.
+ * Example: `/servicios/instalacion-de-ventanas` + `ru` → `/ru/servicios/montazh-okon`.
+ */
+export function resolveServiceLocaleHref(
+  pathname: string,
+  nextLocale: Locale,
+): string | null {
+  const localized = getLocalizedServicePath(pathname, nextLocale);
+  if (!localized) {
+    return null;
+  }
+  return toPublicLocalePath(localized, nextLocale);
 }
 
 export const mainNavItems: NavItem[] = [
