@@ -57,7 +57,7 @@ export function CalculatorCard({ type, className }: CalculatorCardProps) {
             id={`area-${type}`}
             type="number"
             min="0"
-            step="0.01"
+            step="10"
             value={area}
             onChange={(event) => setArea(event.target.value)}
           />
